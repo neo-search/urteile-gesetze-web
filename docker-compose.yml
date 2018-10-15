@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  urteile-gesetze-rest:
+    image: eu.gcr.io/urteile-gesetze-crawler/urteile-gesetze-rest
+    ports:
+      - 8090:8090
+    deploy:
+        replicas: 2
+        restart_policy:
+            condition: any
+          # delay: 5s
+          # max_attempts: 3
+          # window: 120s
+        update_config:
+           parallelism: 1
+           delay: 60s
+  urteile-gesetze-portal:
+    image: eu.gcr.io/urteile-gesetze-crawler/urteile-gesetze-portal
+    ports:
+      - 3000:3000
+    deploy:
+        replicas: 2
+        restart_policy:
+            condition: any
+          # delay: 5s
+          # max_attempts: 3
+          # window: 120s
+        update_config:
+           parallelism: 1
+           delay: 7s
+

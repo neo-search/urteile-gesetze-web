@@ -1,0 +1,256 @@
+{
+  "/gesetz": {
+    "filter": { "d": "g" },
+    "title": "Aktuelle Gesetze der Bundesrepublik Deutschland",
+    "h1": "Aktuelle Gesetze Bundesrepublik Deutschland", 
+    "description": "Aktuelle Gesetze den Bundesrepublik Deutschland",
+    "image": "",
+    "canonical": "/gesetz",
+    "page": "/rechtsgebiet",
+    "noindex": true
+  },
+  "/section": {
+    "filter": { "d": "g" },
+    "title": "Aktuelle Gesetze der Bundesrepublik Deutschland",
+    "h1": "Aktuelle Gesetze Bundesrepublik Deutschland", 
+    "description": "Aktuelle Gesetze den Bundesrepublik Deutschland",
+    "image": "",
+    "canonical": "/gesetz",
+    "page": "/rechtsgebiet",
+    "noindex": true
+  },
+  "/rechtsgebiet": {
+    "filter": { "d": "r" },
+    "title": "Aktuelle Urteile Bundesgerichte",
+    "h1": "Aktuelle Urteile Bundesgerichte", 
+    "description": "Aktuelle Urteile der Bundesgerichte Deutschland",
+    "image": "",
+    "canonical": "/urteile",
+    "page": "/rechtsgebiet"
+  },
+  "/arbeitsrecht": {
+    "filter": { "r": "arbr" },
+    "title": "Arbeitsrecht",
+    "h1": "Aktuelle Urteile und Gesetze zu Arbeitsrecht", 
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Arbeitsrecht",
+    "image": "",
+    "canonical": "/arbeitsrecht",
+    "page": "/rechtsgebiet"
+  },
+  "/arbeitsrecht-urteile": {
+    "filter": { "r": "arbr", "d": "r" },
+    "title": "Urteile Arbeitsrecht",
+    "h1": "Aktuelle Urteile Arbeitsrecht", 
+    "description": "Finden sie hier die aktuellsten Urteile zu Arbeitsrecht",
+    "image": "",
+    "canonical": "/arbeitsrecht-urteile",
+    "page": "/rechtsgebiet"
+  },
+  "/arbeitsrecht-gesetze": {
+    "filter": { "r": "arbr", "d": "g" },
+    "title": "Gesetze Arbeitsrecht",
+    "h1": "Aktuelle Gesetze Arbeitsrecht", 
+    "image": "",
+    "canonical": "/arbeitsrecht-gesetze",
+    "page": "/rechtsgebiet"
+  },
+  "/sozialrecht": {
+    "filter": { "r": "szr" },
+    "title": "Sozialrecht",
+    "h1": "Aktuelle Urteile und Gesetze zu Sozialrecht", 
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Sozialrecht",
+    "image": "",
+    "canonical": "/sozialrecht",
+    "page": "/rechtsgebiet"
+  },
+  "/sozialrecht-urteile": {
+    "filter": { "r": "szr", "d": "r" },
+    "title": "Urteile Sozialrecht",
+    "h1": "Aktuelle Urteile Sozialrecht", 
+    "description": "Finden sie hier die aktuellsten Urteile zu Sozialrecht",
+    "image": "",
+    "canonical": "/sozialrecht-urteile",
+    "page": "/rechtsgebiet"
+  },
+  "/sozialrecht-gesetze": {
+    "filter": { "r": "szr", "d": "g" },
+    "title": "Gesetze Sozialrecht",
+    "h1": "Aktuelle Gesetze Sozialrecht", 
+    "description": "Finden sie hier die aktuellsten Gesetze zu Sozialrecht",
+    "image": "",
+    "canonical": "/sozialrecht-gesetze",
+    "page": "/rechtsgebiet"
+  },
+  "/staats-verfassungsrecht": {
+    "filter": { "r": "stvr" },
+    "title": "Staatsrecht und Verfassungsrecht",
+    "h1": "Aktuelle Urteile und Gesetze zu Staatsrecht und Verfassungsrecht", 
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Staatsrecht und Verfassungsrecht",
+    "image": "",
+    "canonical": "/staats-verfassungsrecht",
+    "page": "/rechtsgebiet"
+  },
+  "/staats-verfassungsrecht-urteile": {
+    "filter": { "r": "stvr", "d": "r" },
+    "title": "Urteile Staatsrecht und Verfassungsrecht",
+    "h1": "Aktuelle Urteile Staatsrecht und Verfassungsrecht", 
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Staatsrecht und Verfassungsrecht",
+    "image": "",
+    "canonical": "/staats-verfassungsrecht-urteile",
+    "page": "/rechtsgebiet"
+  },
+  "/staats-verfassungsrecht-gesetze": {
+    "filter": { "r": "stvr", "d": "g" },
+    "title": "Gesetze Staatsrecht und Verfassungsrecht",
+    "h1": "Aktuelle Gesetze Staatsrecht und Verfassungsrecht", 
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Staatsrecht und Verfassungsrecht",
+    "image": "",
+    "canonical": "/staats-verfassungsrecht-gesetze",
+    "page": "/rechtsgebiet"
+  },
+  "/steuerrecht": {
+    "filter": { "r": "steuerr" },
+    "title": "Steuerrecht",
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Steuerrecht",
+    "image": "",
+    "canonical": "/steuerrecht",
+    "page": "/rechtsgebiet"
+  },
+  "/steuerrecht-urteile": {
+    "filter": { "r": "steuerr", "d": "r" },
+    "title": "Urteile Steuerrecht",
+    "description": "Finden sie hier die aktuellsten Gesetze zu Steuerrecht",
+    "image": "",
+    "canonical": "/steuerrecht-urteile",
+    "page": "/rechtsgebiet"
+  },
+  "/steuerrecht-gesetze": {
+    "filter": { "r": "steuerr", "d": "g" },
+    "title": "Gesetze Steuerrecht",
+    "description": "Finden sie hier die aktuellsten Urteile zu Steuerrecht",
+    "image": "",
+    "canonical": "/steuerrecht-gesetze",
+    "page": "/rechtsgebiet"
+  },
+  "/strafrecht": {
+    "filter": { "r": "strar" },
+    "title": "Strafrecht",
+    "description":
+      "Finden sie hier die aktuellsten Urteile und Gesetze zu Strafrecht",
+    "image": "",
+    "canonical": "/strafrecht",
+    "page": "/rechtsgebiet"
+  },
+  "/strafrecht-urteile": {
+    "filter": { "r": "strar", "d": "r" },
+    "title": "Urteile Strafrecht",
+    "description": "Finden sie hier die aktuellsten Urteile zu Strafrecht",
+    "image": "",
+    "canonical": "/strafrecht-urteile",
+    "page": "/rechtsgebiet"
+  },
+  "/strafrecht-gesetze": {
+    "filter": { "r": "strar", "d": "g" },
+    "title": "Gesetze Strafrecht",
+    "h1": "Aktuelle Gesetze Strafrecht", 
+    "description": "Finden sie hier die aktuellsten Gesetze zu Strafrecht",
+    "image": "",
+    "canonical": "/strafrecht-gesetze",
+    "page": "/rechtsgebiet"
+  },
+  "/ebay-recht": {
+    "q": "ebay",
+    "filter": {},
+    "title": "Urteile ebay und ebay-Auktionen",
+    "h1": "Aktuelle Urteile und Gesetze zu ebay-Recht", 
+    "description":
+      "Finden Sie hier die letzten Urteile zu ebay und ebay-Auktionen",
+    "image": "",
+    "canonical": "/ebay-recht",
+    "page": "/rechtsgebiet"
+  },
+  "/bgh": {
+    "filter": { "g": "bgh" },
+    "title": "Urteile des Bundesgerichtshofs (BGH) ",
+    "h1": "Aktuelle Urteile Bundesgerichtshofs", 
+    "description": "Finden Sie hier die letzten Urteile des Bundesgerichtshofs",
+    "image": "",
+    "canonical": "/bgh",
+    "page": "/gericht"
+  },
+  "/bag": {
+    "filter": { "g": "bag" },
+    "title": "Urteile Bundesarbeitsgericht (BAG)",
+    "h1": "Aktuelle Urteile Bundesarbeitsgericht", 
+    "description":
+      "Finden Sie hier die letzten Urteile des Bundesarbeitsgericht",
+    "image": "",
+    "canonical": "/bag",
+    "page": "/gericht"
+  },
+  "/bfh": {
+    "filter": { "g": "bfh" },
+    "title": "Urteile Bundesfinanzhof (BFH)",
+    "h1": "Aktuelle Urteile Bundesfinanzhof", 
+    "description": "Finden Sie hier die letzten Urteile des Bundesfinanzhof",
+    "image": "",
+    "canonical": "/bfh",
+    "page": "/gericht"
+  },
+  "/bsg": {
+    "filter": { "g": "bsg" },
+    "title": "Urteile Bundessozialgericht (BSG)",
+    "h1": "Aktuelle Urteile Bundessozialgericht", 
+    "description":
+      "Finden Sie hier die letzten Urteile des Bundessozialgericht",
+    "image": "",
+    "canonical": "/bsg",
+    "page": "/gericht"
+  },
+  "/bverfg": {
+    "filter": { "g": "bverfg" },
+    "title": "Urteile des Bundesverfassungsgerichts (BVerfG)",
+    "h1": "Aktuelle Urteile Bundesverfassungsgericht", 
+    "description":
+      "Finden Sie hier die letzten Urteile des Bundesverfassungsgerichts",
+    "image": "",
+    "canonical": "/bverfg",
+    "page": "/gericht"
+  },
+  "/bpatg": {
+    "filter": { "g": "bpatg" },
+    "title": "Urteile des Bundespatentgerichts (BPatG)",
+    "h1": "Aktuelle Urteile Bundespatentgericht", 
+    "description":
+      "Finden Sie hier die letzten Urteile des Bundespatentgerichts",
+    "image": "",
+    "canonical": "/bpatg",
+    "page": "/gericht"
+  },
+  "/bverwg": {
+    "filter": { "g": "bverwg" },
+    "title": "Urteile des Bundesverwaltungsgerichts (BVerwG)",
+    "h1": "Aktuelle Urteile Bundesverwaltungsgericht", 
+    "description":
+      "Finden Sie hier die letzten Urteile des Bundesverwaltungsgerichts",
+    "image": "",
+    "canonical": "/bverwg",
+    "page": "/gericht"
+  },
+  "/gmsogb": {
+    "filter": { "g": "gmsogb" },
+    "title":
+      "Urteile des Gemeinsamen Senats der obersten Gerichtshöfe des Bundes (GmS-OGB)",
+    "h1": "Aktuelle Urteile Gemeinsamer Senat", 
+    "description": "Finden Sie hier die letzten Urteile des Gemeinsamen Senats",
+    "image": "",
+    "canonical": "/gmsogb",
+    "page": "/gericht"
+  }
+}

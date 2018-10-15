@@ -1,0 +1,119 @@
+import Container from "reactstrap/lib/Container";
+import Col from "reactstrap/lib/Col";
+import Row from "reactstrap/lib/Row";
+
+import NormHeader from "../components/document/NormHeader";
+import Norm from "../components/document/Norm";
+import Layout from "../layout/MainLayout";
+import css from "styled-jsx/css";
+import backend from "../services/backend";
+import { branding } from "../components/common/Constants";
+import titleGenerator from "../services/titleGenerator";
+
+const contentStyles = css`
+  div.content {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+`;
+
+const renderAltLink = doc => {
+  if (process.env.NODE_ENV !== "production")
+    return (
+      <Row>
+        <Col md="10">
+          <p style={{ fontSize: 10 }}>
+            <a
+              target="_blank"
+              href={"http://urteile-gesetze.de/" + doc.kanonischeUrl}
+            >
+              Alt
+            </a>
+          </p>
+        </Col>
+      </Row>
+    );
+};
+
+const computeGesetzTitle = (kurzueberschrift, titel, abkuerzung) => {
+  const length = `${abkuerzung} |  ${branding.seoname}`.length;
+  const trimmedKurzueberschrift = titleGenerator.title(
+    kurzueberschrift,
+    length
+  );
+  if (kurzueberschrift) return kurzueberschrift;
+
+  return titleGenerator.title(titel, length);
+};
+
+const GesetzPage = ({ doc, zitierendeUrteile }) => {
+  const { titel, abkuerzung, kurzueberschrift } = doc;
+
+  const gesetzTitle = computeGesetzTitle(kurzueberschrift, titel, abkuerzung);
+
+  return (
+    <Layout
+      title={`${abkuerzung} | ${gesetzTitle} ${branding.seoname}`}
+      // canonical={doc.kanonischeUrl}
+    >
+      <div>
+        <Container>
+          <NormHeader doc={doc} />
+        </Container>
+      </div>
+
+      <div className="content">
+        <style jsx>{contentStyles}</style>
+        <Container>
+          <Row>
+            <Col md="10">
+              <Norm doc={doc} zitierendeUrteile={zitierendeUrteile} />
+            </Col>
+          </Row>
+          {renderAltLink(doc)}
+        </Container>
+      </div>
+    </Layout>
+  );
+};
+
+GesetzPage.getInitialProps = async function(props) {
+  const { kanonischeUrl } = props.query;
+
+  if (kanonischeUrl) {
+    try {
+      const doc = await backend.retrieveDoc(kanonischeUrl);
+      let zitierendeUrteile = undefined;
+      if (doc.smallNorm && doc.smallNorm === true) {
+        zitierendeUrteile = await backend.search({
+          query: kanonischeUrl,
+          page: 0,
+          filter: {
+            docTypes: ["r"],
+            gerichte: [],
+            rechtsgebiete: []
+          },
+          anzahlDerErgebnisse: 6
+        });
+      }
+      return { ...doc, pageName: "/gesetz", zitierendeUrteile };
+    } catch (e) {
+      props.res.statusCode = 404;
+      props.res.end(
+        "Dieses Dokument befindet sich nicht mehr in unserer Datenbank."
+      );
+
+      if (!e.response) console.error(e);
+      else
+        console.error(
+          "Error /gesetz: Dokument wurde nicht gefunden ",
+          kanonischeUrl,
+          `HTTP StatusCode :${e.response.status}`,
+          `HTTP StatusText: ${e.response.statusText}`
+        );
+    }
+  }
+};
+
+export default GesetzPage;
