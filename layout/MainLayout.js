@@ -195,31 +195,6 @@ class LayoutWithHeaderAndFooter extends Component {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-          {/* <script
-            dangerouslySetInnerHTML={{
-              __html: `
-      function loadCSS(href){
-        var ss = window.document.createElement('link'),
-            ref = window.document.getElementsByTagName('head')[0];
-
-        ss.rel = 'stylesheet';
-        ss.href = href;
-
-        // temporarily, set media to something non-matching to ensure it'll
-        // fetch without blocking render
-        ss.media = 'only x';
-
-        ref.parentNode.insertBefore(ss, ref);
-
-        setTimeout( function(){
-          ss.media = 'all';
-        },0);
-      }
-      loadCSS('/static/bootstrap.min.css');
-
-      `
-            }}
-          /> */}
         </Head>
         {this.renderTrackingFooter()}
         {this.renderTrackingOverlay()}
