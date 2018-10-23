@@ -1,0 +1,12 @@
+node_modules
+*.swp
+*package-lock.json
+.next
+.git
+bundles
+*.lock
+now.sh
+now-deploy.sh
+
+.DS_Store
+

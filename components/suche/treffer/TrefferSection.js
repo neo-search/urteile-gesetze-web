@@ -26,20 +26,21 @@ export default ({ doc }) => {
   return (
     <div className="treffer-outer">
       <style jsx>{styles}</style>
-      <SectionLink url={doc.kanonischeUrl}>
-        <div className="treffer">
-
-            <div>
-              <a href={doc.kanonischeUrl} style={{ fontWeight: 600 }}>
-                {(doc.abkuerzung || "") + " " + doc.abkuerzungNorm  + (doc.titel ? ", " + doc.titel : "")}
-              </a>
-              {/* <span style={{ color: colors.primaryAction }}>
-                {doc.titel ? ",  " + doc.titel : ""}
-              </span> */}
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: doc.kurzBeschreibung }} />
+      <div className="treffer">
+        <div>
+          <SectionLink url={doc.kanonischeUrl}>
+            <a href={doc.kanonischeUrl} style={{ fontWeight: 600 }}>
+              {(doc.abkuerzung || "") +
+                " " +
+                doc.abkuerzungNorm +
+                (doc.titel ? ", " + doc.titel : "")}
+            </a>
+          </SectionLink>
         </div>
-      </SectionLink>
+        <SectionLink url={doc.kanonischeUrl}>
+          <div dangerouslySetInnerHTML={{ __html: doc.kurzBeschreibung }} />
+        </SectionLink>
+      </div>
       <Breadcrumb>
         <BreadcrumbItem>Gesetze</BreadcrumbItem>
         <BreadcrumbItem>{doc.abkuerzungNorm}</BreadcrumbItem>
