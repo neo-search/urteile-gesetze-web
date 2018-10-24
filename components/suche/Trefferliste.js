@@ -1,5 +1,4 @@
 import Treffer from "./treffer";
-
 import Pagination from "./pagination";
 
 const computeUrl = (query, selectedFilters) => {
@@ -49,17 +48,15 @@ export default props => {
   } = props;
   const { query, filter, page } = searchRequest;
   const url = computeUrl(query, filter);
-  const { title, canonical, description, pageName } = pageMetaInfo;
+
   return (
     <div className="trefferliste">
-      <div>
-        {renderHighlightedDocs(highlightedDocs)}
-        {docs.map(d => (
-          <Treffer key={d.kanonischeUrl} doc={d}>
-            {d.kanonischeUrl}
-          </Treffer>
-        ))}
-      </div>
+      {renderHighlightedDocs(highlightedDocs)}
+      {docs.map(d => (
+        <Treffer key={d.kanonischeUrl} doc={d}>
+          {d.kanonischeUrl}
+        </Treffer>
+      ))}
       <Pagination
         numberOfResults={docCount}
         baseUrl={url}
