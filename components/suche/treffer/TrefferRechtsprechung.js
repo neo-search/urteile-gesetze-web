@@ -20,38 +20,30 @@ const styles = css`
   }
 `;
 export default ({ doc }) => {
-  return (
-    <div className="treffer-outer">
+  return <div className="treffer-outer">
       <style jsx>{styles}</style>
       <div className="treffer">
-        <div>
-          <div style={{ paddingBottom: 4 }}>
-            <RechtsprechungLink url={doc.kanonischeUrl}>
-              <a href={`${doc.kanonischeUrl}`} style={{ fontWeight: 600 }}>
-                {doc.gericht + " " + doc.spruchkoerper}
-              </a>
-            </RechtsprechungLink>
-            <RechtsprechungLink url={doc.kanonischeUrl}>
+        <div style={{ paddingBottom: 4 }}>
+          <RechtsprechungLink url={doc.kanonischeUrl}>
+            <a href={`${doc.kanonischeUrl}`} style={{ fontWeight: 600 }}>
+              {doc.gericht + " " + doc.spruchkoerper}
               <span style={{ fontWeight: 400, color: colors.primaryAction }}>
                 {", " + doc.abkuerzung + ", Entscheidungsdatum: " + doc.date}
               </span>
-            </RechtsprechungLink>
-          </div>
-          <RechtsprechungLink url={doc.kanonischeUrl}>
-            <div>
-              <span
-                dangerouslySetInnerHTML={{ __html: doc.kurzBeschreibung || "" }}
-              />
-              <br />
-            </div>
+            </a>
           </RechtsprechungLink>
         </div>
+        <RechtsprechungLink url={doc.kanonischeUrl}>
+          <div>
+            <span dangerouslySetInnerHTML={{ __html: doc.kurzBeschreibung || "" }} />
+            <br />
+          </div>
+        </RechtsprechungLink>
       </div>
       <Breadcrumb>
         <BreadcrumbItem>Urteile</BreadcrumbItem>
         <BreadcrumbItem>{doc.gerichtsbezeichnung}</BreadcrumbItem>
         <BreadcrumbItem>{doc.abkuerzung}</BreadcrumbItem>
       </Breadcrumb>
-    </div>
-  );
+    </div>;
 };
