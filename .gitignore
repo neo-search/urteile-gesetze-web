@@ -1,6 +1,6 @@
 node_modules
 *.swp
-*package-lock.json
+#*package-lock.json
 .next
 .git
 bundles
