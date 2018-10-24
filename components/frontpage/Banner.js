@@ -40,9 +40,9 @@ export default () => (
     <Container>
       <Row>
         <h1>
-          Aktuelle Gesetze und aktuelle Rechtsprechung. Tägliches Update der
-          Datenbank mit über <b>133.978</b> juristischen Dokumenten für die
-          Bundesrepublik Deutschland.
+          Aktuelle Gesetze und aktuelle Rechtsprechung. Open Source. Tägliches
+          Update der Datenbank mit über <b>133.978</b> juristischen Dokumenten
+          für die Bundesrepublik Deutschland.
         </h1>
       </Row>
       <Row style={{ marginTop: 45 }}>

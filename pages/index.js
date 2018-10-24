@@ -6,6 +6,7 @@ import css from "styled-jsx/css";
 import Container from "reactstrap/lib/Container";
 import Col from "reactstrap/lib/Col";
 import Row from "reactstrap/lib/Row";
+import GitHubSvg from "../components/icons/GitHubSvg";
 
 const styles = css`
   h2 {
@@ -37,7 +38,7 @@ const LabelLink = ({ href, as, children }) => (
         border: "1px solid transparent",
         padding: ".375rem .75rem",
         fontSize: "1rem",
-        lineHeight: 1.5,
+        lineHeight: 1.5
         // borderRadius: ".25rem"
       }}
     >
@@ -65,6 +66,10 @@ const CardLink = ({ asHref, href, label, img, alt }) => (
 );
 
 export default props => {
+  <p>
+    Kostenfrei und Open Source!. urteile-gesetze ist das erste juristische
+    Informationssystem unter einer Open Source Lizenz
+  </p>;
   return (
     <Layout
       title="Urteile, Gesetze und Verordnungen der Bundesrepublik Deutschland"
@@ -76,6 +81,19 @@ export default props => {
       <Banner />
       <Container>
         <style jsx>{styles}</style>
+        <div>
+          <h2>Open-Source</h2>
+          <p>
+            <em>Kostenfrei und Open Source!</em> urteile-gesetze.de ist das
+            erste juristische Informationssystem unter einer Open Source Lizenz.
+            Quellcode einfach forken und auf{" "}
+            <a href="https://github.com/neo-search/urteile-gesetze-web/">
+              GitHub
+            </a>{" "}
+            ändern. 
+            
+          </p>
+        </div>
         <div>
           <h2>Rechtsgebiete</h2>
           <Row>
@@ -127,14 +145,17 @@ export default props => {
           <LabelLink as="/bsg">Bundessozialgericht (BSG)</LabelLink>
           <LabelLink as="/bpatg">Bundespatentgericht (BPatG)</LabelLink>
           <LabelLink as="/gmsogb">Gemeinsamer Senat (GmS-OGB)</LabelLink>
-          <LabelLink href="/themenbasierte-urteile" as="/themenbasierte-urteile">
+          <LabelLink
+            href="/themenbasierte-urteile"
+            as="/themenbasierte-urteile"
+          >
             Urteile nach Themen
           </LabelLink>
           <a href="/gerichte">...&nbsp;Alle Gerichte sehen</a>
           {/* <Link as={`/urteile`} href={`/suche?d=r`}>
             ...&nbsp;Alle Urteile sehen
           </Link> */}
-          <p></p>
+          <p />
           <Link as={`/urteile`} href={`/urteile`}>
             ...&nbsp;Alle Urteile sehen
           </Link>
@@ -188,7 +209,7 @@ export default props => {
           >
             StPO
           </LabelLink>
-          <p></p>
+          <p />
           <Link href="/gesetze">
             <a>... Alle Gesetze sehen</a>
           </Link>
@@ -198,7 +219,8 @@ export default props => {
           <h2>Neueste Trends</h2>
           <LabelLink href="/dsgvo">
             <b>DSGVO</b>
-            <br />Datenschutzgrundverordnung
+            <br />
+            Datenschutzgrundverordnung
           </LabelLink>
         </div>
       </Container>
