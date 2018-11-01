@@ -96,7 +96,7 @@ const SectionPage = ({ doc, errorCode, zitierendeUrteile }) => {
         <Container>
           <Row>
             <Col md="10">
-              <Section doc={doc.sectionInfo} zitierendeUrteile={zitierendeUrteile} />
+              <Section doc={doc} zitierendeUrteile={zitierendeUrteile} />
             </Col>
           </Row>
           {renderAltLink(doc)}

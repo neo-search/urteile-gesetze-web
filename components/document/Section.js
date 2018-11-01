@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import KurzformTrefferRechtsprechung from '../suche/treffer/KurzformTrefferRechtsprechung'
-import css from 'styled-jsx/css'
+import KurzformTrefferRechtsprechung from "../suche/treffer/KurzformTrefferRechtsprechung";
+import css from "styled-jsx/css";
 
 const contentStyles = css`
   div.content {
@@ -14,7 +14,7 @@ const contentStyles = css`
     display: block;
     background-color: yellow;
   }
-`
+`;
 
 const renderZitierendeUrteile = (abkuerzungSection, docs) => {
   if (docs && docs.length > 0)
@@ -41,15 +41,15 @@ export default ({ doc, zitierendeUrteile }) => {
     abkuerzungNorm,
     abkuerzung,
     content
-  } = doc;
+  } = doc.sectionInfo;
 
   const contentWithImages = content
     ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
     : null;
   // const contentWithImages = content;
-  
-  const abkuerzungSection = abkuerzung + " " + abkuerzungNorm;
 
+  const abkuerzungSection = abkuerzung + " " + abkuerzungNorm;
+  // debugger;
   return (
     <div>
       <h3 style={{ textAlign: "center", fontSize: "1rem" }}>
@@ -78,8 +78,7 @@ export default ({ doc, zitierendeUrteile }) => {
         {doc.titel ? " " + doc.titel : ""}
       </h1>
 
-      <div dangerouslySetInnerHTML={{ __html: contentWithImages }}>
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: contentWithImages }} />
       {renderZitierendeUrteile(abkuerzungSection, zitierendeUrteile)}
     </div>
   );
