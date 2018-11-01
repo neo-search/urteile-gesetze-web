@@ -39,12 +39,10 @@ const LabelLink = ({ href, as, children }) => (
         padding: ".375rem .75rem",
         fontSize: "1rem",
         lineHeight: 1.5
-        // borderRadius: ".25rem"
       }}
     >
       {children}
     </a>
-    {/* </Label> */}
   </Link>
 );
 
@@ -90,8 +88,7 @@ export default props => {
             <a href="https://github.com/neo-search/urteile-gesetze-web/">
               GitHub
             </a>{" "}
-            ändern. 
-            
+            ändern.
           </p>
         </div>
         <div>
@@ -136,6 +133,15 @@ export default props => {
         </div>
 
         <div>
+          <h2>Neueste Gesetze</h2>
+          <LabelLink href="/mufklag">
+            <b>MuFKlaG</b>
+            <br />
+            Musterfeststellungsklage
+          </LabelLink>
+        </div>
+
+        <div>
           <h2>Letze Urteile</h2>
           <LabelLink as="/bverfg">Bundesverfassungsgericht (BVerfG)</LabelLink>
           <LabelLink as="/bgh">Bundesgerichtshof (BGH)</LabelLink>
@@ -152,9 +158,6 @@ export default props => {
             Urteile nach Themen
           </LabelLink>
           <a href="/gerichte">...&nbsp;Alle Gerichte sehen</a>
-          {/* <Link as={`/urteile`} href={`/suche?d=r`}>
-            ...&nbsp;Alle Urteile sehen
-          </Link> */}
           <p />
           <Link as={`/urteile`} href={`/urteile`}>
             ...&nbsp;Alle Urteile sehen
@@ -186,22 +189,10 @@ export default props => {
             GG
           </LabelLink>
           <LabelLink
-            as="/gesetze/inso"
-            href="/gesetz/?kanonischeUrl=/gesetze/inso"
-          >
-            InsO
-          </LabelLink>
-          <LabelLink
             as="/gesetze/hgb"
             href="/gesetz/?kanonischeUrl=/gesetze/hgb"
           >
             HGB
-          </LabelLink>
-          <LabelLink
-            as="/gesetze/ustg"
-            href="/gesetz/?kanonischeUrl=/gesetze/ustg"
-          >
-            UStG
           </LabelLink>
           <LabelLink
             as="/gesetze/stpo"
@@ -213,15 +204,6 @@ export default props => {
           <Link href="/gesetze">
             <a>... Alle Gesetze sehen</a>
           </Link>
-        </div>
-
-        <div>
-          <h2>Neueste Trends</h2>
-          <LabelLink href="/dsgvo">
-            <b>DSGVO</b>
-            <br />
-            Datenschutzgrundverordnung
-          </LabelLink>
         </div>
       </Container>
     </Layout>
