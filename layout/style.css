@@ -190,9 +190,29 @@ a:not([href]):not([tabindex]) {
 	text-decoration: none;
 }
 
-dl, ol, ul {
-	margin-top: 0;
-	margin-bottom: 1rem;
+
+
+dl {
+  margin-left: 8px;
+  margin-left: 24px;
+}
+
+dl dt  {
+  font-weight: bold;
+  /* margin-right: 10px; */
+  /* margin-right: 26px; */
+  float: left;
+}
+
+dl dd {
+  margin: 2px 0;
+  margin: 4px 0;
+  margin-left: 30px;
+}
+
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 p {

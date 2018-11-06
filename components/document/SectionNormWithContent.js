@@ -26,9 +26,13 @@ export default ({ doc }) => {
     content
   } = doc;
 
-  const contentWithImages = content
-    ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
-    : null;
+  // const contentWithImages = content
+  //   ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
+  //   : null;
+
+  const contentWithImages = content;
+  // ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
+  // : null;
     // const content =  doc.sectionInfo.content;
 
   return (

@@ -43,10 +43,10 @@ export default ({ doc, zitierendeUrteile }) => {
     content
   } = doc.sectionInfo;
 
-  const contentWithImages = content
-    ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
-    : null;
-  // const contentWithImages = content;
+  // const contentWithImages = content
+  //   ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
+  //   : null;
+  const contentWithImages = content;
 
   const abkuerzungSection = abkuerzung + " " + abkuerzungNorm;
   // debugger;

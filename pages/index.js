@@ -134,7 +134,10 @@ export default props => {
 
         <div>
           <h2>Neueste Gesetze</h2>
-          <LabelLink href="/mufklag">
+          <LabelLink
+            as="/gesetze/mufklag"
+            href="/gesetz/?kanonischeUrl=/gesetze/mufklag"
+          >
             <b>MuFKlaG</b>
             <br />
             Musterfeststellungsklage

@@ -9,7 +9,8 @@ import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
 import { initGA, logPageView, logException } from "../services/analytics";
 
-import "./bootstrap.neosearch.min.css";
+// import "./bootstrap.neosearch.min.css";
+import "./bootstrap.min.css";
 import "./style.css";
 
 class LayoutWithHeaderAndFooter extends Component {
