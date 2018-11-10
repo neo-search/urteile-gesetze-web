@@ -52,7 +52,7 @@ export default ({ doc, zitierendeUrteile }) => {
   // debugger;
   return (
     <div>
-      <h3 style={{ textAlign: "center", fontSize: "1rem" }}>
+      <h2 style={{ textAlign: "center", fontSize: "1rem" }}>
         <Link href={kanonischeUrlNorm}>
           <a>
             <b>
@@ -65,7 +65,7 @@ export default ({ doc, zitierendeUrteile }) => {
             {titelNorm}
           </a>
         </Link>
-      </h3>
+      </h2>
       <p style={{ fontSize: "0.9rem", fontWeight: 300, textAlign: "center" }}>
         Ausfertigungsdatum:
         <b style={{ fontWeight: 600 }}>{" " + ausfertigungsdatumNorm}</b>
