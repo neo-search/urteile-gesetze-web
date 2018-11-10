@@ -39,11 +39,10 @@ const RechtsprechungPage = ({ doc }) => {
   const { seoDescription } = doc;
   const { entscheidungsdatum, gericht, aktenzeichen } = doc.rechtsprechungInfo;
 
+  const firstAktenzeichen = aktenzeichen.replace(/.*\,/,"");
   return (
     <Layout
-      title={`${gericht}, Urteil ${aktenzeichen} vom ${entscheidungsdatum} ${
-        branding.seoname
-      }`}
+      title={`Urteil ${gericht}: ${firstAktenzeichen} vom ${entscheidungsdatum}`}
       description={`${seoDescription}`}
       canonical={doc.kanonischeUrl}
     >

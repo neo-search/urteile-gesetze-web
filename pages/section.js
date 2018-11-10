@@ -58,24 +58,23 @@ const computeGesetzTitle = (kurzueberschrift, titel, abkuerzung) => {
 };
 
 const computeLayoutTitel = (abkuerzung, abkuerzungNorm, titel) => {
-  if (!titel || titel == "")
-    return `${abkuerzung} ${abkuerzungNorm} ${branding.seoname}`;
+  debugger;  
+  if (!titel || titel == "") return `${abkuerzung} ${abkuerzungNorm}`;
 
-  const length = `${abkuerzung} ${abkuerzungNorm} |  ${branding.seoname}`
-    .length;
-
-  const sectionTitel = titleGenerator.title(titel, length);
-
-  return `${abkuerzung} ${abkuerzungNorm} | ${sectionTitel} ${
-    branding.seoname
-  }`;
+  const titelString = `${abkuerzung} ${abkuerzungNorm} - ${titel}`;
+  return titleGenerator.title(titelString);
 };
 
 const SectionPage = ({ doc, errorCode, zitierendeUrteile }) => {
   if (errorCode) return <Error statusCode={errorCode} />;
 
   const { seoDescription, titel } = doc;
-  const { abkuerzung, abkuerzungNorm, smallNorm, kanonischeUrlNorm } = doc.sectionInfo;
+  const {
+    abkuerzung,
+    abkuerzungNorm,
+    smallNorm,
+    kanonischeUrlNorm
+  } = doc.sectionInfo;
 
   const layoutTitel = computeLayoutTitel(abkuerzung, abkuerzungNorm, titel);
   const kanonischeUrl = smallNorm ? kanonischeUrlNorm : doc.kanonischeUrl;

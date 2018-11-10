@@ -1,21 +1,21 @@
-import React from 'react'
-import SucheComponent from '../components/suche'
-import landingPagesJson from '../data/landingpages.json'
-import backend from '../services/backend'
-import Layout from '../layout/MainLayout'
-import { branding } from '../components/common/Constants'
+import React from "react";
+import SucheComponent from "../components/suche";
+import landingPagesJson from "../data/landingpages.json";
+import backend from "../services/backend";
+import Layout from "../layout/MainLayout";
+import { branding } from "../components/common/Constants";
 
 const Gericht = props => {
-  const { title, description } = props.pageMetaInfo
+  const { title, description } = props.pageMetaInfo;
   return (
     <Layout title={title} description={description}>
       <SucheComponent {...props} />
     </Layout>
-  )
-}
+  );
+};
 
 function normalizeParam(param) {
-  return typeof param === 'string' ? [param] : param
+  return typeof param === "string" ? [param] : param;
 }
 
 async function retrieveSearchResults(searchRequest) {
@@ -25,26 +25,26 @@ async function retrieveSearchResults(searchRequest) {
     g: gesetze,
     p: page,
     r: rechtsgebiete
-  } = searchRequest
+  } = searchRequest;
 
   const body = {
     query,
     page: p,
-    sortType: 'relevanz',
+    sortType: "relevanz",
     anzahlDerErgebnisse: 20,
     filter: {
       docTypes: normalizeParam(docTypes),
       gerichte: normalizeParam(gesetze),
       rechtsgebiete: normalizeParam(rechtsgebiete)
     }
-  }
+  };
 
-  const { docs, docCount, aggregations } = await backend.search(body)
-  return { docs, docCount, aggregations }
+  const { docs, docCount, aggregations } = await backend.search(body);
+  return { docs, docCount, aggregations };
 }
 
 Gericht.getInitialProps = async function(props) {
-  const { landingpage, p } = props.query
+  const { landingpage, p } = props.query;
   const {
     q,
     filter = {},
@@ -54,7 +54,7 @@ Gericht.getInitialProps = async function(props) {
     canonical,
     page,
     h1
-  } = landingPagesJson[landingpage]
+  } = landingPagesJson[landingpage];
 
   const searchResult = await backend.search({
     query: q,
@@ -64,7 +64,7 @@ Gericht.getInitialProps = async function(props) {
       gerichte: filter.g,
       rechtsgebiete: filter.r
     }
-  })
+  });
 
   return {
     searchResult,
@@ -74,14 +74,14 @@ Gericht.getInitialProps = async function(props) {
       filter
     },
     pageMetaInfo: {
-      title: `${title} ${branding.seoname}`,
+      title,
       description,
       h1,
       canonical,
-      pageName: '/gericht',
+      pageName: "/gericht",
       landingpage
     }
-  }
-}
+  };
+};
 
-export default Gericht
+export default Gericht;

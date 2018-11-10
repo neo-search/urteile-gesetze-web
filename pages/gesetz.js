@@ -8,7 +8,7 @@ import Layout from "../layout/MainLayout";
 import css from "styled-jsx/css";
 import backend from "../services/backend";
 import { branding } from "../components/common/Constants";
-import titleGenerator from "../services/titleGenerator";
+import serpGenerator from "../services/serpGenerator";
 
 const contentStyles = css`
   div.content {
@@ -37,14 +37,10 @@ const renderAltLink = doc => {
 };
 
 const computeGesetzTitle = (kurzueberschrift, titel, abkuerzung) => {
-  const length = `${abkuerzung} |  ${branding.seoname}`.length;
-  const trimmedKurzueberschrift = titleGenerator.title(
-    kurzueberschrift,
-    length
-  );
-  if (kurzueberschrift) return kurzueberschrift;
+  if (kurzueberschrift) return `${kurzueberschrift} (${abkuerzung})`;
 
-  return titleGenerator.title(titel, length);
+  const langTitel = `${abkuerzung} | ${titel}`;
+  return serpGenerator.title(langTitel);
 };
 
 const GesetzPage = ({ doc, zitierendeUrteile }) => {
@@ -52,9 +48,11 @@ const GesetzPage = ({ doc, zitierendeUrteile }) => {
 
   const gesetzTitle = computeGesetzTitle(kurzueberschrift, titel, abkuerzung);
 
+  const description = serpGenerator.description();
   return (
     <Layout
-      title={`${abkuerzung} | ${gesetzTitle} ${branding.seoname}`}
+      title={gesetzTitle}
+      description={doc.description}
       // canonical={doc.kanonischeUrl}
     >
       <div>

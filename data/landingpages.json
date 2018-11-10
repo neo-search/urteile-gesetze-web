@@ -158,7 +158,7 @@
   "/strafrecht-gesetze": {
     "filter": { "r": "strar", "d": "g" },
     "title": "Gesetze Strafrecht",
-    "h1": "Aktuelle Gesetze Strafrecht", 
+    "h1": "Strafrecht - Suche nach Gesetze ", 
     "description": "Finden sie hier die aktuellsten Gesetze zu Strafrecht",
     "image": "",
     "canonical": "/strafrecht-gesetze",
@@ -167,7 +167,7 @@
   "/ebay-recht": {
     "q": "ebay",
     "filter": {},
-    "title": "Urteile ebay und ebay-Auktionen",
+    "title": "Ebay und ebay-Auktionen - Suche nach Urteile",
     "h1": "Aktuelle Urteile und Gesetze zu ebay-Recht", 
     "description":
       "Finden Sie hier die letzten Urteile zu ebay und ebay-Auktionen",
@@ -177,7 +177,7 @@
   },
   "/bgh": {
     "filter": { "g": "bgh" },
-    "title": "Urteile des Bundesgerichtshofs (BGH) ",
+    "title": "Bundesgerichtshofs (BGH) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundesgerichtshofs", 
     "description": "Finden Sie hier die letzten Urteile des Bundesgerichtshofs",
     "image": "",
@@ -186,7 +186,7 @@
   },
   "/bag": {
     "filter": { "g": "bag" },
-    "title": "Urteile Bundesarbeitsgericht (BAG)",
+    "title": "Bundesarbeitsgericht (BAG) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundesarbeitsgericht", 
     "description":
       "Finden Sie hier die letzten Urteile des Bundesarbeitsgericht",
@@ -196,7 +196,7 @@
   },
   "/bfh": {
     "filter": { "g": "bfh" },
-    "title": "Urteile Bundesfinanzhof (BFH)",
+    "title": "Bundesfinanzhof (BFH) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundesfinanzhof", 
     "description": "Finden Sie hier die letzten Urteile des Bundesfinanzhof",
     "image": "",
@@ -205,7 +205,7 @@
   },
   "/bsg": {
     "filter": { "g": "bsg" },
-    "title": "Urteile Bundessozialgericht (BSG)",
+    "title": "Bundessozialgericht (BSG) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundessozialgericht", 
     "description":
       "Finden Sie hier die letzten Urteile des Bundessozialgericht",
@@ -215,7 +215,7 @@
   },
   "/bverfg": {
     "filter": { "g": "bverfg" },
-    "title": "Urteile des Bundesverfassungsgerichts (BVerfG)",
+    "title": "Bundesverfassungsgericht (BVerfG) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundesverfassungsgericht", 
     "description":
       "Finden Sie hier die letzten Urteile des Bundesverfassungsgerichts",
@@ -225,7 +225,7 @@
   },
   "/bpatg": {
     "filter": { "g": "bpatg" },
-    "title": "Urteile des Bundespatentgerichts (BPatG)",
+    "title": "Bundespatentgerichts (BPatG) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundespatentgericht", 
     "description":
       "Finden Sie hier die letzten Urteile des Bundespatentgerichts",
@@ -235,7 +235,7 @@
   },
   "/bverwg": {
     "filter": { "g": "bverwg" },
-    "title": "Urteile des Bundesverwaltungsgerichts (BVerwG)",
+    "title": "Bundesverwaltungsgerichts (BVerwG) - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Bundesverwaltungsgericht", 
     "description":
       "Finden Sie hier die letzten Urteile des Bundesverwaltungsgerichts",
@@ -246,7 +246,7 @@
   "/gmsogb": {
     "filter": { "g": "gmsogb" },
     "title":
-      "Urteile des Gemeinsamen Senats der obersten Gerichtshöfe des Bundes (GmS-OGB)",
+      "Gemeinsamer Senat der obersten Gerichtshöfe - Suche nach Entscheidungen",
     "h1": "Aktuelle Urteile Gemeinsamer Senat", 
     "description": "Finden Sie hier die letzten Urteile des Gemeinsamen Senats",
     "image": "",
