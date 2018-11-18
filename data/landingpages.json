@@ -57,17 +57,17 @@
   },
   "/sozialrecht": {
     "filter": { "r": "szr" },
-    "title": "Sozialrecht",
+    "title": "Sozialrecht - Suche nach aktuellen Urteile und Gesetzen",
     "h1": "Aktuelle Urteile und Gesetze zu Sozialrecht", 
     "description":
-      "Finden sie hier die aktuellsten Urteile und Gesetze zu Sozialrecht",
+      "Sozialrecht - aktuelle und wichtige Gesetze und Urteile aus dem Sozialrecht kostenlos abrufen",
     "image": "",
     "canonical": "/sozialrecht",
     "page": "/rechtsgebiet"
   },
   "/sozialrecht-urteile": {
     "filter": { "r": "szr", "d": "r" },
-    "title": "Urteile Sozialrecht",
+    "title": "Sozialrecht - Suche nach aktuellen Urteile",
     "h1": "Aktuelle Urteile Sozialrecht", 
     "description": "Finden sie hier die aktuellsten Urteile zu Sozialrecht",
     "image": "",

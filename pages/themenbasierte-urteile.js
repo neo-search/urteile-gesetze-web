@@ -36,13 +36,14 @@ const asLink = urteil =>
     .split("ü")
     .join("ue")
     .split("ß")
-    .join("ss");
+    .join("ss") +
+  "-urteile";
 
 const renderLinks = () => {
   const urteile = landingPagesJson["urteile"];
   return urteile.map(e => (
     <li>
-    <style jsx>{contentStyles}</style>
+      <style jsx>{contentStyles}</style>
       <Link href={asLink(e)}>{e}</Link>
     </li>
   ));

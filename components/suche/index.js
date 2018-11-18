@@ -88,6 +88,28 @@ const renderInfoBarText = (query, docCount, page, h1) => {
         </h1>
       </React.Fragment>
     );
+  if (page == "/landingpage-urteile")
+    return (
+      <React.Fragment>
+        <b
+          style={{
+            fontSize: "1.2rem"
+          }}
+        >
+          {docCount.toLocaleString("DE")}
+        </b>{" "}
+        <h1
+          style={{
+            // backgroundColor: "#b7fffb",
+            fontSize: "1.2rem",
+            fontWeight: "normal",
+            display: "inline"
+          }}
+        >
+          Urteile für <b>{query}</b>
+        </h1>
+      </React.Fragment>
+    );
   if (h1)
     return (
       <>

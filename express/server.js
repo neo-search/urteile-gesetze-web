@@ -80,7 +80,7 @@ app
       const url = linkGenerator.generateUrteilslandingpageLink(query);
 
       server.get(url, (req, res) => {
-        return app.render(req, res, "/landingpage", {
+        return app.render(req, res, "/landingpage-urteile", {
           q: query,
           p: req.query.p
         });
@@ -91,7 +91,7 @@ app
     for (let i = 0; i < dokumentelandingpages.length; i++) {
       const query = dokumentelandingpages[i];
 
-      const url = linkGenerator.generateUrteilslandingpageLink(query);
+      const url = linkGenerator.generateDocumentslandingpageLink(query);
       server.get(url, (req, res) => {
         return app.render(req, res, "/landingpage", {
           q: query,
