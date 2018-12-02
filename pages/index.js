@@ -7,6 +7,7 @@ import Container from "reactstrap/lib/Container";
 import Col from "reactstrap/lib/Col";
 import Row from "reactstrap/lib/Row";
 import GitHubSvg from "../components/icons/GitHubSvg";
+import Head from "next/head";
 
 const styles = css`
   h2 {
@@ -63,6 +64,35 @@ const CardLink = ({ asHref, href, label, img, alt }) => (
   </Col>
 );
 
+const renderSocialMetaData = () => {
+  return (
+    <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+              __html: `{
+              "@context": "http://schema.org",
+              "@type": "Blog",
+              "url": "https://blog.urteile-gesetze.de"
+              }`}}/>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: `{
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "Urteile & Gesetze",
+            "url": "https://urteile-gesetze.de",
+            "sameAs": [
+              "https://www.facebook.com/urteilegesetze/",
+              "https://plus.google.com/116310509828182688093",
+              "https://twitter.com/urteile_gesetze"
+            ]}`}}/>
+      </Head>
+    </>
+  );
+};
 export default props => {
   <p>
     Kostenfrei und Open Source!. urteile-gesetze ist das erste juristische
@@ -76,6 +106,7 @@ export default props => {
       description="Finden Sie Gesetze, Verordnungen und Entscheidungen der Bundesrepublik Deutschland. Aktuell und kostenlos bei urteile-gesetze.de"
       canonical="/"
     >
+      {renderSocialMetaData()}
       <Banner />
       <Container>
         <style jsx>{styles}</style>
