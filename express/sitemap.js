@@ -73,7 +73,8 @@ for (let i = 0; i < urteilelandingpages.length; i++) {
       .split("ü")
       .join("ue")
       .split("ß")
-      .join("ss");
+      .join("ss")
+      + "-urteile";
   landingpagesLinks.push(url);
 }
 
