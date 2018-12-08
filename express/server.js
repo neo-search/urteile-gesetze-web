@@ -78,6 +78,7 @@ app
     for (let i = 0; i < urteilelandingpages.length; i++) {
       const query = urteilelandingpages[i];
       const url = linkGenerator.generateUrteilslandingpageLink(query);
+      // console.log("Generateded URL:" , url);
 
       server.get(url, (req, res) => {
         return app.render(req, res, "/landingpage-urteile", {

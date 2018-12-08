@@ -159,7 +159,6 @@ class LayoutWithHeaderAndFooter extends Component {
       <div>
         <Head>
           <title>{title}</title>
-
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -183,7 +182,6 @@ class LayoutWithHeaderAndFooter extends Component {
             color="#5bbad5"
           />
           <meta name="theme-color" content="#ffffff" />
-
           <meta property="og:title" content={title} />
           {this.renderDescription(description)}
           {this.renderCanonical(canonical)}
@@ -194,6 +192,7 @@ class LayoutWithHeaderAndFooter extends Component {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
+     
         </Head>
         {this.renderTrackingFooter()}
         {this.renderTrackingOverlay()}
