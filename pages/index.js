@@ -98,10 +98,12 @@ const renderSocialMetaData = () => {
     </>
   );
 };
+
+
 export default props => {
   <p>
-    Kostenfrei und Open Source!. urteile-gesetze ist das erste juristische
-    Informationssystem unter einer Open Source Lizenz
+    Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
+    Informationssystem unter einer Open Source Lizenz.
   </p>;
   return (
     <Layout
