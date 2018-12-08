@@ -260,7 +260,7 @@
   "/bpatg-entscheidungen": {
     "filter": { "g": "bpatg" },
     "title": "BPatG Entscheidungen - online lesen",
-    "h1": "Entscheidungen den Bundespatentgericht (BPatG)",
+    "h1": "Entscheidungen des Bundespatentgerichts (BPatG)",
     "description": "Alle Entscheidungen des BPatG online lesen und durchsuchen",
     "image": "",
     "canonical": "/bpatg-entscheidungen",
