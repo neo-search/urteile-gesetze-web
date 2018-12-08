@@ -68,14 +68,17 @@ const renderSocialMetaData = () => {
   return (
     <>
       <Head>
+        <meta name="msvalidate.01" content="C251808E1C75AD34739DB1A71F474DCA" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-              __html: `{
+            __html: `{
               "@context": "http://schema.org",
               "@type": "Blog",
               "url": "https://blog.urteile-gesetze.de"
-              }`}}/>
+              }`
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -88,7 +91,9 @@ const renderSocialMetaData = () => {
               "https://www.facebook.com/urteilegesetze/",
               "https://plus.google.com/116310509828182688093",
               "https://twitter.com/urteile_gesetze"
-            ]}`}}/>
+            ]}`
+          }}
+        />
       </Head>
     </>
   );
