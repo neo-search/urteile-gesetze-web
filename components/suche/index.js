@@ -115,8 +115,8 @@ const renderInfoBarText = (query, docCount, page, h1) => {
       <>
         <h1
           style={{
-            backgroundColor: "#b7fffb",
-            fontSize: "1rem",
+            // backgroundColor: "#b7fffb",
+            fontSize: "1.2rem",
             fontWeight: "bold",
             display: "inline"
           }}

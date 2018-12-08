@@ -10,6 +10,10 @@ module.exports.serveRedirects = function(server) {
   server.get("/rechtsprechung", (req, res) => {
     return res.redirect("/urteile");
   });
+  
+  server.get("/bpatg", (req, res) => {
+    return res.redirect("/bpatg-entscheidungen");
+  });
 
   server.get("/query-rechtsprechung", (req, res) => {
     redirectToSearch(req, res);

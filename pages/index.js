@@ -99,7 +99,6 @@ const renderSocialMetaData = () => {
   );
 };
 
-
 export default props => {
   <p>
     Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
@@ -171,18 +170,6 @@ export default props => {
         </div>
 
         <div>
-          <h2>Neueste Gesetze</h2>
-          <LabelLink
-            as="/gesetze/mufklag"
-            href="/gesetz/?kanonischeUrl=/gesetze/mufklag"
-          >
-            <b>MuFKlaG</b>
-            <br />
-            Musterfeststellungsklage
-          </LabelLink>
-        </div>
-
-        <div>
           <h2>Letze Urteile</h2>
           <LabelLink as="/bverfg">Bundesverfassungsgericht (BVerfG)</LabelLink>
           <LabelLink as="/bgh">Bundesgerichtshof (BGH)</LabelLink>
@@ -190,7 +177,9 @@ export default props => {
           <LabelLink as="/bfh">Bundesfinanzhof (BFH)</LabelLink>
           <LabelLink as="/bag">Bundesarbeitsgericht (BAG)</LabelLink>
           <LabelLink as="/bsg">Bundessozialgericht (BSG)</LabelLink>
-          <LabelLink as="/bpatg">Bundespatentgericht (BPatG)</LabelLink>
+          <LabelLink as="/bpatg-entscheidungen">
+            Bundespatentgericht (BPatG)
+          </LabelLink>
           <LabelLink as="/gmsogb">Gemeinsamer Senat (GmS-OGB)</LabelLink>
           <LabelLink
             href="/themenbasierte-urteile"
@@ -203,6 +192,18 @@ export default props => {
           <Link as={`/urteile`} href={`/urteile`}>
             ...&nbsp;Alle Urteile sehen
           </Link>
+        </div>
+
+        <div>
+          <h2>Neueste Gesetze</h2>
+          <LabelLink
+            as="/gesetze/mufklag"
+            href="/gesetz/?kanonischeUrl=/gesetze/mufklag"
+          >
+            <b>MuFKlaG</b>
+            <br />
+            Musterfeststellungsklage
+          </LabelLink>
         </div>
 
         <div>
