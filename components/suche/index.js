@@ -47,6 +47,16 @@ const facettenData = (aggregations, filters, query) => {
     );
   }
 
+  if (aggregations["aggregationJahr"]) {
+    facetten.push(
+      facettenDataAggregation(
+        aggregations["aggregationJahr"],
+        "JAHR",
+        "j"
+      )
+    );
+  }
+
   return {
     facetten,
     urlparams: { ...filters, q: query }

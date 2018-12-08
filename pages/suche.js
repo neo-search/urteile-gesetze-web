@@ -22,7 +22,7 @@ const SuchePage = ({ pageMetaInfo, searchRequest, searchResult }) => {
 };
 
 SuchePage.getInitialProps = async function(props) {
-  const { q, p, d, g, r } = props.query;
+  const { q, p, d, g, r, j } = props.query;
   const { headers } = props.req || {};
 
   const searchResult = await backend.search(
@@ -32,7 +32,8 @@ SuchePage.getInitialProps = async function(props) {
       filter: {
         docTypes: d,
         gerichte: g,
-        rechtsgebiete: r
+        rechtsgebiete: r,
+        jahre: j
       },
       page: p
     },
@@ -51,7 +52,8 @@ SuchePage.getInitialProps = async function(props) {
       filter: {
         d,
         g,
-        r
+        r,
+        j
       }
     },
     pageMetaInfo: {

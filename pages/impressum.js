@@ -42,6 +42,10 @@ export default () => (
         (Anschrift wie oben)
       </p>
       <p>
+        Informationen zur Online-Streitbeilegung:<br/>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Diese Plattform finden Sie unter folgendem Link: <a href="https://ec.europa.eu/consumers/odr/">https://ec.europa.eu/consumers/odr/</a>. Verbraucher können diese Plattform nutzen, um ihre Streitigkeiten aus Online-Verträgen beizulegen.
+      </p>
+      <p>
         Impressum erstellt durch:<br /> © IT-Recht-Kanzlei DURY –{" "}
         <a href="http://www.dury.de">www.dury.de</a>
         <br /> © Website-Check GmbH –{" "}

@@ -25,7 +25,8 @@ async function retrieveSearchResults(searchRequest) {
     d: docTypes,
     g: gesetze,
     p: page,
-    r: rechtsgebiete
+    r: rechtsgebiete,
+    j: jahre
   } = searchRequest;
 
   const body = {
@@ -36,7 +37,8 @@ async function retrieveSearchResults(searchRequest) {
     filter: {
       docTypes: normalizeParam(docTypes),
       gerichte: normalizeParam(gesetze),
-      rechtsgebiete: normalizeParam(rechtsgebiete)
+      rechtsgebiete: normalizeParam(rechtsgebiete),
+      jahre: normalizeParam(jahre)
     }
   };
 
@@ -64,7 +66,8 @@ Suche.getInitialProps = async function(props) {
     filter: {
       docTypes: filter.d,
       gerichte: filter.g,
-      rechtsgebiete: filter.r
+      rechtsgebiete: filter.r,
+      jahre: filter.j
     }
   });
 

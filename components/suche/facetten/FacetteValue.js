@@ -89,6 +89,8 @@ const without = (arrayOrString, obj) => {
 const linksparam = (urlparams, facetteId, id) => {
   const linkparam = { ...urlparams };
 
+  id = cleanParamJahr(id);
+
   if (!linkparam[facetteId]) {
     linkparam[facetteId] = [id];
     return linkparam;
@@ -119,20 +121,44 @@ const cleanedLinkparam = (urlparams, facetteId, id) => {
   for (let [key, value] of Object.entries(params)) {
     if (!value || value === "" || _isEmpty(value)) delete params[key];
   }
+
+  if (params["j"]) params["j"] = cleanedLinkparamJahr(params["j"]);
   return params;
+};
+
+const cleanedLinkparamJahr = params => {
+  if (typeof (params) == 'string') {
+    params = cleanParamJahr(params);
+
+    return params;
+  } else {
+    for (var i = 0; i < params.length; i++) {
+      params[i] = cleanParamJahr(params[i]);
+    }
+
+    return params;
+  }
+};
+
+const cleanParamJahr = (param) => {
+  param = param.replace(" - ", "-");
+  param = param.replace("bis ", "1800-");
+
+  return param;
 };
 
 const isChecked = (urlparams, facetteId, id) => {
   if (!urlparams[facetteId]) return false;
 
-  if (typeof urlparams[facetteId] == "string" && urlparams[facetteId] !== id)
-    return false;
+  id = cleanParamJahr(id);
 
-  if (
-    typeof urlparams[facetteId] !== "string" &&
-    !urlparams[facetteId].includes(id)
-  )
-    return false;
+  if (typeof urlparams[facetteId] == "string") {
+    return urlparams[facetteId] === id;
+  }
+
+  if (typeof urlparams[facetteId] !== "string") {
+    return urlparams[facetteId].includes(id);
+  }
 
   return true;
 };

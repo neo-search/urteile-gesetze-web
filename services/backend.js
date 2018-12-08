@@ -9,11 +9,16 @@ const restserviceUrl = `${publicRuntimeConfig.backendUrl}`;
 
 const normalize = param => (typeof param === "string" ? [param] : param);
 
+const normalizeJahre = param => {
+  var filter = typeof param === "string" ? [param] : param;
+  return filter;
+};
+
 const PAGE_SIZE = 20;
-const search = async (props) => {
+const search = async props => {
   const {
     query,
-    filter: { docTypes, gerichte, rechtsgebiete },
+    filter: { docTypes, gerichte, rechtsgebiete, jahre },
     sortType = "relevanz",
     anzahlDerErgebnisse = PAGE_SIZE,
     page = 0,
@@ -25,7 +30,8 @@ const search = async (props) => {
     filter: {
       docTypes: normalize(docTypes),
       gerichte: normalize(gerichte),
-      rechtsgebiete: normalize(rechtsgebiete)
+      rechtsgebiete: normalize(rechtsgebiete),
+      jahre: normalizeJahre(jahre)
     },
     sortType,
     anzahlDerErgebnisse,
@@ -46,17 +52,16 @@ const search = async (props) => {
   };
 };
 
-const retrieveDoc = async (kanonischeUrl) => {
+const retrieveDoc = async kanonischeUrl => {
   const url = restserviceUrl + kanonischeUrl;
-  
+
   const axiosRes = await axios.get(url);
 
   const doc = await axiosRes.data;
 
   //FIXME: quickfix, weil path von google gelesen wird
-  if(doc.sectionInfo)
-    doc.sectionInfo.path = "";
-  
+  if (doc.sectionInfo) doc.sectionInfo.path = "";
+
   return { doc };
 };
 

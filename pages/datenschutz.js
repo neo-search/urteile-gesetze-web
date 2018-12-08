@@ -151,7 +151,50 @@ export default () => (
         </p>
 
         <p>
-          4. Einbindung externer Webservices und Verarbeitung von Daten
+          4. Statistische Auswertung der Besuche dieser Internetseite - Webtracker
+        </p>
+        <p>
+          Wir erheben, verarbeiten und speichern bei dem Aufruf dieser Internetseite oder einzelner Dateien der Internetseite folgende Daten: IP-Adresse, Webseite, von der aus die Datei abgerufen wurde, Name der Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge und Meldung über den Erfolg des Abrufs (sog. Web-Log).
+        </p>
+        <p>
+          Diese Zugriffsdaten verwenden wir ausschließlich in nicht personalisierter Form für die stetige Verbesserung unseres Internetangebots und zu statistischen Zwecken. Wir setzen zur Auswertung der Besuche dieser Internetseite zudem noch folgende Webtracker ein:
+        </p>
+        <p>
+          Google-Analytics
+        </p>
+        <p>
+          Umfang der Verarbeitung personenbezogener Daten
+        </p>
+        <p>
+          Auf unserer Seite verwenden wir den Webtracking-Service des Unternehmens Google LLC, 1600 Amphitheatre Park in 94043 Mountain View, USA (nachfolgend: Google-Analytics). Google-Analytics nutzt im Rahmen des Webtrackings Cookies, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung unserer Website und Ihres Surfverhaltens ermöglichen (sogenanntes Tracken). Wir führen diese Analyse auf Basis des Tracking-Services von Google-Analytics durch, um unser Internetangebot ständig zu optimieren und besser verfügbar zu machen. Im Rahmen der Benutzung unserer Webseite werden dabei Daten, wie insbesondere Ihre IP-Adresse und Ihre Nutzeraktivitäten an Server des Unternehmens Google LLC übertragen und außerhalb der Europäischen Union, z.B. in den USA verarbeitet und gespeichert. Die EU-Kommission hat festgestellt, dass in den USA ein angemessenes Datenschutzniveau bestehen kann, wenn sich das datenverarbeitende Unternehmen dem US-EU-Privacy-Shield Abkommen unterworfen hat und der Datenexport in die USA auf diesem Weg zulässig ausgestaltet wurde. Durch die Aktivierung der IP-Anonymisierung innerhalb des Google-Analytics Tracking-Codes dieser Internetseite, wird Ihre IP-Adresse von Google-Analytics vor der Übertragung anonymisiert. Diese Website nutzt einen Google-Analytics-Tracking-Code, der um den Operator gat._anonymizeIp(); erweitert wurde, um nur eine anonymisierte Erfassung von IP-Adressen (sog. IP-Masking) zu ermöglichen.
+        </p>
+        <p>
+          Rechtsgrundlage für die Verarbeitung personenbezogener Daten
+        </p>
+        <p>
+          Art. 6 Abs.1 lit.a DSGVO (Einwilligung), entweder im Rahmen der Registrierung bei Google (Eröffnung eines Google-Accounts und Akzeptanz der dort implementierten Datenschutzhinweise) oder, falls Sie sich nicht bei Google registriert haben, durch explizite Einwilligung beim Öffnen unserer Seite.
+        </p>
+        <p>
+          Zweck der Datenverarbeitung
+        </p>
+        <p>
+          In unserem Auftrag wird Google diese Informationen nutzen, um Ihren Besuch auf dieser Internetseite auszuwerten, Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber uns zu erbringen. Die im Rahmen von Google-Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten der Google LLC zusammengeführt.
+        </p>
+        <p>
+          Dauer der Speicherung
+        </p>
+        <p>
+          Google wird die für die Bereitstellung des Webtracking relevanten Daten solange speichern, wie es notwendig ist, um den gebuchten Webservice zu erfüllen. Die Datenerhebung und Speicherung erfolgt anonymisiert. Soweit doch Personenbezug bestehen sollte, werden die Daten unverzüglich gelöscht, soweit diese keinen gesetzlichen Aufbewahrungspflichten unterfallen. In jedem Fall erfolgt die Löschung nach Ablauf der Aufbewahrungspflicht.
+        </p>
+        <p>
+          Widerspruchs- und Beseitigungsmöglichkeit
+        </p>
+        <p>
+          Sie können die Erfassung und Weiterleitung der personenbezogenen Daten an Google (insb. Ihrer IP-Adresse) sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie die Ausführung von Script-Code in Ihrem Browser deaktivieren, einen Script-Blocker in Ihrem Browser installieren (diesen finden Sie z.B. unter <a href="https://www.noscript.net">www.noscript.net</a> oder <a href="https://www.ghostery.com">www.ghostery.com</a> ) oder die „Do Not Track“ Einstellung Ihres Browsers aktivieren. Sie können darüber hinaus die Erfassung der durch den Google-Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link (<a href="https://tools.google.com/dlpage/gaoptout?hl=de">https://tools.google.com/dlpage/gaoptout?hl=de</a>) verfügbare Browser-Plug-In herunterladen und installieren. Die Sicherheits- und Datenschutzgrundsätze von Google-Analytics finden Sie unter <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+        </p>
+
+        <p>
+          5. Einbindung externer Webservices und Verarbeitung von Daten
           außerhalb der EU{" "}
         </p>
         <p>
@@ -278,7 +321,7 @@ export default () => (
           <a href="http://www.ghostery.com/">www.ghostery.com</a>).
         </p>
 
-        <p>5. Unterrichtung über die Nutzung von Cookies</p>
+        <p>6. Unterrichtung über die Nutzung von Cookies</p>
         <p>
           <i>Umfang der Verarbeitung personenbezogener Daten</i>
         </p>
@@ -344,7 +387,7 @@ export default () => (
           datenschutzrechtlichen Widerspruchsrecht und Löschungsanspruch.
         </p>
 
-        <p>6. Datensicherheit und Datenschutz, Kommunikation per E-Mail</p>
+        <p>7. Datensicherheit und Datenschutz, Kommunikation per E-Mail</p>
         <p>
           Ihre personenbezogenen Daten werden durch technische und
           organisatorische Maßnahmen so bei der Erhebung, Speicherung und
@@ -357,7 +400,7 @@ export default () => (
         </p>
 
         <p>
-          7. Widerruf von Einwilligungen – Datenauskünfte und Änderungswünsche –
+          8. Widerruf von Einwilligungen – Datenauskünfte und Änderungswünsche –
           Löschung & Sperrung von Daten
         </p>
         <p>
@@ -375,7 +418,7 @@ export default () => (
           E-Mail: info@neosearch.de
         </p>
 
-        <p>8. Beschwerderecht bei der Aufsichtsbehörde gem. Art. 77 I DSGVO</p>
+        <p>9. Beschwerderecht bei der Aufsichtsbehörde gem. Art. 77 I DSGVO</p>
         <p>
           Sofern Sie den Verdacht haben, dass auf unserer Seite Ihre Daten
           rechtswidrig verarbeitet werden, können Sie selbstverständlich
