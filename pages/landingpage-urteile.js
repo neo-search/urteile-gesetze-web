@@ -35,7 +35,7 @@ Suche.getInitialProps = async function(props) {
   let { q, p } = props.query;
 
   const description = "Lesen Sie die letzten Urteile und Beschlüsse zu " + q;
-  const title = `Aktuelle Urteile zum Thema ${q}`;
+  const title = `${q} Urteile`;
 
   const canonical =
     "/" +
@@ -50,7 +50,8 @@ Suche.getInitialProps = async function(props) {
       .split("ü")
       .join("ue")
       .split("ß")
-      .join("ss");
+      .join("ss") +
+    "-urteile";
   const filter = { d: ["r"] };
   const landingpage = canonical;
 

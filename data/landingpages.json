@@ -240,7 +240,7 @@
     "page": "/gericht"
   },
   "/bfh-urteile-2017": {
-    "filter": { "g": "bfh" },
+    "filter": { "g": "bfh", "j": "2017" },
     "title": "BFH Urteile 2017 - Entscheidungen online lesen",
     "h1": "BFH Urteile 2017",
     "description": "Alle Entscheidungen des BFH aus 2017 online lesen und durchsuchen",
@@ -249,7 +249,7 @@
     "page": "/gericht"
   },
   "/bfh-urteile-2018": {
-    "filter": { "g": "bfh" },
+    "filter": { "g": "bfh", "j": "2018" },
     "title": "BFH Urteile 2018 - Entscheidungen online lesen",
     "h1": "BFH Urteile 2018",
     "description": "Alle Urteile des BFH aus 2017 online lesen und durchsuchen",
