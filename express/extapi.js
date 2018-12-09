@@ -12,18 +12,20 @@ const BASE_URL =
 const backendUrl = config.publicRuntimeConfig.backendUrl + "/search";
 
 const isOnlyRechtsprechung = filter =>
-  filter && filter.categories && filter.categories.includes(RECHSTSPRECHUNG);
+  filter && arraysEqual(filter.categories, [RECHSTSPRECHUNG]);
 
 const isOnlyGesetze = filter =>
-  filter && filter.categories && filter.categories.includes(GESETZE);
+  filter && arraysEqual(filter.categories, [GESETZE]);
+
+const docType = filter => {
+  if (isOnlyGesetze(filter)) return ["g"];
+  if (isOnlyRechtsprechung(filter)) return ["r"];
+  return [];
+};
 
 const backendSearch = async searchRequest => {
   const { filter } = searchRequest;
-  const docTypes = isOnlyGesetze(filter)
-    ? ["g"]
-    : isOnlyRechtsprechung(filter)
-      ? ["r"]
-      : [];
+  const docTypes = docType(filter);
 
   const body = {
     query: searchRequest.query,
@@ -103,25 +105,55 @@ module.exports.servExtAPI = function(server) {
     if (data.docType === "rechtsprechung") return rechtsprechungDAO(data);
   };
 
-  const rechtsprechungDAO = data => ({
-    abkuerzung: null,
-    titel: data.titel,
-    url: BASE_URL + data.kanonischeUrl,
-    type: "rechtsprechung",
-    aktenzeichen: data.abkuerzung,
-    gericht:
-      data.gericht + (data.spruchkoerper ? " " + data.spruchkoerper : ""),
-    beschlussdatum: moment(data.date, "YYYY-MM-DD").format("MM.DD.YYYY")
-  });
+  const rechtsprechungDAO = data => {
+    const url = BASE_URL + data.kanonischeUrl;
+    const gericht =
+      data.gericht + (data.spruchkoerper ? " " + data.spruchkoerper : "");
+    const kurzbeschreibung = data.kurzBeschreibung;
 
-  const gesetzDAO = data => ({
-    abkuerzung:
-      (data.abkuerzung ? data.abkuerzung + " " : "") + data.abkuerzungNorm,
-    titel: data.titel,
-    url: BASE_URL + data.kanonischeUrl,
-    type: "gesetz",
-    aktenzeichen: null,
-    gericht: null,
-    beschlussdatum: moment(data.date, "YYYY-MM-DD").format("MM.DD.YYYY")
-  });
+    return {
+      abkuerzung: data.abkuerzung,
+      aktenzeichen: data.abkuerzung,
+      titel: data.titel,
+      url,
+      type: "rechtsprechung",
+      gericht,
+      kurzbeschreibung,
+      beschlussdatum: moment(data.date, "YYYY-MM-DD").format("MM.DD.YYYY")
+    };
+  };
+
+  const gesetzDAO = data => {
+    const abkuerzung =
+      (data.abkuerzung ? data.abkuerzung + " " : "") + data.abkuerzungNorm;
+    const url = BASE_URL + data.kanonischeUrl;
+    const kurzbeschreibung = data.kurzBeschreibung;
+
+    return {
+      abkuerzung,
+      titel: data.titel,
+      url,
+      type: "gesetz",
+      aktenzeichen: null,
+      gericht: null,
+      kurzbeschreibung,
+      beschlussdatum: moment(data.date, "YYYY-MM-DD").format("MM.DD.YYYY")
+    };
+  };
 };
+
+function arraysEqual(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length != b.length) return false;
+
+  // If you don't care about the order of the elements inside
+  // the array, you should sort both arrays here.
+  // Please note that calling sort on an array will modify that array.
+  // you might want to clone your array first.
+
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
