@@ -29,6 +29,7 @@ const backendSearch = async searchRequest => {
 
   const body = {
     query: searchRequest.query,
+    anzahlDerErgebnisse: 50,
     filter: {
       docTypes: docTypes
     }
