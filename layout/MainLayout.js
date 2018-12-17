@@ -192,10 +192,7 @@ class LayoutWithHeaderAndFooter extends Component {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
           />
-     
         </Head>
-        {this.renderTrackingFooter()}
-        {this.renderTrackingOverlay()}
         <Header query={query} noSearchBar={noSearchbar} />
 
         <div
@@ -205,6 +202,9 @@ class LayoutWithHeaderAndFooter extends Component {
 
         <div className="spaceUnderSearchbar" />
         <div>{children}</div>
+
+        {this.renderTrackingFooter()}
+        {this.renderTrackingOverlay()}
         <Footer />
       </div>
     );
