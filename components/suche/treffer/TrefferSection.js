@@ -19,12 +19,13 @@ const styles = css`
   }
 
   div.treffer-outer {
-    padding-bottom: 16px;
+    // padding-bottom: 16px;
   }
 `;
 export default ({ doc }) => {
   return (
-    <div className="treffer-outer">
+    <div className="treffer-outer" 
+    style={{ borderBottom: "1px solid #eaeaea", marginBottom: 25 }}>
       <style jsx>{styles}</style>
       <div className="treffer">
         <div>
