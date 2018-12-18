@@ -62,6 +62,7 @@ Gericht.getInitialProps = async function(props) {
     filter: {
       docTypes: filter.d,
       gerichte: filter.g,
+      jahre: filter.j,
       rechtsgebiete: filter.r
     }
   });

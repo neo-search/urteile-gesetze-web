@@ -5,6 +5,7 @@ const axios = require("axios");
 const landingpages = require("./../data/landingpages.json");
 const querieslandingpage = require("./../data/queries-landingpages.json");
 const extapi = require("./extapi");
+// const extapi_v2 = require("./extapi_v2");
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 const handle = app.getRequestHandler();
@@ -63,6 +64,7 @@ app
 
     redirects.serveRedirects(server);
     extapi.servExtAPI(server);
+    // extapi_v2.servExtAPI(server);
     sitemaps.serveSitemaps(server);
 
     for (const [route, { page }] of Object.entries(landingpages)) {

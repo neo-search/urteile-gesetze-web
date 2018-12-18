@@ -239,15 +239,6 @@
     "canonical": "/gmsogb",
     "page": "/gericht"
   },
-  "/bfh-urteile-2017": {
-    "filter": { "g": "bfh", "j": "2017" },
-    "title": "BFH Urteile 2017 - Entscheidungen online lesen",
-    "h1": "BFH Urteile 2017",
-    "description": "Alle Entscheidungen des BFH aus 2017 online lesen und durchsuchen",
-    "image": "",
-    "canonical": "/bfh-urteile-2017",
-    "page": "/gericht"
-  },
   "/bfh-urteile-2018": {
     "filter": { "g": "bfh", "j": "2018" },
     "title": "BFH Urteile 2018 - Entscheidungen online lesen",
@@ -255,6 +246,33 @@
     "description": "Alle Urteile des BFH aus 2017 online lesen und durchsuchen",
     "image": "",
     "canonical": "/bfh-urteile-2018",
+    "page": "/gericht"
+  },
+  "/bfh-urteile-2017": {
+    "filter": { "g": "bfh", "j": "2017" },
+    "title": "BFH Urteile 2017 - Entscheidungen online lesen",
+    "h1": "BFH Urteile 2017",
+    "description": "Alle Urteile des BFH aus 2017 online lesen und durchsuchen",
+    "image": "",
+    "canonical": "/bfh-urteile-2017",
+    "page": "/gericht"
+  },
+  "/bfh-urteile-2016": {
+    "filter": { "g": "bfh", "j": "2016" },
+    "title": "BFH Urteile 2016 - Entscheidungen online lesen",
+    "h1": "BFH Urteile 2016",
+    "description": "Alle Urteile des BFH aus 2016 online lesen und durchsuchen",
+    "image": "",
+    "canonical": "/bfh-urteile-2016",
+    "page": "/gericht"
+  },
+  "/bfh-urteile-2015": {
+    "filter": { "g": "bfh", "j": "2015" },
+    "title": "BFH Urteile 2015 - Entscheidungen online lesen",
+    "h1": "BFH Urteile 2015",
+    "description": "Alle Urteile des BFH aus 2015 online lesen und durchsuchen",
+    "image": "",
+    "canonical": "/bfh-urteile-2015",
     "page": "/gericht"
   },
   "/bpatg-entscheidungen": {
