@@ -167,6 +167,15 @@
     "canonical": "/ebay-recht",
     "page": "/rechtsgebiet"
   },
+  "/mietrecht-urteile": {
+    "filter": { "r": "mietr", "d": "r" },
+    "title": "Mietrecht Urteile",
+    "h1": "Mietrecht Urteile",
+    "description": "Finden sie hier die aktuellsten Urteile zu Mietrecht",
+    "image": "",
+    "canonical": "/mietrecht-urteile",
+    "page": "/gericht"
+  },
   "/bgh": {
     "filter": { "g": "bgh" },
     "title": "Bundesgerichtshofs (BGH) - Suche nach Entscheidungen",
@@ -178,9 +187,9 @@
   },
   "/bag": {
     "filter": { "g": "bag" },
-    "title": "Bundesarbeitsgericht (BAG) - Suche nach Entscheidungen",
-    "h1": "Aktuelle Urteile Bundesarbeitsgericht",
-    "description": "Finden Sie hier die letzten Urteile des Bundesarbeitsgericht",
+    "title": "Aktuelle BAG Urteile - alle Urteile online lesen",
+    "h1": "Aktuelle Urteile BAG",
+    "description": "Die aktuelle Urteile des Bundesarbeitsgerichts (BAG) online lesen und durchsuchen",
     "image": "",
     "canonical": "/bag",
     "page": "/gericht"
@@ -282,6 +291,86 @@
     "description": "Alle Entscheidungen des BPatG online lesen und durchsuchen",
     "image": "",
     "canonical": "/bpatg-entscheidungen",
+    "page": "/gericht"
+  },
+  "/gez-aktuelle-urteile-2018": {
+    "q": "Rundfunkbeitrag",
+    "filter": { "d": "r", "j": "2018", "g": "bverfg" },
+    "title": "GEZ aktuelle urteile 2018 - online lesen",
+    "h1": "Aktuelle GEZ urteile aus 2018",
+    "description": "Alle Urteile zur GEZ vom Bundesverfassungsgericht online lesen. Ist der Rundfunkbeitrag noch verfassungsgemäß? Am heutigen ...",
+    "image": "",
+    "canonical": "/gez-aktuelle-urteile-2018",
+    "page": "/gericht"
+  },
+  "/gez-aktuelle-urteile-2017": {
+    "q": "Rundfunkbeitrag",
+    "filter": { "d": "r", "j": "2017" },
+    "title": "GEZ aktuelle urteile 2017 - alle Urteile online lesen",
+    "h1": "Aktuelle GEZ urteile aus 2017",
+    "description": "Alle Urteile GEZ aus dem Jahr 2017 online lesen. 36 Urteile aus dem Jahr 2017",
+    "image": "",
+    "canonical": "/gez-aktuelle-urteile-2017",
+    "page": "/gericht"
+  },
+  "/bauen-aussenbereich-urteile": {
+    "q": "Bauen Außenbereich",
+    "filter": { "d": "r" },
+    "title": "Bauen im Außenbereich - alle Urteile online lesen",
+    "h1": "Bauen im Außenbereich Urteile",
+    "description": "Alle Urteile zu Bauen im Außenbereich online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/bauen-aussenbereich-urteile",
+    "page": "/gericht"
+  },
+  "/widerrufsbelehrung-urteile-2016": {
+    "q": "Widerrufsbelehrung",
+    "filter": { "d": "r", "j": "2016" },
+    "title": "Widerrufsbelehrung Urteile 2016 - alle Urteile online lesen",
+    "h1": "Widerrufsbelehrung Urteile (2016)",
+    "description": "Alle Urteile zu Widerrufsbelehrung online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/widerrufsbelehrung-urteile-2016",
+    "page": "/gericht"
+  },
+  "/widerstand-vollstreckungsbeamte-urteile": {
+    "q": "widerstand gegen vollstreckungsbeamte",
+    "filter": { "d": "r" },
+    "title": "Eiderstand gegen Vollstreckungsbeamte Urteile -  online lesen",
+    "h1": "Widerstand gegen Vollstreckungsbeamte Urteile",
+    "description": "Alle Urteile zu Widerstand gegen Vollstreckungsbeamte online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/widerstand-vollstreckungsbeamte-urteile",
+    "page": "/gericht"
+  },
+  "/fahren-ohne-fahrerlaubnis-eingestellt-verfahren": {
+    "q": "Fahren ohne fahrerlaubnis eingestellt Verfahren",
+    "filter": { "d": "r" },
+    "title": "Fahren ohne fahrerlaubnis eingestellt Verfahren - Urteile online lesen",
+    "h1": "Fahren ohne fahrerlaubnis eingestellt Verfahren",
+    "description": "Alle Urteile zu Fahren ohne fahrerlaubnis eingestellt Verfahren online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/fahren-ohne-fahrerlaubnis-eingestellt-verfahren",
+    "page": "/gericht"
+  },
+  "/nichtzulassungsbeschwerde-bfh": {
+    "q": "Nichtzulassungsbeschwerde",
+    "filter": { "d": "r", "g": "bfh" },
+    "title": "Nichtzulassungsbeschwerde BFH - Urteile online lesen",
+    "h1": "Nichtzulassungsbeschwerde BFH (Bundesfinanzhof)",
+    "description": "Alle Urteile zu Nichtzulassungsbeschwerde am Bundesfinanzhof (BFH) online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/nichtzulassungsbeschwerde-bfh",
+    "page": "/gericht"
+  },
+  "/bgb-1619-urteile": {
+    "q": "BGB § 1619",
+    "filter": { "d": "r" },
+    "title": "BGB 1619 Urteile - alle Urteile online lesen",
+    "h1": "BGB § 1619 Urteile",
+    "description": "Alle Urteile zu BGB § 1619 online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/bgb-1619-urteile",
     "page": "/gericht"
   }
 }
