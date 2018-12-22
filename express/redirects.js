@@ -15,6 +15,10 @@ module.exports.serveRedirects = function(server) {
     return res.redirect("/bpatg-entscheidungen");
   });
 
+  server.get("/bverwg", (req, res) => {
+    return res.redirect("/bverwg-entscheidungen");
+  });
+
   server.get("/query-rechtsprechung", (req, res) => {
     redirectToSearch(req, res);
   });

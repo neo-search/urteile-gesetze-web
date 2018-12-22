@@ -239,6 +239,15 @@
     "canonical": "/bverwg",
     "page": "/gericht"
   },
+   "/bverwg-entscheidungen": {
+    "filter": { "g": "bverwg" },
+    "title": "BVerwG Entscheidungen - Alle Urteile online lesen",
+    "h1": "Entscheidungen des BVerwG",
+    "description": "Alle Entscheidungen des BVerwG (Bundesverwaltungsgerichts). Kostenlos Urteile abrufen",
+    "image": "",
+    "canonical": "/bverwg",
+    "page": "/gericht"
+  },
   "/gmsogb": {
     "filter": { "g": "gmsogb" },
     "title": "Gemeinsamer Senat der obersten Gerichtshöfe - Suche nach Entscheidungen",
