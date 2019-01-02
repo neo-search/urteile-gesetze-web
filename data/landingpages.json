@@ -381,5 +381,35 @@
     "image": "",
     "canonical": "/bgb-1619-urteile",
     "page": "/gericht"
+  },
+  "/573a-bgb-urteile": {
+    "q": "BGB § 573a",
+    "filter": { "d": "r" },
+    "title": "§573a BGB Urteile - alle Urteile online lesen",
+    "h1": "§573a BGB Urteile",
+    "description": "Alle Urteile zu BGB § 573a online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/573a-bgb-urteile",
+    "page": "/gericht"
+  },
+  "/2057a-bgb-urteile": {
+    "q": "BGB § 2057a",
+    "filter": { "d": "r" },
+    "title": "§ 2057a BGB Urteile - alle Urteile online lesen",
+    "h1": "§2057a BGB Urteile",
+    "description": "Alle Urteile zu BGB § 2057a online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/2057a-bgb-urteile",
+    "page": "/gericht"
+  },
+  "/urteile-falsche-eidesstattliche-versicherung": {
+    "q": "Urteile falsche eidesstattliche Versicherung",
+    "filter": { "d": "r" },
+    "title": "Urteile falsche eidesstattliche Versicherung - alle Urteile online lesen",
+    "h1": "Urteile falsche eidesstattliche Versicherung",
+    "description": "Alle Urteile zu \"eidesstattlichen Versicherungen\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "canonical": "/urteile-falsche-eidesstattliche-versicherung",
+    "page": "/gericht"
   }
 }

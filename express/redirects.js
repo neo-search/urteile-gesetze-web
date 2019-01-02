@@ -18,6 +18,12 @@ module.exports.serveRedirects = function(server) {
   server.get("/bverwg", (req, res) => {
     return res.redirect("/bverwg-entscheidungen");
   });
+  
+  server.get("/falsche-eidesstattliche-versicherung-urteile", (req, res) => {
+    return res.redirect("/urteile-falsche-eidesstattliche-versicherung");
+  });
+
+  
 
   server.get("/query-rechtsprechung", (req, res) => {
     redirectToSearch(req, res);

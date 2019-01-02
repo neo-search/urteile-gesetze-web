@@ -56,7 +56,8 @@ app
 
     server.get("/rechtsprechung/:rechtsprechungid", (req, res) => {
       const queryParams = {
-        kanonischeUrl: `/rechtsprechung/${req.params.rechtsprechungid}`
+        kanonischeUrl: `/rechtsprechung/${req.params.rechtsprechungid}`,
+        pdf: req.params.pdf
       };
       const actualPage = "/rechtsprechung";
       return app.render(req, res, actualPage, queryParams);
@@ -105,6 +106,11 @@ app
 
     server.get("/google1451df9c0876553e.html", (req, res) =>
       res.send("google-site-verification: google1451df9c0876553e.html")
+    );
+
+    server.get(
+      "/ahrefs_201e44264991e133d497a1769093885f8c6812c00668ac30b69c1475877d3724",
+      (req, res) => res.send("ahrefs-site-verification_201e44264991e133d497a1769093885f8c6812c00668ac30b69c1475877d3724")
     );
 
     server.get("/robots.txt", (req, res) => {
