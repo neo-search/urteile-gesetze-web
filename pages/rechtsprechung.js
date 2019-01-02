@@ -39,7 +39,7 @@ const RechtsprechungPage = ({ doc, pdf }) => {
   const { seoDescription } = doc;
   const { entscheidungsdatum, gericht, aktenzeichen } = doc.rechtsprechungInfo;
 
-  const firstAktenzeichen = aktenzeichen.replace(/.*\,/,"");
+  const firstAktenzeichen = aktenzeichen.replace(/.*\,/, "");
   return (
     <Layout
       title={`${firstAktenzeichen} - Urteil ${gericht} vom ${entscheidungsdatum}`}
@@ -70,11 +70,11 @@ const RechtsprechungPage = ({ doc, pdf }) => {
 
 RechtsprechungPage.getInitialProps = async function(props) {
   // http://localhost:3000/rechtsprechung/xii%20zb%20583-15
-  const { kanonischeUrl, pdf } = props.query;
+  const { kanonischeUrl } = props.query;
   if (kanonischeUrl) {
     try {
       const doc = await backend.retrieveDoc(kanonischeUrl);
-      return { ...doc, pdf, pageName: "/rechtsprechung" };
+      return { ...doc, pageName: "/rechtsprechung" };
     } catch (e) {
       props.res.statusCode = 404;
       props.res.end(
