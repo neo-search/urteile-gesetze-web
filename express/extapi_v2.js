@@ -116,7 +116,7 @@ module.exports.servExtAPI = function(server) {
       type: "rechtsprechung",
       gericht,
       kurzbeschreibung,
-      beschlussdatum: moment(data.date, "YYYY-MM-DD").format("MM.DD.YYYY")
+      beschlussdatum: moment(data.date, "YYYY-MM-DD").format("DD.MM.YYYY")
     };
   };
 
@@ -135,7 +135,7 @@ module.exports.servExtAPI = function(server) {
       aktenzeichen: null,
       gericht: null,
       kurzbeschreibung,
-      beschlussdatum: moment(data.date, "YYYY-MM-DD").format("MM.DD.YYYY")
+      beschlussdatum: moment(data.date, "YYYY-MM-DD").format("DD.MM.YYYY")
     };
   };
 };
