@@ -51,8 +51,8 @@ const sitemapIndex = sitemapService.buildSitemapIndex({
 });
 
 const landingpagesLinks = ["/dsgvo", "/gesetze", "/urteile", "/gerichte"];
-for (const [route, { page }] of Object.entries(landingpages)) {
-  landingpagesLinks.push(route);
+for (const [route, { doNotIncludeInSitemap }] of Object.entries(landingpages)) {
+  if (!doNotIncludeInSitemap) landingpagesLinks.push(route);
   //  landingpagesLinks.push({ urls: route, changefreq: 'weekly', priority: 0.9 })
 }
 
@@ -73,8 +73,8 @@ for (let i = 0; i < urteilelandingpages.length; i++) {
       .split("ü")
       .join("ue")
       .split("ß")
-      .join("ss")
-      + "-urteile";
+      .join("ss") +
+    "-urteile";
   landingpagesLinks.push(url);
 }
 
@@ -92,7 +92,7 @@ const searchSitemapSections = async function searchSections(letters) {
   const url = backendUrl + "/sitemap-sections/" + letters;
   const axiosRes = await axios.get(url);
   data = await axiosRes.data;
-  return  data//;
+  return data; //;
 };
 
 const sitemapSections = async function createSitemapSections(sections) {
@@ -102,17 +102,19 @@ const sitemapSections = async function createSitemapSections(sections) {
     urls: sections
   });
   sitemap.urls = sitemap.urls //
-  .map(e => ({
-    url: e,
-    changefreq: "weekly",
-    priority: 0.8
-  }));
+    .map(e => ({
+      url: e,
+      changefreq: "weekly",
+      priority: 0.8
+    }));
   return sitemap;
 };
 
 const sendSitemapSection = async function(letters, res) {
   const sections = await searchSitemapSections(letters);
-  const sectionsWithoutInhaltsuebersicht = sections.filter( e  => {return !e.endsWith("inhaltsuebersicht");});
+  const sectionsWithoutInhaltsuebersicht = sections.filter(e => {
+    return !e.endsWith("inhaltsuebersicht");
+  });
   const sitemap = await sitemapSections(sectionsWithoutInhaltsuebersicht);
   return sitemap.toXML((err, xml) => {
     if (err) {

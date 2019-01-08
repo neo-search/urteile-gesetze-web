@@ -228,7 +228,8 @@
     "description": "Finden Sie hier die letzten Urteile des Bundespatentgerichts",
     "image": "",
     "canonical": "/bpatg",
-    "page": "/gericht"
+    "page": "/gericht",
+    "doNotIncludeInSitemap": true
   },
   "/bverwg": {
     "filter": { "g": "bverwg" },
@@ -237,7 +238,8 @@
     "description": "Finden Sie hier die letzten Urteile des Bundesverwaltungsgerichts",
     "image": "",
     "canonical": "/bverwg",
-    "page": "/gericht"
+    "page": "/gericht",
+    "doNotIncludeInSitemap": true
   },
    "/bverwg-entscheidungen": {
     "filter": { "g": "bverwg" },
