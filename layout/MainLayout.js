@@ -155,6 +155,7 @@ class LayoutWithHeaderAndFooter extends Component {
       noSearchbar = false,
       canonical
     } = this.props;
+    debugger;
     return (
       <div>
         <Head>

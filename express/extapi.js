@@ -70,6 +70,7 @@ module.exports.servExtAPI = function(server) {
         .end();
     }
 
+    console.log("JLawyer > Query " + query);
     const result = backendSearch({ filter, query })
       .then(result => result.data)
       .then(data => {

@@ -245,7 +245,6 @@
     "h1": "Entscheidungen des BVerwG",
     "description": "Alle Entscheidungen des BVerwG (Bundesverwaltungsgerichts). Kostenlos Urteile abrufen",
     "image": "",
-    "canonical": "/bverwg-entscheidungen",
     "page": "/gericht"
   },
   "/gmsogb": {
@@ -254,7 +253,6 @@
     "h1": "Aktuelle Urteile Gemeinsamer Senat",
     "description": "Finden Sie hier die letzten Urteile des Gemeinsamen Senats",
     "image": "",
-    "canonical": "/gmsogb",
     "page": "/gericht"
   },
   "/bfh-urteile-2018": {
@@ -263,7 +261,6 @@
     "h1": "BFH Urteile 2018",
     "description": "Alle Urteile des BFH aus 2017 online lesen und durchsuchen",
     "image": "",
-    "canonical": "/bfh-urteile-2018",
     "page": "/gericht"
   },
   "/bfh-urteile-2017": {
@@ -272,7 +269,6 @@
     "h1": "BFH Urteile 2017",
     "description": "Alle Urteile des BFH aus 2017 online lesen und durchsuchen",
     "image": "",
-    "canonical": "/bfh-urteile-2017",
     "page": "/gericht"
   },
   "/bfh-urteile-2016": {
@@ -290,7 +286,6 @@
     "h1": "BFH Urteile 2015",
     "description": "Alle Urteile des BFH aus 2015 online lesen und durchsuchen",
     "image": "",
-    "canonical": "/bfh-urteile-2015",
     "page": "/gericht"
   },
   "/bpatg-entscheidungen": {
@@ -299,7 +294,6 @@
     "h1": "Entscheidungen des Bundespatentgerichts (BPatG)",
     "description": "Alle Entscheidungen des BPatG online lesen und durchsuchen",
     "image": "",
-    "canonical": "/bpatg-entscheidungen",
     "page": "/gericht"
   },
   "/gez-aktuelle-urteile-2018": {
@@ -309,7 +303,6 @@
     "h1": "Aktuelle GEZ urteile aus 2018",
     "description": "Alle Urteile zur GEZ vom Bundesverfassungsgericht online lesen. Ist der Rundfunkbeitrag noch verfassungsgemäß? Am heutigen ...",
     "image": "",
-    "canonical": "/gez-aktuelle-urteile-2018",
     "page": "/gericht"
   },
   "/gez-aktuelle-urteile-2017": {
@@ -319,7 +312,6 @@
     "h1": "Aktuelle GEZ urteile aus 2017",
     "description": "Alle Urteile GEZ aus dem Jahr 2017 online lesen. 36 Urteile aus dem Jahr 2017",
     "image": "",
-    "canonical": "/gez-aktuelle-urteile-2017",
     "page": "/gericht"
   },
   "/bauen-aussenbereich-urteile": {
@@ -329,7 +321,6 @@
     "h1": "Bauen im Außenbereich Urteile",
     "description": "Alle Urteile zu Bauen im Außenbereich online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/bauen-aussenbereich-urteile",
     "page": "/gericht"
   },
   "/widerrufsbelehrung-urteile-2016": {
@@ -339,7 +330,6 @@
     "h1": "Widerrufsbelehrung Urteile (2016)",
     "description": "Alle Urteile zu Widerrufsbelehrung online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/widerrufsbelehrung-urteile-2016",
     "page": "/gericht"
   },
   "/widerstand-vollstreckungsbeamte-urteile": {
@@ -349,7 +339,6 @@
     "h1": "Widerstand gegen Vollstreckungsbeamte Urteile",
     "description": "Alle Urteile zu Widerstand gegen Vollstreckungsbeamte online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/widerstand-vollstreckungsbeamte-urteile",
     "page": "/gericht"
   },
   "/fahren-ohne-fahrerlaubnis-eingestellt-verfahren": {
@@ -359,7 +348,6 @@
     "h1": "Fahren ohne fahrerlaubnis eingestellt Verfahren",
     "description": "Alle Urteile zu Fahren ohne fahrerlaubnis eingestellt Verfahren online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/fahren-ohne-fahrerlaubnis-eingestellt-verfahren",
     "page": "/gericht"
   },
   "/nichtzulassungsbeschwerde-bfh": {
@@ -369,7 +357,6 @@
     "h1": "Nichtzulassungsbeschwerde BFH (Bundesfinanzhof)",
     "description": "Alle Urteile zu Nichtzulassungsbeschwerde am Bundesfinanzhof (BFH) online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/nichtzulassungsbeschwerde-bfh",
     "page": "/gericht"
   },
   "/bgb-1619-urteile": {
@@ -379,7 +366,6 @@
     "h1": "BGB § 1619 Urteile",
     "description": "Alle Urteile zu BGB § 1619 online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/bgb-1619-urteile",
     "page": "/gericht"
   },
   "/573a-bgb-urteile": {
@@ -389,7 +375,6 @@
     "h1": "§573a BGB Urteile",
     "description": "Alle Urteile zu BGB § 573a online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/573a-bgb-urteile",
     "page": "/gericht"
   },
   "/2057a-bgb-urteile": {
@@ -409,7 +394,6 @@
     "h1": "Urteile falsche eidesstattliche Versicherung",
     "description": "Alle Urteile zu \"eidesstattlichen Versicherungen\" online lesen. Kostenlos Urteile abrufen.",
     "image": "",
-    "canonical": "/urteile-falsche-eidesstattliche-versicherung",
     "page": "/gericht"
   }
 }
