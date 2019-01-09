@@ -23,6 +23,18 @@ module.exports.serveRedirects = function(server) {
     return res.redirect("/urteile-falsche-eidesstattliche-versicherung");
   });
 
+  server.get("/bag", (req, res) => {
+    return res.redirect("/bag-urteile");
+  });
+
+  server.get("/fahren-ohne-versicherungsschutz-urteile", (req, res) => {
+    return res.redirect("/urteile-fahren-ohne-versicherungsschutz");
+  });
+
+  server.get("/wegerecht-urteile", (req, res) => {
+    return res.redirect("/urteile-wegerecht");
+  });
+
   
 
   server.get("/query-rechtsprechung", (req, res) => {

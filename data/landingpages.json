@@ -191,8 +191,17 @@
     "h1": "Aktuelle Urteile BAG",
     "description": "Die aktuelle Urteile des Bundesarbeitsgerichts (BAG) online lesen und durchsuchen",
     "image": "",
-    "canonical": "/bag",
-    "page": "/gericht"
+    "page": "/gericht",
+    "doNotIncludeInSitemap": true
+  },
+  "/bag-urteile": {
+    "filter": { "g": "bag" },
+    "title": "BAG Urteile - alle Urteile des Bundesarbeitsgerichts online lesen",
+    "h1": "Urteile BAG",
+    "description": "Die aktuelle Urteile des Bundesarbeitsgerichts (BAG) online lesen und das Archive durchsuchen",
+    "image": "",
+    "page": "/gericht",
+    "doNotIncludeInSitemap": true
   },
   "/bfh": {
     "filter": { "g": "bfh" },
@@ -241,7 +250,7 @@
     "page": "/gericht",
     "doNotIncludeInSitemap": true
   },
-   "/bverwg-entscheidungen": {
+  "/bverwg-entscheidungen": {
     "filter": { "g": "bverwg" },
     "title": "BVerwG Entscheidungen - Alle Urteile online lesen",
     "h1": "Entscheidungen des BVerwG",
@@ -395,6 +404,33 @@
     "title": "Urteile falsche eidesstattliche Versicherung - alle Urteile online lesen",
     "h1": "Urteile falsche eidesstattliche Versicherung",
     "description": "Alle Urteile zu \"eidesstattlichen Versicherungen\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-fahren-ohne-versicherungsschutz": {
+    "q": "Fahren ohne Versicherungsschutz",
+    "filter": { "d": "r" },
+    "title": "Urteile fahren ohne Versicherungsschutz - alle Urteile online lesen",
+    "h1": "Urteile fahren ohne Versicherungsschutz",
+    "description": "Alle Urteile zu \"Fahren ohne Versicherungsschutz\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-wegerecht": {
+    "q": "Wegerecht",
+    "filter": { "d": "r" },
+    "title": "Urteile Wegerecht - alle Urteile online lesen",
+    "h1": "Urteile Wegerecht",
+    "description": "Alle Urteile zu \"Wegerecht\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/bgh-urteile-wegerecht": {
+    "q": "Wegerecht",
+    "filter": { "d": "r", "g": "bgh" },
+    "title": "BGH Urteile Wegerecht - alle Urteile online lesen",
+    "h1": "BGH Urteile Wegerecht",
+    "description": "Alle BGH-Urteile zu \"Wegerecht\" online lesen. Kostenlos Urteile abrufen.",
     "image": "",
     "page": "/gericht"
   }
