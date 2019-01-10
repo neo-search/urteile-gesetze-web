@@ -6,8 +6,14 @@ import Layout from "../layout/MainLayout";
 
 const Gericht = props => {
   const { title, description, canonical } = props.pageMetaInfo;
+  const { query } = props.searchRequest;
   return (
-    <Layout title={title} description={description} canonical={canonical}>
+    <Layout
+      title={title}
+      description={description}
+      canonical={canonical}
+      query={query}
+    >
       <SucheComponent {...props} />
     </Layout>
   );
