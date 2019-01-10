@@ -398,6 +398,33 @@
     "canonical": "/2057a-bgb-urteile",
     "page": "/gericht"
   },
+  "/319-stgb-urteile": {
+    "q": "StGB § 319",
+    "filter": { "d": "r" },
+    "title": "§319 StGB Urteile - alle Urteile online lesen",
+    "h1": "§319 StGB Urteile",
+    "description": "Alle Urteile zu StGB § 319 online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/nichtzulassungsbeschwerde-bag": {
+    "q": "nichtzulassungsbeschwerde",
+    "filter": { "d": "r", "g": "bag" },
+    "title": "Nichtzulassungsbeschwerde BAG - alle Urteile online lesen",
+    "h1": "Nichtzulassungsbeschwerde BAG",
+    "description": "Alle Urteile zu Nichtzulassungsbeschwerde BAG online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-beamtenrechtsrahmengesetz": {
+    "q": "§ 127 Beamtenrechtsrahmengesetz",
+    "filter": { "d": "r"},
+    "title": "Urteile Beamtenrechtsrahmengesetz - alle Urteile online lesen",
+    "h1": "Urteile Beamtenrechtsrahmengesetz",
+    "description": "Alle Urteile zu Beamtenrechtsrahmengesetz online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
   "/urteile-falsche-eidesstattliche-versicherung": {
     "q": "Urteile falsche eidesstattliche Versicherung",
     "filter": { "d": "r" },
