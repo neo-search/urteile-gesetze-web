@@ -478,5 +478,32 @@
     "description": "Alle Urteile zu \"Niederschlagswasser\" online lesen. Kostenlos Urteile abrufen.",
     "image": "",
     "page": "/gericht"
+  },
+  "/bgh-urteil-kreditgebuehren": {
+    "q": "BGH Urteil Kreditgebühren",
+    "filter": { "d": "r" },
+    "title": "BGH Urteil Kreditgebühren - alle Urteile online lesen",
+    "h1": "BGH Urteil Kreditgebühren",
+    "description": "Urteil zu \"Kreditgebühren\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/bag-urteile-überstunden": {
+    "q": "BAG Urteile Überstunden",
+    "filter": { "d": "r" },
+    "title": "BAG Urteile Überstunden - alle Urteile online lesen",
+    "h1": "BAG Urteile Überstunden",
+    "description": "BAG-Urteile zu \"Überstunden\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/hartz-4-urteile": {
+    "q": "Hartz IV Urteile",
+    "filter": { "d": "r" },
+    "title": "Hartz 4 Urteile - alle Urteile online lesen",
+    "h1": "Hartz 4 Urteile",
+    "description": "Urteile zu \"Hartz IV\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
   }
 }
