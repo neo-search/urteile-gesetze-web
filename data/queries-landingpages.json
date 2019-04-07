@@ -1685,7 +1685,10 @@
     "Verfassungsbeschwerde",
     "Verfassungsgericht",
     "Verfassungsorgane",
-    "Zivildienst"
+    "Zivildienst",
+
+    "Üble Nachrede",
+    "Schwerer gewerbsmäßiger Betrug"
   ],
   "dokumente": ["Grober Undank", "Widerstand gegen Vollstreckungsbeamte"]
 }

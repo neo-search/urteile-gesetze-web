@@ -35,7 +35,9 @@ module.exports.serveRedirects = function(server) {
     return res.redirect("/urteile-wegerecht");
   });
 
-  
+  server.get("/niederschlagswasser-urteile", (req, res) => {
+    return res.redirect("/urteile-niederschlagswasser");
+  });
 
   server.get("/query-rechtsprechung", (req, res) => {
     redirectToSearch(req, res);

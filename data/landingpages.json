@@ -399,7 +399,7 @@
     "page": "/gericht"
   },
   "/319-stgb-urteile": {
-    "q": "StGB § 319",
+    "q": "319 § StGB",
     "filter": { "d": "r" },
     "title": "§319 StGB Urteile - alle Urteile online lesen",
     "h1": "§319 StGB Urteile",
@@ -458,6 +458,24 @@
     "title": "BGH Urteile Wegerecht - alle Urteile online lesen",
     "h1": "BGH Urteile Wegerecht",
     "description": "Alle BGH-Urteile zu \"Wegerecht\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/bgh-urteile-elternunterhalt": {
+    "q": "Elternunterhalt",
+    "filter": { "d": "r", "g": "bgh" },
+    "title": "BGH Urteile Elternunterhalt - alle Urteile online lesen",
+    "h1": "BGH Urteile Elternunterhalt",
+    "description": "Alle BGH-Urteile zu \"Elternunterhalt\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-niederschlagswasser": {
+    "q": "Urteile Niederschlagswasser",
+    "filter": { "d": "r" },
+    "title": "Urteile Niederschlagswasser - alle Urteile online lesen",
+    "h1": "Urteile Niederschlagswasser",
+    "description": "Alle Urteile zu \"Niederschlagswasser\" online lesen. Kostenlos Urteile abrufen.",
     "image": "",
     "page": "/gericht"
   }
