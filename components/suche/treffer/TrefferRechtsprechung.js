@@ -19,9 +19,7 @@ const styles = css`
   }
 `;
 export default ({ doc }) => {
-  const kurzbeschreibung = doc.kurzBeschreibung
-    ? doc.kurzBeschreibung + "..."
-    : "";
+  const kurzbeschreibung = doc.kurzBeschreibung ? doc.kurzBeschreibung : "";
 
   return (
     <div
@@ -40,7 +38,7 @@ export default ({ doc }) => {
             <a href={`${doc.kanonischeUrl}`} style={{ fontWeight: 600 }}>
               {doc.gericht + " " + doc.spruchkoerper}
               <span style={{ fontWeight: 400, color: colors.primaryAction }}>
-                {doc.titel ? ", " + doc.titel: ''}
+                {doc.titel ? ", " + doc.titel : ""}
               </span>
             </a>
           </RechtsprechungLink>
