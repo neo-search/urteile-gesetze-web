@@ -32,6 +32,9 @@ Gericht.getInitialProps = async function(props) {
     h1
   } = landingPagesJson[landingpage];
 
+  debugger;
+  const canonicalWithPaging = p ? `${landingpage}&p=${p}` : landingpage;
+
   const searchResult = await backend.search({
     query: q,
     page: p,
@@ -54,9 +57,8 @@ Gericht.getInitialProps = async function(props) {
       title,
       description,
       h1,
-      canonical,
-      pageName: "/gericht",
-      landingpage
+      canonical: canonicalWithPaging,
+      pageName: "/gericht"
     }
   };
 };
