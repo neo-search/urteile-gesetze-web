@@ -488,7 +488,7 @@
     "image": "",
     "page": "/gericht"
   },
-  "/bag-urteile-überstunden": {
+  "/bag-urteile-ueberstunden": {
     "q": "BAG Urteile Überstunden",
     "filter": { "d": "r" },
     "title": "BAG Urteile Überstunden - alle Urteile online lesen",
