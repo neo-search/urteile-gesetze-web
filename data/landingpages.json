@@ -505,5 +505,41 @@
     "description": "Urteile zu \"Hartz IV\" online lesen. Kostenlos Urteile abrufen.",
     "image": "",
     "page": "/gericht"
+  },
+  "/aktuelle-urteile-vergnuegungssteuer": {
+    "q": "Urteile Vergnügungssteuer",
+    "filter": { "d": "r" },
+    "title": "Aktuelle Urteile Vergnüngsteuer - alle Urteile online lesen",
+    "h1": "Aktuelle Urteile Vergnügungsteuer",
+    "description": "Aktuelle Urteile zu \"Vergnügungssteuer\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-sozialgericht-schwerbehinderung": {
+    "q": "Urteile BSG schwerbehinderung",
+    "filter": { "d": "r" },
+    "title": "Urteile Sozialgericht Schwerbehinderung - alle Urteile online lesen",
+    "h1": "Urteile Sozialgericht Schwerbehinderung",
+    "description": "Sozialgericht Urteile zu \"Schwerbehinderung\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-arbeitsgericht-schwerbehinderung": {
+    "q": "Urteile BAG schwerbehinderung",
+    "filter": { "d": "r" },
+    "title": "Urteile Arbeitsgericht Schwerbehinderung - alle Urteile online lesen",
+    "h1": "Urteile Arbeitsgericht Schwerbehinderung",
+    "description": "Arbeitsgericht Urteile zu \"Schwerbehinderung\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
+  },
+  "/urteile-sozialgericht-erwerbsminderungsrente": {
+    "q": "Urteile BSG Erwerbsminderungsrente",
+    "filter": { "d": "r" },
+    "title": "Urteile Sozialgericht Erwerbsminderungsrente - alle Urteile online lesen",
+    "h1": "Urteile Sozialgericht Erwerbsminderungsrente",
+    "description": "Sozialgericht Urteile zu \"Erwerbsminderungsrente\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
   }
 }
