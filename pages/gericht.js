@@ -1,26 +1,35 @@
 import React from "react";
-import SucheComponent from "../components/suche";
+import Suche from "../components/suche";
 import landingPagesJson from "../data/landingpages.json";
 import backend from "../services/backend";
 import Layout from "../layout/MainLayout";
 
-const Gericht = props => {
-  const { title, description, canonical } = props.pageMetaInfo;
-  const { query } = props.searchRequest;
+const Gericht = ({ pageMetaInfo, searchRequest, searchResult }) => {
+  const { title, description, canonical } = pageMetaInfo;
+  const { query, page } = searchRequest;
+
+  const canonicalWithPaging = page ? `${canonical}&p=${page}` : landingpage;
   return (
     <Layout
       title={title}
       description={description}
-      canonical={canonical}
+      canonical={canonicalWithPaging}
       query={query}
     >
-      <SucheComponent {...props} />
+      <Suche
+        searchRequest={searchRequest}
+        searchResult={searchResult}
+        pageMetaInfo={pageMetaInfo}
+      />
     </Layout>
   );
 };
 
 Gericht.getInitialProps = async function(props) {
-  const { landingpage, p } = props.query;
+  let { landingpage, p } = props.query;
+  if (!landingpage && props.asPath)
+    landingpage = props.asPath.replace(/\?.*/, "");
+  debugger;
   const {
     q,
     filter = {},
@@ -33,7 +42,8 @@ Gericht.getInitialProps = async function(props) {
   } = landingPagesJson[landingpage];
 
   debugger;
-  const canonicalWithPaging = p ? `${landingpage}&p=${p}` : landingpage;
+  // const canonicalWithPaging = p ? `${landingpage}&p=${p}` : landingpage;
+  const canonicalWithPaging = `${landingpage}`;
 
   const searchResult = await backend.search({
     query: q,
@@ -57,7 +67,7 @@ Gericht.getInitialProps = async function(props) {
       title,
       description,
       h1,
-      canonical: canonicalWithPaging,
+      canonical: landingpage,
       pageName: "/gericht"
     }
   };
