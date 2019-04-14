@@ -541,5 +541,14 @@
     "description": "Sozialgericht Urteile zu \"Erwerbsminderungsrente\" online lesen. Kostenlos Urteile abrufen.",
     "image": "",
     "page": "/gericht"
+  },
+  "/urteile-eigenmaechtige-abwesenheit": {
+    "q": "Urteile eigenmächtige Abwesenheit",
+    "filter": { "d": "r" },
+    "title": "Urteile eigenmächtige Abwesenheit - alle Urteile online lesen",
+    "h1": "Urteile eigenmächtige Abwesenheit",
+    "description": "Urteile zu \"eigenmächtige Abwesenheit\" online lesen. Kostenlos Urteile abrufen.",
+    "image": "",
+    "page": "/gericht"
   }
 }
