@@ -8,7 +8,7 @@ const Gericht = ({ pageMetaInfo, searchRequest, searchResult }) => {
   const { title, description, canonical } = pageMetaInfo;
   const { query, page } = searchRequest;
 
-  const canonicalWithPaging = page ? `${canonical}&p=${page}` : landingpage;
+  const canonicalWithPaging = page ? `${canonical}&p=${page}` : canonical;
   return (
     <Layout
       title={title}
