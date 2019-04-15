@@ -170,7 +170,7 @@ export default props => {
         </div>
 
         <div>
-          <h2>Letze Urteile</h2>
+          <h2>Letzte Urteile</h2>
           <LabelLink as="/bverfg">Bundesverfassungsgericht (BVerfG)</LabelLink>
           <LabelLink as="/bgh">Bundesgerichtshof (BGH)</LabelLink>
           <LabelLink as="/bverwg">Bundesverwaltungsgericht (BVerwG)</LabelLink>
