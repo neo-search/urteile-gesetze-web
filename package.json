@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "dev-restservice-live": "NODE_ENV=production next",
     "express": "node express/server.js",
     "build": "next build",
     "start": "NODE_ENV=production node express/server.js",
