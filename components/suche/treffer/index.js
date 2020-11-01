@@ -18,10 +18,12 @@ const isGesetz = (doc) => {
   return doc.docType == 'gesetzbuch'
 }
 
-export default ({ doc }) => {
+const Index = ({ doc }) => {
   if (isRechtsprechung(doc)) return <TrefferRechtsprechung doc={doc} />
 
   if (isSectionOfSmallNorm(doc)) return <TrefferSectionSmallNorm doc={doc} />
 
   if (isSection(doc)) return <TrefferSection doc={doc} />
-}
+};
+
+export default Index;

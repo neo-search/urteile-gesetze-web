@@ -31,30 +31,31 @@ const styles = css`
     padding-right: 10px;
   }
 `
-export default () => (
-  <footer>
-    <style jsx>{styles}</style>
-    <Container>
-      <Row>
-        <Col md={{ size: 4 }}>
-          <Link href="/impressum">
-            <a>Impressum</a>
-          </Link>
-        </Col>
-        <Col md={{ size: 4 }}>
-          <Link href="/unternehmen">
-            <a>Über uns</a>
-          </Link>
-        </Col>
-      </Row>
 
-      <Row>
-        <Col md={{ size: 4 }}>
-          <Link href="/datenschutz">
-            <a>Datenschutz</a>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
-  </footer>
-)
+const Footer = () => <footer>
+  <style jsx>{styles}</style>
+  <Container>
+    <Row>
+      <Col md={{ size: 4 }}>
+        <Link href="/impressum">
+          <a>Impressum</a>
+        </Link>
+      </Col>
+      <Col md={{ size: 4 }}>
+        <Link href="/unternehmen">
+          <a>Über uns</a>
+        </Link>
+      </Col>
+    </Row>
+
+    <Row>
+      <Col md={{ size: 4 }}>
+        <Link href="/datenschutz">
+          <a>Datenschutz</a>
+        </Link>
+      </Col>
+    </Row>
+  </Container>
+</footer>;
+
+export default Footer;

@@ -1,3 +1,5 @@
 import Layout from '../layout/MainLayout'
 
-export default () => <Layout>Wir sind die neoSearch UG</Layout>
+const About = () => <Layout>Wir sind die neoSearch UG</Layout>;
+
+export default About;

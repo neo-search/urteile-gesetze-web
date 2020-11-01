@@ -19,7 +19,7 @@ const styles = css`
   }
 `
 
-export default (props) => {
+const BreadcrumbItem = props => {
   const { markup, children } = props
 
   if (markup)
@@ -41,4 +41,6 @@ export default (props) => {
       {children}
     </li>
   )
-}
+};
+
+export default BreadcrumbItem;

@@ -38,7 +38,7 @@ const renderHighlightedDocs = (highlightedDocs) => {
   )
 }
 
-export default (props) => {
+const Trefferliste = props => {
   const { docs, docCount, highlightedDocs, pageMetaInfo, searchRequest } = props
   const { query, filter, page } = searchRequest
   const url = computeUrl(query, filter)
@@ -60,4 +60,6 @@ export default (props) => {
       />
     </div>
   )
-}
+};
+
+export default Trefferliste;

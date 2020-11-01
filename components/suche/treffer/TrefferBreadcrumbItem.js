@@ -19,9 +19,9 @@ const styles = css`
   }
 `
 
-export default (props) => (
-  <li {...props}>
-    <style jsx>{styles}</style>
-    {props.children}
-  </li>
-)
+const TrefferBreadcrumbItem = props => <li {...props}>
+  <style jsx>{styles}</style>
+  {props.children}
+</li>;
+
+export default TrefferBreadcrumbItem;

@@ -94,14 +94,16 @@ const pagingParam = (page, urlparams) => {
   return { ...urlparams, q: page }
 }
 
-export default ({
-  numberOfResults,
-  actualPage = 0,
-  baseUrl,
-  pageSize = 20,
-  pageMetaInfo,
-  searchRequest
-}) => {
+const Index = (
+  {
+    numberOfResults,
+    actualPage = 0,
+    baseUrl,
+    pageSize = 20,
+    pageMetaInfo,
+    searchRequest
+  }
+) => {
   const pageIndex = Number(actualPage)
   const numberOfPages = numberOfResults / pageSize + 1
   const result = []
@@ -163,4 +165,6 @@ export default ({
       )}
     </CenteredPagination>
   )
-}
+};
+
+export default Index;

@@ -20,7 +20,7 @@ const styles = css`
     padding-bottom: 16px;
   }
 `
-export default ({ doc }) => {
+const TrefferNorm = ({ doc }) => {
   return (
     <div className="treffer-outer">
       <style jsx>{styles}</style>
@@ -53,3 +53,5 @@ export default ({ doc }) => {
     </div>
   )
 }
+
+export default TrefferNorm

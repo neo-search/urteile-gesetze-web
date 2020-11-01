@@ -7,7 +7,7 @@ const styles = css`
   }
 `
 
-export default ({ sections }) => {
+const SectionsNorm = ({ sections }) => {
   return (
     <div>
       <style jsx>{styles}</style>
@@ -29,4 +29,6 @@ export default ({ sections }) => {
       })}
     </div>
   )
-}
+};
+
+export default SectionsNorm;

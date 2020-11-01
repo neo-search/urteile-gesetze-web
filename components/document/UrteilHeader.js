@@ -31,7 +31,7 @@ const UrteilBreadCrump = ({ gericht, aktenzeichen }) => (
   </Breadcrump>
 )
 
-export default ({ doc }) => {
+const UrteilHeader = ({ doc }) => {
   const {
     rechtsprechungInfo: { aktenzeichen, gericht, gerichtsbezeichnung }
   } = doc
@@ -41,4 +41,6 @@ export default ({ doc }) => {
       <UrteilBreadCrump gericht={gericht} aktenzeichen={aktenzeichen} />
     </InfoBar>
   )
-}
+};
+
+export default UrteilHeader;

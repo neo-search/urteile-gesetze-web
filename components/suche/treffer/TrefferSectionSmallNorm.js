@@ -22,7 +22,8 @@ const styles = css`
     padding-bottom: 16px;
   }
 `
-export default ({ doc }) => {
+
+const TrefferSectionSmallNorm = ({ doc }) => {
   return (
     <div className="treffer-outer">
       <style jsx>{styles}</style>
@@ -48,4 +49,6 @@ export default ({ doc }) => {
       </Breadcrumb>
     </div>
   )
-}
+};
+
+export default TrefferSectionSmallNorm;

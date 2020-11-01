@@ -7,7 +7,8 @@ const styles = css`
     font-size: 0.8rem;
   }
 `
-export default ({ name, id, values, urlparams }) => {
+
+const Facette = ({ name, id, values, urlparams }) => {
   return (
     <div>
       <div className="facette-title">{name}</div>
@@ -25,4 +26,6 @@ export default ({ name, id, values, urlparams }) => {
       <style jsx>{styles}</style>
     </div>
   )
-}
+};
+
+export default Facette;

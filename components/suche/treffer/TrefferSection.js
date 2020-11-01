@@ -22,7 +22,8 @@ const styles = css`
     // padding-bottom: 16px;
   }
 `
-export default ({ doc }) => {
+
+const TrefferSection = ({ doc }) => {
   return (
     <div
       className="treffer-outer"
@@ -51,4 +52,6 @@ export default ({ doc }) => {
       </Breadcrumb>
     </div>
   )
-}
+};
+
+export default TrefferSection;

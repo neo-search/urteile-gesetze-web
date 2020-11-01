@@ -18,7 +18,8 @@ const styles = css`
     // padding-bottom: 16px;
   }
 `
-export default ({ doc }) => {
+
+const TrefferRechtsprechung = ({ doc }) => {
   const kurzbeschreibung = doc.kurzBeschreibung ? doc.kurzBeschreibung : ''
 
   return (
@@ -63,4 +64,6 @@ export default ({ doc }) => {
       </Breadcrumb>
     </div>
   )
-}
+};
+
+export default TrefferRechtsprechung;

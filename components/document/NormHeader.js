@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Breadcrump from '../common/Breadcrumb'
 import BreadcrumpItem from '../common/BreadcrumbItem'
 
-export default ({ doc }) => {
+const NormHeader = ({ doc }) => {
   const { titel, abkuerzung, kurzueberschrift, kanonischeUrl } = doc
 
   return (
@@ -27,4 +27,6 @@ export default ({ doc }) => {
       </Breadcrump>
     </InfoBar>
   )
-}
+};
+
+export default NormHeader;

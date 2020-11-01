@@ -7,7 +7,7 @@ import Col from 'reactstrap/lib/Col'
 import SectionLink from '../links/SectionLink'
 import Section from './Section'
 
-export default ({ doc }) => {
+const SectionHeader = ({ doc }) => {
   const {
     sectionInfo: {
       titelNorm,
@@ -62,7 +62,9 @@ export default ({ doc }) => {
       </Row>
     </InfoBar>
   )
-}
+};
+
+export default SectionHeader;
 
 const renderLinkNext = (kanonischeUrlNext, abkuerzungNext) => {
   if (kanonischeUrlNext && kanonischeUrlNext !== '') {

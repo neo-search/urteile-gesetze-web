@@ -175,7 +175,7 @@ const objectEntryPolyfill = () => {
     }
 }
 
-export default ({ facetteId, name, id, hits, urlparams }) => {
+const FacetteValue = ({ facetteId, name, id, hits, urlparams }) => {
   objectEntryPolyfill()
 
   const params = cleanedLinkparam(urlparams, facetteId, id)
@@ -197,4 +197,6 @@ export default ({ facetteId, name, id, hits, urlparams }) => {
       </div>
     </Link>
   )
-}
+};
+
+export default FacetteValue;

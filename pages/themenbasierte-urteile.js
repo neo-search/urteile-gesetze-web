@@ -49,7 +49,7 @@ const renderLinks = () => {
   ))
 }
 
-export default () => {
+const ThemenbasierteUrteile = () => {
   return (
     <Layout title={`Urteile nach Themen ${branding.seoname}`}>
       <div className="content">
@@ -61,4 +61,6 @@ export default () => {
       </div>
     </Layout>
   )
-}
+};
+
+export default ThemenbasierteUrteile;

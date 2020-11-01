@@ -58,27 +58,27 @@ const renderLogo = (noSearchBar) => {
   }
 }
 
-export default ({ query, noSearchBar }) => (
-  <header>
-    <style jsx>{styles}</style>
-    <nav className="urteile-gesetze-header">
-      <Row>
-        {renderLogo(noSearchBar)}
-        {renderSearchBar(noSearchBar, query)}
-        <Col
-          sm="2"
-          md="2"
-          lg="2"
-          className="d-sm-block d-md-block hidden-xs-down d-none"
+const Index = ({ query, noSearchBar }) => <header>
+  <style jsx>{styles}</style>
+  <nav className="urteile-gesetze-header">
+    <Row>
+      {renderLogo(noSearchBar)}
+      {renderSearchBar(noSearchBar, query)}
+      <Col
+        sm="2"
+        md="2"
+        lg="2"
+        className="d-sm-block d-md-block hidden-xs-down d-none"
+      >
+        <a
+          href="https://blog.urteile-gesetze.de"
+          className="btn btn-secondary"
         >
-          <a
-            href="https://blog.urteile-gesetze.de"
-            className="btn btn-secondary"
-          >
-            Neues
-          </a>
-        </Col>
-      </Row>
-    </nav>
-  </header>
-)
+          Neues
+        </a>
+      </Col>
+    </Row>
+  </nav>
+</header>;
+
+export default Index;

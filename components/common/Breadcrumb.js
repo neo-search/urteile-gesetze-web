@@ -15,7 +15,7 @@ const styles = css`
   }
 `
 
-export default ({ style, children, markup, small }) => {
+const BreadcrumbComponent = ({ style, children, markup, small }) => {
   const mergedStyle = { ...style, fontSize: small ? '.8rem' : '1rem' }
   if (markup)
     return (
@@ -35,4 +35,6 @@ export default ({ style, children, markup, small }) => {
       {children}
     </ol>
   )
-}
+};
+
+export default BreadcrumbComponent;

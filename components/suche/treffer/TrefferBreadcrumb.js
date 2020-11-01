@@ -11,11 +11,13 @@ const styles = css`
   }
 `
 
-export default (props) => {
+const TrefferBreadcrumb = props => {
   return (
     <ol style={props.style}>
       <style jsx>{styles}</style>
       {props.children}
     </ol>
   )
-}
+};
+
+export default TrefferBreadcrumb;

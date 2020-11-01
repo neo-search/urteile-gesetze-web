@@ -1,6 +1,6 @@
 import SectionsNorm from './SectionsNorm'
 
-export default ({ doc, zitierendeUrteile }) => {
+const Norm = ({ doc, zitierendeUrteile }) => {
   const {
     titel,
     abkuerzung,
@@ -50,7 +50,9 @@ export default ({ doc, zitierendeUrteile }) => {
       {renderZitierendeUrteile(abkuerzung, zitierendeUrteile)}
     </div>
   )
-}
+};
+
+export default Norm;
 
 const renderZitierendeUrteile = (abkuerzung, docs) => {
   if (docs && docs.length > 0)

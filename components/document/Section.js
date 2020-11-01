@@ -30,7 +30,7 @@ const renderZitierendeUrteile = (abkuerzungSection, docs) => {
     )
 }
 
-export default ({ doc, zitierendeUrteile }) => {
+const Section = ({ doc, zitierendeUrteile }) => {
   const {
     titelNorm,
     kurzueberschriftNorm,
@@ -82,4 +82,6 @@ export default ({ doc, zitierendeUrteile }) => {
       {renderZitierendeUrteile(abkuerzungSection, zitierendeUrteile)}
     </div>
   )
-}
+};
+
+export default Section;
