@@ -1,9 +1,11 @@
 import Link from 'next/link'
 
-export default (props) => (
+const SectionLink = (props) => (
   <Link
     {...props}
     as={props.url}
     href={`/section?kanonischeUrl=${props.url}`}
   />
 )
+
+export default SectionLink

@@ -244,8 +244,7 @@ export default (props) => {
           <Link href="/gesetze">
             <a>... Alle Gesetze sehen</a>
           </Link>
-        </div>{' '}
-        */}
+        </div>
       </Container>
     </Layout>
   )

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export default () => (
+const Logo = () => (
   <Link href="/">
     <a
       href="/"
@@ -11,3 +11,5 @@ export default () => (
     </a>
   </Link>
 )
+
+export default Logo

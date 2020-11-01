@@ -22,7 +22,7 @@ const styles = css`
     text-overflow: ellipsis;
   }
 `
-export default ({ doc }) => {
+const KurzformTrefferRechtsprechung = ({ doc }) => {
   return (
     <div className="treffer-outer">
       <style jsx>{styles}</style>
@@ -50,3 +50,5 @@ export default ({ doc }) => {
     </div>
   )
 }
+
+export default KurzformTrefferRechtsprechung

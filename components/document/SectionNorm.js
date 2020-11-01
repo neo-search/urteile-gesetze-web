@@ -1,6 +1,7 @@
 import SectionLink from '../common/SectionLink'
 import css from 'styled-jsx/css'
 import { colors } from '../common/Constants'
+import SectionNormWithContent from './SectionNormWithContent'
 
 const styles = css`
   div:hover {
@@ -47,10 +48,12 @@ const renderGliederung = (doc, abkuerzungOrEmpty) => {
   )
 }
 
-export default ({ doc }) => {
+const SectionNorm = ({ doc }) => {
   const abkuerzungOrEmpty = doc.abkuerzung || ''
 
   if (doc.gliederung) return renderGliederung(doc, abkuerzungOrEmpty)
 
   return renderLink(doc, abkuerzungOrEmpty)
 }
+
+export default SectionNorm
