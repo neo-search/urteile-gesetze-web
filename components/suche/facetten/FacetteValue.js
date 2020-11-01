@@ -1,10 +1,10 @@
-import css from "styled-jsx/css";
-import { colors } from "../../common/Constants";
-import Link from "next/link";
-import _without from "lodash/without";
-import _isEmpty from "lodash/isEmpty";
+import css from 'styled-jsx/css'
+import { colors } from '../../common/Constants'
+import Link from 'next/link'
+import _without from 'lodash/without'
+import _isEmpty from 'lodash/isEmpty'
 
-const { primaryAction, primaryActionHover, foregroundColor } = colors;
+const { primaryAction, primaryActionHover, foregroundColor } = colors
 
 const styles = css`
   div {
@@ -28,7 +28,7 @@ const styles = css`
     color: ${foregroundColor};
   }
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     margin-right: 9px;
     height: 1rem;
     -webkit-appearance: none;
@@ -43,13 +43,13 @@ const styles = css`
     border: 1px solid #ccc;
   }
 
-  input[type="checkbox"]:active,
-  input[type="checkbox"]:checked:active {
+  input[type='checkbox']:active,
+  input[type='checkbox']:checked:active {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
       inset 0px 1px 3px rgba(0, 0, 0, 0.1);
   }
 
-  input[type="checkbox"]:checked {
+  input[type='checkbox']:checked {
     background-color: #e9ecee;
     border: 1px solid ${primaryAction};
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
@@ -61,8 +61,8 @@ const styles = css`
     color: white;
   }
 
-  input[type="checkbox"]:checked:after {
-    content: "✓";
+  input[type='checkbox']:checked:after {
+    content: '✓';
     position: absolute;
     top: -4px;
     left: 2px;
@@ -78,111 +78,111 @@ const styles = css`
     color: #999;
     font-weight: normal;
   }
-`;
+`
 
 const without = (arrayOrString, obj) => {
-  const result = _without(arrayOrString, obj);
+  const result = _without(arrayOrString, obj)
   // return result == [] ? undefined : result;
-  return result;
-};
+  return result
+}
 
 const linksparam = (urlparams, facetteId, id) => {
-  const linkparam = { ...urlparams };
+  const linkparam = { ...urlparams }
 
-  id = cleanParamJahr(id);
+  id = cleanParamJahr(id)
 
   if (!linkparam[facetteId]) {
-    linkparam[facetteId] = [id];
-    return linkparam;
+    linkparam[facetteId] = [id]
+    return linkparam
   }
 
-  if (typeof linkparam[facetteId] == "string" && linkparam[facetteId] == id) {
-    linkparam[facetteId] = without(linkparam[facetteId], id);
-    return linkparam;
+  if (typeof linkparam[facetteId] == 'string' && linkparam[facetteId] == id) {
+    linkparam[facetteId] = without(linkparam[facetteId], id)
+    return linkparam
   }
 
-  if (typeof linkparam[facetteId] == "string" && linkparam[facetteId] != id) {
-    linkparam[facetteId] = [linkparam[facetteId], id];
-    return linkparam;
+  if (typeof linkparam[facetteId] == 'string' && linkparam[facetteId] != id) {
+    linkparam[facetteId] = [linkparam[facetteId], id]
+    return linkparam
   }
 
   if (!linkparam[facetteId].includes(id)) {
-    linkparam[facetteId] = [...linkparam[facetteId], id];
-    return linkparam;
+    linkparam[facetteId] = [...linkparam[facetteId], id]
+    return linkparam
   }
 
-  linkparam[facetteId] = without(linkparam[facetteId], id);
-  return linkparam;
-};
+  linkparam[facetteId] = without(linkparam[facetteId], id)
+  return linkparam
+}
 
 const cleanedLinkparam = (urlparams, facetteId, id) => {
-  const params = linksparam(urlparams, facetteId, id);
+  const params = linksparam(urlparams, facetteId, id)
 
   for (let [key, value] of Object.entries(params)) {
-    if (!value || value === "" || _isEmpty(value)) delete params[key];
+    if (!value || value === '' || _isEmpty(value)) delete params[key]
   }
 
-  if (params["j"]) params["j"] = cleanedLinkparamJahr(params["j"]);
-  return params;
-};
+  if (params['j']) params['j'] = cleanedLinkparamJahr(params['j'])
+  return params
+}
 
-const cleanedLinkparamJahr = params => {
-  if (typeof (params) == 'string') {
-    params = cleanParamJahr(params);
+const cleanedLinkparamJahr = (params) => {
+  if (typeof params == 'string') {
+    params = cleanParamJahr(params)
 
-    return params;
+    return params
   } else {
     for (var i = 0; i < params.length; i++) {
-      params[i] = cleanParamJahr(params[i]);
+      params[i] = cleanParamJahr(params[i])
     }
 
-    return params;
+    return params
   }
-};
+}
 
 const cleanParamJahr = (param) => {
-  param = param.replace(" - ", "-");
-  param = param.replace("bis ", "1800-");
+  param = param.replace(' - ', '-')
+  param = param.replace('bis ', '1800-')
 
-  return param;
-};
+  return param
+}
 
 const isChecked = (urlparams, facetteId, id) => {
-  if (!urlparams[facetteId]) return false;
+  if (!urlparams[facetteId]) return false
 
-  id = cleanParamJahr(id);
+  id = cleanParamJahr(id)
 
-  if (typeof urlparams[facetteId] == "string") {
-    return urlparams[facetteId] === id;
+  if (typeof urlparams[facetteId] == 'string') {
+    return urlparams[facetteId] === id
   }
 
-  if (typeof urlparams[facetteId] !== "string") {
-    return urlparams[facetteId].includes(id);
+  if (typeof urlparams[facetteId] !== 'string') {
+    return urlparams[facetteId].includes(id)
   }
 
-  return true;
-};
+  return true
+}
 
 const objectEntryPolyfill = () => {
   if (!Object.entries)
-    Object.entries = function(obj) {
+    Object.entries = function (obj) {
       var ownProps = Object.keys(obj),
         i = ownProps.length,
-        resArray = new Array(i); // preallocate the Array
-      while (i--) resArray[i] = [ownProps[i], obj[ownProps[i]]];
+        resArray = new Array(i) // preallocate the Array
+      while (i--) resArray[i] = [ownProps[i], obj[ownProps[i]]]
 
-      return resArray;
-    };
-};
+      return resArray
+    }
+}
 
 export default ({ facetteId, name, id, hits, urlparams }) => {
-  objectEntryPolyfill();
+  objectEntryPolyfill()
 
-  const params = cleanedLinkparam(urlparams, facetteId, id);
-  const checked = isChecked(urlparams, facetteId, id);
+  const params = cleanedLinkparam(urlparams, facetteId, id)
+  const checked = isChecked(urlparams, facetteId, id)
 
   return (
-    <Link href={{ pathname: "/suche", query: params }}>
+    <Link href={{ pathname: '/suche', query: params }}>
       <div>
         <input
           type="checkbox"
@@ -190,11 +190,11 @@ export default ({ facetteId, name, id, hits, urlparams }) => {
           checked={checked}
         />
         <label htmlFor={`check-${facetteId}-${id}`}>
-          {name + " "}
-          <span className="lighter">({hits.toLocaleString("DE")})</span>
+          {name + ' '}
+          <span className="lighter">({hits.toLocaleString('DE')})</span>
         </label>
         <style jsx>{styles}</style>
       </div>
     </Link>
-  );
-};
+  )
+}

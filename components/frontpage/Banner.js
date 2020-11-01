@@ -1,9 +1,9 @@
-import css from "styled-jsx/css";
+import css from 'styled-jsx/css'
 
-import Container from "reactstrap/lib/Container";
-import Row from "reactstrap/lib/Row";
-import Col from "reactstrap/lib/Col";
-import SearchBar from "../common/SearchBar";
+import Container from 'reactstrap/lib/Container'
+import Row from 'reactstrap/lib/Row'
+import Col from 'reactstrap/lib/Col'
+import SearchBar from '../common/SearchBar'
 
 const styles = css`
   div.banner {
@@ -33,7 +33,7 @@ const styles = css`
   p {
     font-size: 0.9rem;
   }
-`;
+`
 const Banner = () => (
   <div className="banner">
     <style jsx>{styles}</style>
@@ -53,6 +53,6 @@ const Banner = () => (
       <Row style={{ marginTop: 90 }} />
     </Container>
   </div>
-);
+)
 
-export default Banner;
+export default Banner

@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Container from "reactstrap/lib/Container";
-import Row from "reactstrap/lib/Row";
-import Col from "reactstrap/lib/Col";
-import css from "styled-jsx/css";
+import Link from 'next/link'
+import Container from 'reactstrap/lib/Container'
+import Row from 'reactstrap/lib/Row'
+import Col from 'reactstrap/lib/Col'
+import css from 'styled-jsx/css'
 
 const styles = css`
   footer {
@@ -30,7 +30,7 @@ const styles = css`
     display: inline;
     padding-right: 10px;
   }
-`;
+`
 export default () => (
   <footer>
     <style jsx>{styles}</style>
@@ -57,4 +57,4 @@ export default () => (
       </Row>
     </Container>
   </footer>
-);
+)

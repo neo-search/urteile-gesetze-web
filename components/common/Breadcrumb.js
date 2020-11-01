@@ -1,8 +1,8 @@
-import Breadcrumb from "reactstrap/lib/Breadcrumb";
+import Breadcrumb from 'reactstrap/lib/Breadcrumb'
 
-import css from "styled-jsx/css";
+import css from 'styled-jsx/css'
 
-const smallStyle = { paddingTop: 4, fontSize: "0.8rem", paddingBottom: 6 };
+const smallStyle = { paddingTop: 4, fontSize: '0.8rem', paddingBottom: 6 }
 
 const styles = css`
   ol {
@@ -13,10 +13,10 @@ const styles = css`
     display: flex;
     list-style: none;
   }
-`;
+`
 
 export default ({ style, children, markup, small }) => {
-  const mergedStyle = { ...style, fontSize: small ? ".8rem" : "1rem" };
+  const mergedStyle = { ...style, fontSize: small ? '.8rem' : '1rem' }
   if (markup)
     return (
       <ol
@@ -27,12 +27,12 @@ export default ({ style, children, markup, small }) => {
         <style jsx>{styles}</style>
         {children}
       </ol>
-    );
+    )
 
   return (
     <ol style={mergedStyle}>
       <style jsx>{styles}</style>
       {children}
     </ol>
-  );
-};
+  )
+}

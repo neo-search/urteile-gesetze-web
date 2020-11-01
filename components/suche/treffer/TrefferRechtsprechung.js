@@ -1,8 +1,8 @@
-import RechtsprechungLink from "./../../common/RechtsprechungLink";
-import css from "styled-jsx/css";
-import Breadcrumb from "./TrefferBreadcrumb";
-import BreadcrumbItem from "./TrefferBreadcrumbItem";
-import { colors } from "../../common/Constants";
+import RechtsprechungLink from './../../common/RechtsprechungLink'
+import css from 'styled-jsx/css'
+import Breadcrumb from './TrefferBreadcrumb'
+import BreadcrumbItem from './TrefferBreadcrumbItem'
+import { colors } from '../../common/Constants'
 
 const styles = css`
   div.treffer {
@@ -17,28 +17,28 @@ const styles = css`
   div.treffer-outer {
     // padding-bottom: 16px;
   }
-`;
+`
 export default ({ doc }) => {
-  const kurzbeschreibung = doc.kurzBeschreibung ? doc.kurzBeschreibung : "";
+  const kurzbeschreibung = doc.kurzBeschreibung ? doc.kurzBeschreibung : ''
 
   return (
     <div
       className="treffer-outer"
-      style={{ borderBottom: "1px solid #eaeaea", marginBottom: 25 }}
+      style={{ borderBottom: '1px solid #eaeaea', marginBottom: 25 }}
     >
       <style jsx>{styles}</style>
       <div className="treffer">
         <div style={{ paddingBottom: 4 }}>
           <div
-            style={{ fontWeight: "bold", color: "#999999", fontSize: "0.8rem" }}
+            style={{ fontWeight: 'bold', color: '#999999', fontSize: '0.8rem' }}
           >
             {doc.date}
           </div>
           <RechtsprechungLink url={doc.kanonischeUrl}>
             <a href={`${doc.kanonischeUrl}`} style={{ fontWeight: 600 }}>
-              {doc.gericht + " " + doc.spruchkoerper}
+              {doc.gericht + ' ' + doc.spruchkoerper}
               <span style={{ fontWeight: 400, color: colors.primaryAction }}>
-                {doc.titel ? ", " + doc.titel : ""}
+                {doc.titel ? ', ' + doc.titel : ''}
               </span>
             </a>
           </RechtsprechungLink>
@@ -62,5 +62,5 @@ export default ({ doc }) => {
         </BreadcrumbItem>
       </Breadcrumb>
     </div>
-  );
-};
+  )
+}

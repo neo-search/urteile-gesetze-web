@@ -1,7 +1,7 @@
-import Layout from "../layout/MainLayout";
-import Container from "reactstrap/lib/Container";
+import Layout from '../layout/MainLayout'
+import Container from 'reactstrap/lib/Container'
 
-import { branding } from "../components/common/Constants";
+import { branding } from '../components/common/Constants'
 
 export default () => (
   <Layout title={`Datenschutz ${branding.seoname}`}>
@@ -10,7 +10,7 @@ export default () => (
       <h2>Datenschutzerklärung</h2>
       <div>
         <p>
-          Wir freuen uns über Ihren Besuch auf unserer Internetseite{" "}
+          Wir freuen uns über Ihren Besuch auf unserer Internetseite{' '}
           <a href="https://urteile-gesetze.de">urteile-gesetze.de</a> und Ihr
           Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen
           Daten ist uns ein wichtiges Anliegen. Personenbezogene Daten sind
@@ -67,7 +67,7 @@ export default () => (
         <p>(4) Datum und Uhrzeit des Zugriffs</p>
         <p>
           (5) Websites und Ressourcen (Bilder, Dateien, weitere Seiteninhalte),
-          die auf unserer Internetseite aufgerufen wurden.{" "}
+          die auf unserer Internetseite aufgerufen wurden.{' '}
         </p>
         <p>
           (6) Websites, von denen das System des Nutzers auf unsere
@@ -151,51 +151,105 @@ export default () => (
         </p>
 
         <p>
-          4. Statistische Auswertung der Besuche dieser Internetseite - Webtracker
+          4. Statistische Auswertung der Besuche dieser Internetseite -
+          Webtracker
         </p>
         <p>
-          Wir erheben, verarbeiten und speichern bei dem Aufruf dieser Internetseite oder einzelner Dateien der Internetseite folgende Daten: IP-Adresse, Webseite, von der aus die Datei abgerufen wurde, Name der Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge und Meldung über den Erfolg des Abrufs (sog. Web-Log).
+          Wir erheben, verarbeiten und speichern bei dem Aufruf dieser
+          Internetseite oder einzelner Dateien der Internetseite folgende Daten:
+          IP-Adresse, Webseite, von der aus die Datei abgerufen wurde, Name der
+          Datei, Datum und Uhrzeit des Abrufs, übertragene Datenmenge und
+          Meldung über den Erfolg des Abrufs (sog. Web-Log).
         </p>
         <p>
-          Diese Zugriffsdaten verwenden wir ausschließlich in nicht personalisierter Form für die stetige Verbesserung unseres Internetangebots und zu statistischen Zwecken. Wir setzen zur Auswertung der Besuche dieser Internetseite zudem noch folgende Webtracker ein:
+          Diese Zugriffsdaten verwenden wir ausschließlich in nicht
+          personalisierter Form für die stetige Verbesserung unseres
+          Internetangebots und zu statistischen Zwecken. Wir setzen zur
+          Auswertung der Besuche dieser Internetseite zudem noch folgende
+          Webtracker ein:
         </p>
+        <p>Google-Analytics</p>
+        <p>Umfang der Verarbeitung personenbezogener Daten</p>
         <p>
-          Google-Analytics
+          Auf unserer Seite verwenden wir den Webtracking-Service des
+          Unternehmens Google LLC, 1600 Amphitheatre Park in 94043 Mountain
+          View, USA (nachfolgend: Google-Analytics). Google-Analytics nutzt im
+          Rahmen des Webtrackings Cookies, die auf Ihrem Computer gespeichert
+          werden und die eine Analyse der Benutzung unserer Website und Ihres
+          Surfverhaltens ermöglichen (sogenanntes Tracken). Wir führen diese
+          Analyse auf Basis des Tracking-Services von Google-Analytics durch, um
+          unser Internetangebot ständig zu optimieren und besser verfügbar zu
+          machen. Im Rahmen der Benutzung unserer Webseite werden dabei Daten,
+          wie insbesondere Ihre IP-Adresse und Ihre Nutzeraktivitäten an Server
+          des Unternehmens Google LLC übertragen und außerhalb der Europäischen
+          Union, z.B. in den USA verarbeitet und gespeichert. Die EU-Kommission
+          hat festgestellt, dass in den USA ein angemessenes Datenschutzniveau
+          bestehen kann, wenn sich das datenverarbeitende Unternehmen dem
+          US-EU-Privacy-Shield Abkommen unterworfen hat und der Datenexport in
+          die USA auf diesem Weg zulässig ausgestaltet wurde. Durch die
+          Aktivierung der IP-Anonymisierung innerhalb des Google-Analytics
+          Tracking-Codes dieser Internetseite, wird Ihre IP-Adresse von
+          Google-Analytics vor der Übertragung anonymisiert. Diese Website nutzt
+          einen Google-Analytics-Tracking-Code, der um den Operator
+          gat._anonymizeIp(); erweitert wurde, um nur eine anonymisierte
+          Erfassung von IP-Adressen (sog. IP-Masking) zu ermöglichen.
         </p>
+        <p>Rechtsgrundlage für die Verarbeitung personenbezogener Daten</p>
         <p>
-          Umfang der Verarbeitung personenbezogener Daten
+          Art. 6 Abs.1 lit.a DSGVO (Einwilligung), entweder im Rahmen der
+          Registrierung bei Google (Eröffnung eines Google-Accounts und
+          Akzeptanz der dort implementierten Datenschutzhinweise) oder, falls
+          Sie sich nicht bei Google registriert haben, durch explizite
+          Einwilligung beim Öffnen unserer Seite.
         </p>
+        <p>Zweck der Datenverarbeitung</p>
         <p>
-          Auf unserer Seite verwenden wir den Webtracking-Service des Unternehmens Google LLC, 1600 Amphitheatre Park in 94043 Mountain View, USA (nachfolgend: Google-Analytics). Google-Analytics nutzt im Rahmen des Webtrackings Cookies, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung unserer Website und Ihres Surfverhaltens ermöglichen (sogenanntes Tracken). Wir führen diese Analyse auf Basis des Tracking-Services von Google-Analytics durch, um unser Internetangebot ständig zu optimieren und besser verfügbar zu machen. Im Rahmen der Benutzung unserer Webseite werden dabei Daten, wie insbesondere Ihre IP-Adresse und Ihre Nutzeraktivitäten an Server des Unternehmens Google LLC übertragen und außerhalb der Europäischen Union, z.B. in den USA verarbeitet und gespeichert. Die EU-Kommission hat festgestellt, dass in den USA ein angemessenes Datenschutzniveau bestehen kann, wenn sich das datenverarbeitende Unternehmen dem US-EU-Privacy-Shield Abkommen unterworfen hat und der Datenexport in die USA auf diesem Weg zulässig ausgestaltet wurde. Durch die Aktivierung der IP-Anonymisierung innerhalb des Google-Analytics Tracking-Codes dieser Internetseite, wird Ihre IP-Adresse von Google-Analytics vor der Übertragung anonymisiert. Diese Website nutzt einen Google-Analytics-Tracking-Code, der um den Operator gat._anonymizeIp(); erweitert wurde, um nur eine anonymisierte Erfassung von IP-Adressen (sog. IP-Masking) zu ermöglichen.
+          In unserem Auftrag wird Google diese Informationen nutzen, um Ihren
+          Besuch auf dieser Internetseite auszuwerten, Reports über die
+          Websiteaktivitäten zusammenzustellen und um weitere mit der
+          Websitenutzung und der Internetnutzung verbundene Dienstleistungen
+          gegenüber uns zu erbringen. Die im Rahmen von Google-Analytics von
+          Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten der
+          Google LLC zusammengeführt.
         </p>
+        <p>Dauer der Speicherung</p>
         <p>
-          Rechtsgrundlage für die Verarbeitung personenbezogener Daten
+          Google wird die für die Bereitstellung des Webtracking relevanten
+          Daten solange speichern, wie es notwendig ist, um den gebuchten
+          Webservice zu erfüllen. Die Datenerhebung und Speicherung erfolgt
+          anonymisiert. Soweit doch Personenbezug bestehen sollte, werden die
+          Daten unverzüglich gelöscht, soweit diese keinen gesetzlichen
+          Aufbewahrungspflichten unterfallen. In jedem Fall erfolgt die Löschung
+          nach Ablauf der Aufbewahrungspflicht.
         </p>
+        <p>Widerspruchs- und Beseitigungsmöglichkeit</p>
         <p>
-          Art. 6 Abs.1 lit.a DSGVO (Einwilligung), entweder im Rahmen der Registrierung bei Google (Eröffnung eines Google-Accounts und Akzeptanz der dort implementierten Datenschutzhinweise) oder, falls Sie sich nicht bei Google registriert haben, durch explizite Einwilligung beim Öffnen unserer Seite.
-        </p>
-        <p>
-          Zweck der Datenverarbeitung
-        </p>
-        <p>
-          In unserem Auftrag wird Google diese Informationen nutzen, um Ihren Besuch auf dieser Internetseite auszuwerten, Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen gegenüber uns zu erbringen. Die im Rahmen von Google-Analytics von Ihrem Browser übermittelte IP-Adresse wird nicht mit anderen Daten der Google LLC zusammengeführt.
-        </p>
-        <p>
-          Dauer der Speicherung
-        </p>
-        <p>
-          Google wird die für die Bereitstellung des Webtracking relevanten Daten solange speichern, wie es notwendig ist, um den gebuchten Webservice zu erfüllen. Die Datenerhebung und Speicherung erfolgt anonymisiert. Soweit doch Personenbezug bestehen sollte, werden die Daten unverzüglich gelöscht, soweit diese keinen gesetzlichen Aufbewahrungspflichten unterfallen. In jedem Fall erfolgt die Löschung nach Ablauf der Aufbewahrungspflicht.
-        </p>
-        <p>
-          Widerspruchs- und Beseitigungsmöglichkeit
-        </p>
-        <p>
-          Sie können die Erfassung und Weiterleitung der personenbezogenen Daten an Google (insb. Ihrer IP-Adresse) sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie die Ausführung von Script-Code in Ihrem Browser deaktivieren, einen Script-Blocker in Ihrem Browser installieren (diesen finden Sie z.B. unter <a href="https://www.noscript.net">www.noscript.net</a> oder <a href="https://www.ghostery.com">www.ghostery.com</a> ) oder die „Do Not Track“ Einstellung Ihres Browsers aktivieren. Sie können darüber hinaus die Erfassung der durch den Google-Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie das unter dem folgenden Link (<a href="https://tools.google.com/dlpage/gaoptout?hl=de">https://tools.google.com/dlpage/gaoptout?hl=de</a>) verfügbare Browser-Plug-In herunterladen und installieren. Die Sicherheits- und Datenschutzgrundsätze von Google-Analytics finden Sie unter <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>
+          Sie können die Erfassung und Weiterleitung der personenbezogenen Daten
+          an Google (insb. Ihrer IP-Adresse) sowie die Verarbeitung dieser Daten
+          durch Google verhindern, indem Sie die Ausführung von Script-Code in
+          Ihrem Browser deaktivieren, einen Script-Blocker in Ihrem Browser
+          installieren (diesen finden Sie z.B. unter 
+          <a href="https://www.noscript.net">www.noscript.net</a> oder 
+          <a href="https://www.ghostery.com">www.ghostery.com</a> ) oder die „Do
+          Not Track“ Einstellung Ihres Browsers aktivieren. Sie können darüber
+          hinaus die Erfassung der durch den Google-Cookie erzeugten und auf
+          Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an
+          Google sowie die Verarbeitung dieser Daten durch Google verhindern,
+          indem Sie das unter dem folgenden Link (
+          <a href="https://tools.google.com/dlpage/gaoptout?hl=de">
+            https://tools.google.com/dlpage/gaoptout?hl=de
+          </a>
+          ) verfügbare Browser-Plug-In herunterladen und installieren. Die
+          Sicherheits- und Datenschutzgrundsätze von Google-Analytics finden Sie
+          unter 
+          <a href="https://policies.google.com/privacy">
+            https://policies.google.com/privacy
+          </a>
         </p>
 
         <p>
           5. Einbindung externer Webservices und Verarbeitung von Daten
-          außerhalb der EU{" "}
+          außerhalb der EU{' '}
         </p>
         <p>
           Auf unserer Internetseite verwenden wir aktive Java-Script-Inhalte von
@@ -214,29 +268,32 @@ export default () => (
         </p>
         <p>
           Auf unserer Webseite wird ein Webservice des Unternehmens StackPath,
-          LLC ,{" "}
+          LLC ,{' '}
           <a href="https://maps.google.com/?q=2021+McKinney+Ave&entry=gmail&source=g">
             2021 McKinney Ave
-          </a>, Suite 1100, Dallas, TX 75201, USA, (nachfolgend: BootstrapCDN)
+          </a>
+          , Suite 1100, Dallas, TX 75201, USA, (nachfolgend: BootstrapCDN)
           nachgeladen. Wir nutzen diese Daten, um die volle Funktionalität
           unserer Webseite zu gewährleisten. In diesem Zusammenhang wird Ihr
           Browser ggf. personenbezogene Daten an BootstrapCDN übermitteln.
           Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs.1 lit. f
           DSGVO. Das berechtigte Interesse besteht in einer fehlerfreien
           Funktion der Internetseite. BootstrapCDN hat sich im Rahmen des
-          EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{" "}
+          EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{' '}
           <a href="https://www.privacyshield.gov/list">
             https://www.privacyshield.gov/list
-          </a>). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
+          </a>
+          ). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
           erfüllt wurde. Weitere Informationen zum Handling der übertragenen
-          Daten finden Sie in der Datenschutzerklärung von BootstrapCDN:{" "}
+          Daten finden Sie in der Datenschutzerklärung von BootstrapCDN:{' '}
           <a href="https://www.bootstrapcdn.com/privacy-policy/">
             https://www.bootstrapcdn.com/privacy-policy/
-          </a>. Sie können die Erfassung sowie die Verarbeitung Ihrer Daten
-          durch BootstrapCDN verhindern, indem Sie die Ausführung von
-          Script-Code in Ihrem Browser deaktivieren oder einen Script-Blocker in
-          Ihrem Browser installieren (diesen finden Sie z.B. unter{" "}
-          <a href="http://www.noscript.net/">www.noscript.net</a> oder{" "}
+          </a>
+          . Sie können die Erfassung sowie die Verarbeitung Ihrer Daten durch
+          BootstrapCDN verhindern, indem Sie die Ausführung von Script-Code in
+          Ihrem Browser deaktivieren oder einen Script-Blocker in Ihrem Browser
+          installieren (diesen finden Sie z.B. unter{' '}
+          <a href="http://www.noscript.net/">www.noscript.net</a> oder{' '}
           <a href="http://www.ghostery.com/">www.ghostery.com</a>).
         </p>
         <p>
@@ -251,19 +308,21 @@ export default () => (
           Google-Apis übermitteln. Rechtsgrundlage für die Datenverarbeitung ist
           Art. 6 Abs.1 lit. f DSGVO. Das berechtigte Interesse besteht in einer
           fehlerfreien Funktion der Internetseite. Google-Apis hat sich im
-          Rahmen des EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{" "}
+          Rahmen des EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{' '}
           <a href="https://www.privacyshield.gov/list">
             https://www.privacyshield.gov/list
-          </a>). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
+          </a>
+          ). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
           erfüllt wurde. Weitere Informationen zum Handling der übertragenen
-          Daten finden Sie in der Datenschutzerklärung von Google-Apis:{" "}
+          Daten finden Sie in der Datenschutzerklärung von Google-Apis:{' '}
           <a href="https://www.google.com/intl/de/policies/privacy/">
             https://www.google.com/intl/de/policies/privacy/
-          </a>. Sie können die Erfassung sowie die Verarbeitung Ihrer Daten
-          durch Google-Apis verhindern, indem Sie die Ausführung von Script-Code
-          in Ihrem Browser deaktivieren oder einen Script-Blocker in Ihrem
-          Browser installieren (diesen finden Sie z.B. unter{" "}
-          <a href="http://www.noscript.net/">www.noscript.net</a> oder{" "}
+          </a>
+          . Sie können die Erfassung sowie die Verarbeitung Ihrer Daten durch
+          Google-Apis verhindern, indem Sie die Ausführung von Script-Code in
+          Ihrem Browser deaktivieren oder einen Script-Blocker in Ihrem Browser
+          installieren (diesen finden Sie z.B. unter{' '}
+          <a href="http://www.noscript.net/">www.noscript.net</a> oder{' '}
           <a href="http://www.ghostery.com/">www.ghostery.com</a>).
         </p>
         <p>
@@ -278,19 +337,21 @@ export default () => (
           Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs.1 lit. f
           DSGVO. Das berechtigte Interesse besteht in einer fehlerfreien
           Funktion der Internetseite. gstatic hat sich im Rahmen des
-          EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{" "}
+          EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{' '}
           <a href="https://www.privacyshield.gov/list">
             https://www.privacyshield.gov/list
-          </a>). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
+          </a>
+          ). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
           erfüllt wurde. Weitere Informationen zum Handling der übertragenen
-          Daten finden Sie in der Datenschutzerklärung von gstatic:{" "}
+          Daten finden Sie in der Datenschutzerklärung von gstatic:{' '}
           <a href="https://www.google.com/intl/de/policies/privacy/">
             https://www.google.com/intl/de/policies/privacy/
-          </a>. Sie können die Erfassung sowie die Verarbeitung Ihrer Daten
-          durch gstatic verhindern, indem Sie die Ausführung von Script-Code in
-          Ihrem Browser deaktivieren oder einen Script-Blocker in Ihrem Browser
-          installieren (diesen finden Sie z.B. unter{" "}
-          <a href="http://www.noscript.net">www.noscript.net</a> oder{" "}
+          </a>
+          . Sie können die Erfassung sowie die Verarbeitung Ihrer Daten durch
+          gstatic verhindern, indem Sie die Ausführung von Script-Code in Ihrem
+          Browser deaktivieren oder einen Script-Blocker in Ihrem Browser
+          installieren (diesen finden Sie z.B. unter{' '}
+          <a href="http://www.noscript.net">www.noscript.net</a> oder{' '}
           <a href="http://www.ghostery.com/">www.ghostery.com</a>).
         </p>
         <p>
@@ -305,19 +366,21 @@ export default () => (
           übermitteln. Rechtsgrundlage für die Datenverarbeitung ist Art. 6
           Abs.1 lit. f DSGVO. Das berechtigte Interesse besteht in einer
           fehlerfreien Funktion der Internetseite. gstatic hat sich im Rahmen
-          des EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{" "}
+          des EU-US-Privacy-Shield-Abkommens selbst zertifiziert (vgl.{' '}
           <a href="https://www.privacyshield.gov/list">
             https://www.privacyshield.gov/list
-          </a>). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
+          </a>
+          ). Die Löschung der Daten erfolgt, sobald der Zweck ihrer Erhebung
           erfüllt wurde. Weitere Informationen zum Handling der übertragenen
-          Daten finden Sie in der Datenschutzerklärung von gstatic:{" "}
+          Daten finden Sie in der Datenschutzerklärung von gstatic:{' '}
           <a href="https://www.google.com/intl/de/policies/privacy/">
             https://www.google.com/intl/de/policies/privacy/
-          </a>. Sie können die Erfassung sowie die Verarbeitung Ihrer Daten
-          durch gstatic verhindern, indem Sie die Ausführung von Script-Code in
-          Ihrem Browser deaktivieren oder einen Script-Blocker in Ihrem Browser
-          installieren (diesen finden Sie z.B. unter{" "}
-          <a href="http://www.noscript.net">www.noscript.net</a> oder{" "}
+          </a>
+          . Sie können die Erfassung sowie die Verarbeitung Ihrer Daten durch
+          gstatic verhindern, indem Sie die Ausführung von Script-Code in Ihrem
+          Browser deaktivieren oder einen Script-Blocker in Ihrem Browser
+          installieren (diesen finden Sie z.B. unter{' '}
+          <a href="http://www.noscript.net">www.noscript.net</a> oder{' '}
           <a href="http://www.ghostery.com/">www.ghostery.com</a>).
         </p>
 
@@ -435,12 +498,12 @@ export default () => (
         </p>
         <p>
           Erstellt durch:
-          <br />© IT-Recht-Kanzlei DURY –{" "}
+          <br />© IT-Recht-Kanzlei DURY –{' '}
           <a href="http://www.dury.de">www.dury.de</a>
-          <br />© Website-Check GmbH –{" "}
+          <br />© Website-Check GmbH –{' '}
           <a href="http://www.website-check.de">www.website-check.de</a>
         </p>
       </div>
     </Container>
   </Layout>
-);
+)

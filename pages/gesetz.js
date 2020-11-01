@@ -1,14 +1,14 @@
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
+import Container from 'reactstrap/lib/Container'
+import Col from 'reactstrap/lib/Col'
+import Row from 'reactstrap/lib/Row'
 
-import NormHeader from "../components/document/NormHeader";
-import Norm from "../components/document/Norm";
-import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
-import backend from "../services/backend";
-import { branding } from "../components/common/Constants";
-import serpGenerator from "../services/serpGenerator";
+import NormHeader from '../components/document/NormHeader'
+import Norm from '../components/document/Norm'
+import Layout from '../layout/MainLayout'
+import css from 'styled-jsx/css'
+import backend from '../services/backend'
+import { branding } from '../components/common/Constants'
+import serpGenerator from '../services/serpGenerator'
 
 const contentStyles = css`
   div.content {
@@ -16,39 +16,39 @@ const contentStyles = css`
     padding-top: 20px;
     padding-bottom: 40px;
   }
-`;
+`
 
-const renderAltLink = doc => {
-  if (process.env.NODE_ENV !== "production")
+const renderAltLink = (doc) => {
+  if (process.env.NODE_ENV !== 'production')
     return (
       <Row>
         <Col md="10">
           <p style={{ fontSize: 10 }}>
             <a
               target="_blank"
-              href={"http://urteile-gesetze.de/" + doc.kanonischeUrl}
+              href={'http://urteile-gesetze.de/' + doc.kanonischeUrl}
             >
               Alt
             </a>
           </p>
         </Col>
       </Row>
-    );
-};
+    )
+}
 
 const computeGesetzTitle = (kurzueberschrift, titel, abkuerzung) => {
-  if (kurzueberschrift) return `${kurzueberschrift} (${abkuerzung})`;
+  if (kurzueberschrift) return `${kurzueberschrift} (${abkuerzung})`
 
-  const langTitel = `${abkuerzung} | ${titel}`;
-  return serpGenerator.title(langTitel);
-};
+  const langTitel = `${abkuerzung} | ${titel}`
+  return serpGenerator.title(langTitel)
+}
 
 const GesetzPage = ({ doc, zitierendeUrteile }) => {
-  const { titel, abkuerzung, kurzueberschrift } = doc;
+  const { titel, abkuerzung, kurzueberschrift } = doc
 
-  const gesetzTitle = computeGesetzTitle(kurzueberschrift, titel, abkuerzung);
+  const gesetzTitle = computeGesetzTitle(kurzueberschrift, titel, abkuerzung)
 
-  const description = serpGenerator.description();
+  const description = serpGenerator.description()
   return (
     <Layout
       title={gesetzTitle}
@@ -73,45 +73,45 @@ const GesetzPage = ({ doc, zitierendeUrteile }) => {
         </Container>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-GesetzPage.getInitialProps = async function(props) {
-  const { kanonischeUrl } = props.query;
+GesetzPage.getInitialProps = async function (props) {
+  const { kanonischeUrl } = props.query
 
   if (kanonischeUrl) {
     try {
-      const doc = await backend.retrieveDoc(kanonischeUrl);
-      let zitierendeUrteile = undefined;
+      const doc = await backend.retrieveDoc(kanonischeUrl)
+      let zitierendeUrteile = undefined
       if (doc.smallNorm && doc.smallNorm === true) {
         zitierendeUrteile = await backend.search({
           query: kanonischeUrl,
           page: 0,
           filter: {
-            docTypes: ["r"],
+            docTypes: ['r'],
             gerichte: [],
             rechtsgebiete: []
           },
           anzahlDerErgebnisse: 6
-        });
+        })
       }
-      return { ...doc, pageName: "/gesetz", zitierendeUrteile };
+      return { ...doc, pageName: '/gesetz', zitierendeUrteile }
     } catch (e) {
-      props.res.statusCode = 404;
+      props.res.statusCode = 404
       props.res.end(
-        "Dieses Dokument befindet sich nicht mehr in unserer Datenbank."
-      );
+        'Dieses Dokument befindet sich nicht mehr in unserer Datenbank.'
+      )
 
-      if (!e.response) console.error(e);
+      if (!e.response) console.error(e)
       else
         console.error(
-          "Error /gesetz: Dokument wurde nicht gefunden ",
+          'Error /gesetz: Dokument wurde nicht gefunden ',
           kanonischeUrl,
           `HTTP StatusCode :${e.response.status}`,
           `HTTP StatusText: ${e.response.statusText}`
-        );
+        )
     }
   }
-};
+}
 
-export default GesetzPage;
+export default GesetzPage

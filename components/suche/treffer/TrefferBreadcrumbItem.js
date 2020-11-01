@@ -1,5 +1,5 @@
-import { colors } from "../../common/Constants";
-import css from "styled-jsx/css";
+import { colors } from '../../common/Constants'
+import css from 'styled-jsx/css'
 
 const styles = css`
   li {
@@ -15,13 +15,13 @@ const styles = css`
   li + li:before {
     display: inline-block;
     padding-right: 0.5rem;
-    content: "/";
+    content: '/';
   }
-`;
+`
 
-export default props => (
+export default (props) => (
   <li {...props}>
     <style jsx>{styles}</style>
     {props.children}
   </li>
-);
+)

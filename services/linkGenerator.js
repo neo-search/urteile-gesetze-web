@@ -1,4 +1,4 @@
-const generateUrteilslandingpageLink = query => {
+const generateUrteilslandingpageLink = (query) => {
   return (
     '/' +
     query

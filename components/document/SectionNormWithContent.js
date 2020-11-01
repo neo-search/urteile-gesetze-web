@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 import KurzformTrefferRechtsprechung from '../suche/treffer/KurzformTrefferRechtsprechung'
 import css from 'styled-jsx/css'
@@ -24,29 +24,29 @@ export default ({ doc }) => {
     abkuerzungNorm,
     abkuerzung,
     content
-  } = doc;
+  } = doc
 
   // const contentWithImages = content
   //   ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
   //   : null;
 
-  const contentWithImages = content;
+  const contentWithImages = content
   // ? content.replace(/bgbl1_/g, "/_assets/bgbl1_")
   // : null;
-    // const content =  doc.sectionInfo.content;
+  // const content =  doc.sectionInfo.content;
 
   return (
     <div>
-      <h2
-        style={{ fontSize: "1.3rem", paddingBottom: 40, paddingTop: 40 }}
-      >
+      <h2 style={{ fontSize: '1.3rem', paddingBottom: 40, paddingTop: 40 }}>
         <b>{abkuerzung}</b>
-        {doc.titel ? " " + doc.titel : ""}
+        {doc.titel ? ' ' + doc.titel : ''}
       </h2>
 
-      <div dangerouslySetInnerHTML={{ __html: contentWithImages }} style={{ paddingBottom: 20 }}>
-      </div>
+      <div
+        dangerouslySetInnerHTML={{ __html: contentWithImages }}
+        style={{ paddingBottom: 20 }}
+      ></div>
       <hr />
     </div>
-  );
-};
+  )
+}

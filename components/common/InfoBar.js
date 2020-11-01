@@ -1,4 +1,4 @@
-import css from "styled-jsx/css";
+import css from 'styled-jsx/css'
 
 const styles = css`
   div {
@@ -13,11 +13,13 @@ const styles = css`
     margin-left: 0;
     margin-right: 10px;
   }
-`;
+`
 
-export default ({ children }) => (
+const InfoBar = ({ children }) => (
   <div className="infobar">
     <style jsx>{styles}</style>
     {children}
   </div>
-);
+)
+
+export default InfoBar

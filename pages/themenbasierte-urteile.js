@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Layout from "../layout/MainLayout";
-import Container from "reactstrap/lib/Container";
-import landingPagesJson from "../data/queries-landingpages.json";
-import css from "styled-jsx/css";
-import { branding } from "../components/common/Constants";
+import Link from 'next/link'
+import Layout from '../layout/MainLayout'
+import Container from 'reactstrap/lib/Container'
+import landingPagesJson from '../data/queries-landingpages.json'
+import css from 'styled-jsx/css'
+import { branding } from '../components/common/Constants'
 
 const contentStyles = css`
   div.content {
@@ -21,33 +21,33 @@ const contentStyles = css`
     padding-top: 8px;
     padding-bottom: 8px;
   }
-`;
+`
 
-const asLink = urteil =>
-  "/" +
+const asLink = (urteil) =>
+  '/' +
   urteil
     .toLowerCase()
-    .split(" ")
-    .join("-")
-    .split("ö")
-    .join("oe")
-    .split("ä")
-    .join("ae")
-    .split("ü")
-    .join("ue")
-    .split("ß")
-    .join("ss") +
-  "-urteile";
+    .split(' ')
+    .join('-')
+    .split('ö')
+    .join('oe')
+    .split('ä')
+    .join('ae')
+    .split('ü')
+    .join('ue')
+    .split('ß')
+    .join('ss') +
+  '-urteile'
 
 const renderLinks = () => {
-  const urteile = landingPagesJson["urteile"];
-  return urteile.map(e => (
+  const urteile = landingPagesJson['urteile']
+  return urteile.map((e) => (
     <li>
       <style jsx>{contentStyles}</style>
       <Link href={asLink(e)}>{e}</Link>
     </li>
-  ));
-};
+  ))
+}
 
 export default () => {
   return (
@@ -60,5 +60,5 @@ export default () => {
         </Container>
       </div>
     </Layout>
-  );
-};
+  )
+}

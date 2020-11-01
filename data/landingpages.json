@@ -418,7 +418,7 @@
   },
   "/urteile-beamtenrechtsrahmengesetz": {
     "q": "§ 127 Beamtenrechtsrahmengesetz",
-    "filter": { "d": "r"},
+    "filter": { "d": "r" },
     "title": "Urteile Beamtenrechtsrahmengesetz - alle Urteile online lesen",
     "h1": "Urteile Beamtenrechtsrahmengesetz",
     "description": "Alle Urteile zu Beamtenrechtsrahmengesetz online lesen. Kostenlos Urteile abrufen.",

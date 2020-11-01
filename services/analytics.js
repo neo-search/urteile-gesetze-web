@@ -1,9 +1,8 @@
 import ReactGA from 'react-ga'
 
 export const initGA = () => {
-  ReactGA.initialize('UA-102965034-1');
-  ReactGA.ga('set', 'anonymizeIp', true);
-
+  ReactGA.initialize('UA-102965034-1')
+  ReactGA.ga('set', 'anonymizeIp', true)
 }
 
 export const logPageView = () => {

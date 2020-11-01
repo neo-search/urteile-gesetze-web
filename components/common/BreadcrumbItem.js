@@ -1,5 +1,5 @@
-import { colors } from "./Constants";
-import css from "styled-jsx/css";
+import { colors } from './Constants'
+import css from 'styled-jsx/css'
 
 const styles = css`
   li {
@@ -15,12 +15,12 @@ const styles = css`
   li + li:before {
     display: inline-block;
     padding-right: 0.5rem;
-    content: "/";
+    content: '/';
   }
-`;
+`
 
-export default props => {
-  const { markup, children } = props;
+export default (props) => {
+  const { markup, children } = props
 
   if (markup)
     return (
@@ -33,12 +33,12 @@ export default props => {
         <style jsx>{styles}</style>
         {children}
       </li>
-    );
+    )
 
   return (
     <li {...props}>
       <style jsx>{styles}</style>
       {children}
     </li>
-  );
-};
+  )
+}

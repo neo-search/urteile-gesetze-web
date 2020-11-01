@@ -1,13 +1,13 @@
-import Link from "next/link";
-import Layout from "../layout/MainLayout";
-import Banner from "../components/frontpage/Banner";
-import Card from "../components/frontpage/card";
-import css from "styled-jsx/css";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
-import GitHubSvg from "../components/icons/GitHubSvg";
-import Head from "next/head";
+import Link from 'next/link'
+import Layout from '../layout/MainLayout'
+import Banner from '../components/frontpage/Banner'
+import Card from '../components/frontpage/card'
+import css from 'styled-jsx/css'
+import Container from 'reactstrap/lib/Container'
+import Col from 'reactstrap/lib/Col'
+import Row from 'reactstrap/lib/Row'
+import GitHubSvg from '../components/icons/GitHubSvg'
+import Head from 'next/head'
 
 const styles = css`
   h2 {
@@ -18,34 +18,34 @@ const styles = css`
     margin-top: 55px;
     text-transform: uppercase;
   }
-`;
+`
 
 const LabelLink = ({ href, as, children }) => (
   <Link href={href} as={as || href}>
     <a
       style={{
         marginRight: 24,
-        backgroundColor: "white",
+        backgroundColor: 'white',
         marginBottom: 18,
-        border: "none",
-        boxShadow: "0px 1px 1px grey",
-        color: "#014fa4",
-        display: "inline-block",
+        border: 'none',
+        boxShadow: '0px 1px 1px grey',
+        color: '#014fa4',
+        display: 'inline-block',
         fontWeight: 400,
-        textAlign: "center",
-        whiteSpace: "nowrap",
-        verticalAlign: "middle",
-        userSelect: "none",
-        border: "1px solid transparent",
-        padding: ".375rem .75rem",
-        fontSize: "1rem",
+        textAlign: 'center',
+        whiteSpace: 'nowrap',
+        verticalAlign: 'middle',
+        userSelect: 'none',
+        border: '1px solid transparent',
+        padding: '.375rem .75rem',
+        fontSize: '1rem',
         lineHeight: 1.5
       }}
     >
       {children}
     </a>
   </Link>
-);
+)
 
 const CardLink = ({ asHref, href, label, img, alt }) => (
   <Col xs={6} sm={6} md={4} lg={3}>
@@ -62,7 +62,7 @@ const CardLink = ({ asHref, href, label, img, alt }) => (
       </div>
     </Link>
   </Col>
-);
+)
 
 const renderSocialMetaData = () => {
   return (
@@ -96,14 +96,14 @@ const renderSocialMetaData = () => {
         />
       </Head>
     </>
-  );
-};
+  )
+}
 
-export default props => {
-  <p>
+export default (props) => {
+  ;<p>
     Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
     Informationssystem unter einer Open Source Lizenz.
-  </p>;
+  </p>
   return (
     <Layout
       title="Urteile, Gesetze und Verordnungen der Bundesrepublik Deutschland"
@@ -121,10 +121,10 @@ export default props => {
           <p>
             <em>Kostenfrei und Open Source!</em> urteile-gesetze.de ist das
             erste juristische Informationssystem unter einer Open Source Lizenz.
-            Quellcode einfach forken und auf{" "}
+            Quellcode einfach forken und auf{' '}
             <a href="https://github.com/neo-search/urteile-gesetze-web/">
               GitHub
-            </a>{" "}
+            </a>{' '}
             ändern.
           </p>
         </div>
@@ -168,23 +168,23 @@ export default props => {
             />
           </Row>
         </div>
-
         <div>
           <h2>Letzte Urteile</h2>
-          <LabelLink as="/bverfg">Bundesverfassungsgericht (BVerfG)</LabelLink>
-          <LabelLink as="/bgh">Bundesgerichtshof (BGH)</LabelLink>
-          <LabelLink as="/bverwg">Bundesverwaltungsgericht (BVerwG)</LabelLink>
-          <LabelLink as="/bfh">Bundesfinanzhof (BFH)</LabelLink>
-          <LabelLink as="/bag">Bundesarbeitsgericht (BAG)</LabelLink>
-          <LabelLink as="/bsg">Bundessozialgericht (BSG)</LabelLink>
-          <LabelLink as="/bpatg-entscheidungen">
+          <LabelLink href="/bverfg">
+            Bundesverfassungsgericht (BVerfG)
+          </LabelLink>
+          <LabelLink href="/bgh">Bundesgerichtshof (BGH)</LabelLink>
+          <LabelLink href="/bverwg">
+            Bundesverwaltungsgericht (BVerwG)
+          </LabelLink>
+          <LabelLink href="/bfh">Bundesfinanzhof (BFH)</LabelLink>
+          <LabelLink href="/bag">Bundesarbeitsgericht (BAG)</LabelLink>
+          <LabelLink href="/bsg">Bundessozialgericht (BSG)</LabelLink>
+          <LabelLink href="/bpatg-entscheidungen">
             Bundespatentgericht (BPatG)
           </LabelLink>
-          <LabelLink as="/gmsogb">Gemeinsamer Senat (GmS-OGB)</LabelLink>
-          <LabelLink
-            href="/themenbasierte-urteile"
-            as="/themenbasierte-urteile"
-          >
+          <LabelLink href="/gmsogb">Gemeinsamer Senat (GmS-OGB)</LabelLink>
+          <LabelLink href="/themenbasierte-urteile">
             Urteile nach Themen
           </LabelLink>
           <a href="/gerichte">...&nbsp;Alle Gerichte sehen</a>
@@ -193,7 +193,6 @@ export default props => {
             ...&nbsp;Alle Urteile sehen
           </Link>
         </div>
-
         <div>
           <h2>Neueste Gesetze</h2>
           <LabelLink
@@ -205,7 +204,6 @@ export default props => {
             Musterfeststellungsklage
           </LabelLink>
         </div>
-
         <div>
           <h2>Wichtigste Gesetze</h2>
 
@@ -246,8 +244,9 @@ export default props => {
           <Link href="/gesetze">
             <a>... Alle Gesetze sehen</a>
           </Link>
-        </div>
+        </div>{' '}
+        */}
       </Container>
     </Layout>
-  );
-};
+  )
+}

@@ -1,26 +1,25 @@
-import SectionLink from "./../../common/SectionLink";
-import css from "styled-jsx/css";
-import BreadcrumbItem from "reactstrap/lib/BreadcrumbItem";
-import { colors } from "../../common/Constants";
+import SectionLink from './../../common/SectionLink'
+import css from 'styled-jsx/css'
+import BreadcrumbItem from 'reactstrap/lib/BreadcrumbItem'
+import { colors } from '../../common/Constants'
 
-import Breadcrumb from "./TrefferBreadcrumb";
-import BreadcrumbItem from "./TrefferBreadcrumbItem";
+import Breadcrumb from './TrefferBreadcrumb'
+import BreadcrumbItem from './TrefferBreadcrumbItem'
 
 const styles = css`
-
   div.treffer {
     padding-bottom: 6px;
   }
 
-  div.treffer:hover{
+  div.treffer:hover {
     background-color: ${colors.hoverBackgroundColor};
     cursor: pointer;
-  } 
+  }
 
   div.treffer-outer {
     padding-bottom: 16px;
   }
-`;
+`
 export default ({ doc }) => {
   return (
     <div className="treffer-outer">
@@ -30,10 +29,10 @@ export default ({ doc }) => {
           <div>
             <div style={{ paddingBottom: 4 }}>
               <a href={doc.kanonischeUrl} style={{ fontWeight: 600 }}>
-                {(doc.abkuerzung || "") + " " + doc.abkuerzungNorm}
+                {(doc.abkuerzung || '') + ' ' + doc.abkuerzungNorm}
               </a>
               <span style={{ fontWeight: 400, color: colors.primaryAction }}>
-                {doc.titel ? ",  " + doc.titel : ""}
+                {doc.titel ? ',  ' + doc.titel : ''}
               </span>
             </div>
             <div style={{}}>{doc.titelNorm}</div>
@@ -52,5 +51,5 @@ export default ({ doc }) => {
         </BreadcrumbItem>
       </Breadcrumb>
     </div>
-  );
-};
+  )
+}

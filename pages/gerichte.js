@@ -1,9 +1,9 @@
-import Link from "next/link";
-import Layout from "../layout/MainLayout";
-import Container from "reactstrap/lib/Container";
+import Link from 'next/link'
+import Layout from '../layout/MainLayout'
+import Container from 'reactstrap/lib/Container'
 
-import { branding } from "../components/common/Constants";
-import Label from "../components/common/Label";
+import { branding } from '../components/common/Constants'
+import Label from '../components/common/Label'
 
 const LabelLink = ({ href, label }) => (
   <Link as={`/${href}`} href={`/gericht?landingpage=/${href}`}>
@@ -11,7 +11,7 @@ const LabelLink = ({ href, label }) => (
       <a href={`/${href}`}>{label}</a>
     </Label>
   </Link>
-);
+)
 
 const Gericht = ({ href, gericht, children }) => (
   <div>
@@ -23,7 +23,7 @@ const Gericht = ({ href, gericht, children }) => (
     <p>{children}</p>
     <LabelLink href={href} label={`Urteile ${gericht}`} />
   </div>
-);
+)
 
 export default () => (
   <Layout title={`Liste der deutschen Bundesgerichte ${branding.seoname}`}>
@@ -34,7 +34,8 @@ export default () => (
         Hugo-Preuß-Platz 1 <br />
         99084 Erfurt <br />
         Tel.: 0361 / 2636 - 0<br />
-        Fax: 0361 / 2636 - 2000<br />
+        Fax: 0361 / 2636 - 2000
+        <br />
         <a href="https://www.bundesarbeitsgericht.de/">
           Homepage des Bundesarbeitsgerichts
         </a>
@@ -61,7 +62,8 @@ export default () => (
       </Gericht>
       <Gericht href="bsg" gericht="Bundessozialgericht (BSG)">
         Graf-Bernadotte-Platz 5<br />
-        34119 Kassel<br />
+        34119 Kassel
+        <br />
         Tel.: 0561 / 3107 - 1<br />
         Fax: 0561 / 3107 - 475 <br />
         <a href="http://www.bsg.bund.de">Homepage des Bundessozialgerichts</a>
@@ -90,4 +92,4 @@ export default () => (
       />
     </Container>
   </Layout>
-);
+)

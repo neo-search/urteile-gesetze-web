@@ -1,6 +1,6 @@
-import { colors } from "./Constants";
+import { colors } from './Constants'
 
-import css from "styled-jsx/css";
+import css from 'styled-jsx/css'
 
 const styles = css`
   div > :global(.btn.btn-outline-secondary:hover) {
@@ -9,15 +9,15 @@ const styles = css`
     -moz-box-shadow: 0px 1px 1px #de1dde;
     box-shadow: 0px 1px 1px #de1dde;
   }
-`;
-export default props => (
+`
+export default (props) => (
   <a
     className="btn btn-outline-secondary"
     style={{
       marginRight: 24,
-      backgroundColor: "white",
+      backgroundColor: 'white',
       marginBottom: 18,
-      border: "none",
+      border: 'none',
       boxShadow: `0px 1px 1px grey`,
 
       color: colors.primaryAction
@@ -29,4 +29,4 @@ export default props => (
       <style jsx>{styles}</style>
     </div>
   </a>
-);
+)

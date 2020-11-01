@@ -1,33 +1,33 @@
-import Link from "next/link";
-import Header from "../components/header/";
-import Footer from "../components/footer/Footer";
-import Head from "next/head";
-import css from "styled-jsx/css";
-import PropTypes from "prop-types";
-import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-import { parseCookies, setCookie, destroyCookie } from "nookies";
-import { initGA, logPageView, logException } from "../services/analytics";
+import Link from 'next/link'
+import Header from '../components/header/'
+import Footer from '../components/footer/Footer'
+import Head from 'next/head'
+import css from 'styled-jsx/css'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
+import { parseCookies, setCookie, destroyCookie } from 'nookies'
+import { initGA, logPageView, logException } from '../services/analytics'
 
-import "./bootstrap.min.css";
-import "./style.css";
+import './bootstrap.min.css'
+import './style.css'
 
 class LayoutWithHeaderAndFooter extends Component {
   constructor(props) {
-    super(props);
-    this.showTrackingOverlay = this.showTrackingOverlay.bind(this);
-    this.changeTrackingSettings = this.changeTrackingSettings.bind(this);
-    const { trackingAllowed } = parseCookies(this.props);
-    this.state = { showTrackingInfo: false, trackingAllowed: trackingAllowed };
+    super(props)
+    this.showTrackingOverlay = this.showTrackingOverlay.bind(this)
+    this.changeTrackingSettings = this.changeTrackingSettings.bind(this)
+    const { trackingAllowed } = parseCookies(this.props)
+    this.state = { showTrackingInfo: false, trackingAllowed: trackingAllowed }
   }
 
   renderCanonical(canonical) {
     if (canonical) {
-      if (canonical.endsWith("inhaltsuebersicht"))
-        canonical = canonical.replace("/inhaltsuebersicht", "");
+      if (canonical.endsWith('inhaltsuebersicht'))
+        canonical = canonical.replace('/inhaltsuebersicht', '')
       return (
-        <link rel="canonical" href={"https://urteile-gesetze.de" + canonical} />
-      );
+        <link rel="canonical" href={'https://urteile-gesetze.de' + canonical} />
+      )
     }
   }
 
@@ -38,32 +38,32 @@ class LayoutWithHeaderAndFooter extends Component {
           <meta property="og:description" content={description} />
           <meta name="description" content={description} />
         </>
-      );
+      )
   }
 
   componentDidMount() {
-    const prod = process.env.NODE_ENV === "production";
-    if (prod) this.trackIfAllowed();
+    const prod = process.env.NODE_ENV === 'production'
+    if (prod) this.trackIfAllowed()
   }
 
   trackIfAllowed() {
     // debugger;
     if (
       this.state.trackingAllowed === undefined ||
-      this.state.trackingAllowed === "true"
+      this.state.trackingAllowed === 'true'
     ) {
       if (!window.GA_INITIALIZED) {
-        initGA();
-        window.GA_INITIALIZED = true;
+        initGA()
+        window.GA_INITIALIZED = true
       }
 
-      logPageView();
+      logPageView()
     }
   }
 
   showTrackingOverlay() {
-    this.setState({ trackingAllowed: true });
-    this.setState({ showTrackingInfo: true });
+    this.setState({ trackingAllowed: true })
+    this.setState({ showTrackingInfo: true })
   }
 
   renderTrackingFooter() {
@@ -72,26 +72,26 @@ class LayoutWithHeaderAndFooter extends Component {
         <div id="stickyFooter">
           <p>
             Wir nutzen Cookies und Webtracking um unser Webangebot für Sie zu
-            verbessern. Hier können Sie die Webtracking-Einstellungen ändern:{" "}
+            verbessern. Hier können Sie die Webtracking-Einstellungen ändern:{' '}
             <a
               onClick={() => {
-                this.showTrackingOverlay();
+                this.showTrackingOverlay()
               }}
-              style={{ "text-decoration": "underline" }}
+              style={{ 'text-decoration': 'underline' }}
             >
               Webtracking-Einstellungen
-            </a>{" "}
+            </a>{' '}
             <button
               onClick={() => {
-                this.state.trackingAllowed = "true";
-                this.changeTrackingSettings();
+                this.state.trackingAllowed = 'true'
+                this.changeTrackingSettings()
               }}
             >
               OK
             </button>
           </p>
         </div>
-      );
+      )
     }
   }
 
@@ -130,20 +130,20 @@ class LayoutWithHeaderAndFooter extends Component {
             </Form>
           </div>
         </div>
-      );
+      )
     }
   }
 
   changeTrackingSettings() {
-    if (this.state.trackingAllowed === "false") {
-      const cookies = parseCookies(this.props);
+    if (this.state.trackingAllowed === 'false') {
+      const cookies = parseCookies(this.props)
       for (var cookieName in cookies) {
-        destroyCookie(this.props, cookieName);
+        destroyCookie(this.props, cookieName)
       }
     }
 
-    this.setState({ showTrackingInfo: false });
-    setCookie(this.props, "trackingAllowed", this.state.trackingAllowed);
+    this.setState({ showTrackingInfo: false })
+    setCookie(this.props, 'trackingAllowed', this.state.trackingAllowed)
   }
 
   render() {
@@ -154,7 +154,7 @@ class LayoutWithHeaderAndFooter extends Component {
       description,
       noSearchbar = false,
       canonical
-    } = this.props;
+    } = this.props
     return (
       <div>
         <Head>
@@ -207,12 +207,12 @@ class LayoutWithHeaderAndFooter extends Component {
         {this.renderTrackingOverlay()}
         <Footer />
       </div>
-    );
+    )
   }
 }
 
 LayoutWithHeaderAndFooter.propTypes = {
   title: PropTypes.string.isRequired
-};
+}
 
-export default LayoutWithHeaderAndFooter;
+export default LayoutWithHeaderAndFooter

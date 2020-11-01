@@ -1,7 +1,7 @@
-import Layout from "../layout/MainLayout";
-import Container from "reactstrap/lib/Container";
+import Layout from '../layout/MainLayout'
+import Container from 'reactstrap/lib/Container'
 
-import { branding } from "../components/common/Constants";
+import { branding } from '../components/common/Constants'
 
 export default () => (
   <Layout
@@ -48,4 +48,4 @@ export default () => (
       </ul>
     </Container>
   </Layout>
-);
+)

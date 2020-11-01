@@ -1,12 +1,12 @@
-import FacetteValue from "./FacetteValue";
-import css from "styled-jsx/css";
+import FacetteValue from './FacetteValue'
+import css from 'styled-jsx/css'
 
 const styles = css`
   div.facette-title {
     color: #909c9a;
     font-size: 0.8rem;
   }
-`;
+`
 export default ({ name, id, values, urlparams }) => {
   return (
     <div>
@@ -24,5 +24,5 @@ export default ({ name, id, values, urlparams }) => {
       ))}
       <style jsx>{styles}</style>
     </div>
-  );
-};
+  )
+}

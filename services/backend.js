@@ -1,29 +1,29 @@
-import getConfig from "next/config";
-import axios from "axios";
+import getConfig from 'next/config'
+import axios from 'axios'
 
-const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
 
-const searchUrl = `${publicRuntimeConfig.backendUrl}/search`;
+const searchUrl = `${publicRuntimeConfig.backendUrl}/search`
 
-const restserviceUrl = `${publicRuntimeConfig.backendUrl}`;
+const restserviceUrl = `${publicRuntimeConfig.backendUrl}`
 
-const normalize = param => (typeof param === "string" ? [param] : param);
+const normalize = (param) => (typeof param === 'string' ? [param] : param)
 
-const normalizeJahre = param => {
-  var filter = typeof param === "string" ? [param] : param;
-  return filter;
-};
+const normalizeJahre = (param) => {
+  var filter = typeof param === 'string' ? [param] : param
+  return filter
+}
 
-const PAGE_SIZE = 20;
-const search = async props => {
+const PAGE_SIZE = 20
+const search = async (props) => {
   const {
     query,
     filter: { docTypes, gerichte, rechtsgebiete, jahre },
-    sortType = "relevanz",
+    sortType = 'relevanz',
     anzahlDerErgebnisse = PAGE_SIZE,
     page = 0,
     landingpage = null
-  } = props;
+  } = props
 
   const body = {
     query,
@@ -37,48 +37,48 @@ const search = async props => {
     anzahlDerErgebnisse,
     page,
     landingpage
-  };
+  }
 
-  const axiosRes = await axios.post(searchUrl, body);
+  const axiosRes = await axios.post(searchUrl, body)
 
-  const result = await axiosRes.data;
-  const { docs, docCount, aggregations, highlightedDocs } = result;
+  const result = await axiosRes.data
+  const { docs, docCount, aggregations, highlightedDocs } = result
   return {
     docs,
     docCount,
     aggregations,
     pageSize: anzahlDerErgebnisse,
     highlightedDocs
-  };
-};
+  }
+}
 
-const retrieveDoc = async kanonischeUrl => {
-  const url = restserviceUrl + kanonischeUrl;
+const retrieveDoc = async (kanonischeUrl) => {
+  const url = restserviceUrl + kanonischeUrl
 
-  const axiosRes = await axios.get(url);
+  const axiosRes = await axios.get(url)
 
-  const doc = await axiosRes.data;
+  const doc = await axiosRes.data
 
   //FIXME: quickfix, weil path von google gelesen wird
-  if (doc.sectionInfo) doc.sectionInfo.path = "";
+  if (doc.sectionInfo) doc.sectionInfo.path = ''
 
-  return { doc };
-};
+  return { doc }
+}
 
 const retrieveSitemapSections = async () => {
-  const url = restserviceUrl + "/sitemap-sections";
-  const axiosRes = await axios.get(url);
-  const doc = await axiosRes.data;
+  const url = restserviceUrl + '/sitemap-sections'
+  const axiosRes = await axios.get(url)
+  const doc = await axiosRes.data
 
-  return { doc };
-};
+  return { doc }
+}
 
 const retrieveNorms = async () => {
-  const url = restserviceUrl + "/norms";
-  const axiosRes = await axios.get(url);
-  const norms = await axiosRes.data;
+  const url = restserviceUrl + '/norms'
+  const axiosRes = await axios.get(url)
+  const norms = await axiosRes.data
 
-  return { norms };
-};
+  return { norms }
+}
 
-export default { search, retrieveDoc, retrieveNorms };
+export default { search, retrieveDoc, retrieveNorms }

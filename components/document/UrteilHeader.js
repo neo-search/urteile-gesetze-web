@@ -1,7 +1,7 @@
-import InfoBar from "../common/InfoBar";
-import Link from "next/link";
-import Breadcrump from "../common/Breadcrumb";
-import BreadcrumpItem from "../common/BreadcrumbItem";
+import InfoBar from '../common/InfoBar'
+import Link from 'next/link'
+import Breadcrump from '../common/Breadcrumb'
+import BreadcrumpItem from '../common/BreadcrumbItem'
 //import { Timeline, TimelineEvent, TimelineBlip } from "react-event-timeline";
 
 const UrteilBreadCrump = ({ gericht, aktenzeichen }) => (
@@ -21,7 +21,7 @@ const UrteilBreadCrump = ({ gericht, aktenzeichen }) => (
       </Link>
     </BreadcrumpItem>
     <BreadcrumpItem>
-      <Link href={"/" + gericht.toLowerCase()}>
+      <Link href={'/' + gericht.toLowerCase()}>
         <a itemProp="url">{gericht}</a>
       </Link>
     </BreadcrumpItem>
@@ -29,16 +29,16 @@ const UrteilBreadCrump = ({ gericht, aktenzeichen }) => (
       <a>{aktenzeichen}</a>
     </BreadcrumpItem>
   </Breadcrump>
-);
+)
 
 export default ({ doc }) => {
   const {
     rechtsprechungInfo: { aktenzeichen, gericht, gerichtsbezeichnung }
-  } = doc;
+  } = doc
 
   return (
     <InfoBar>
       <UrteilBreadCrump gericht={gericht} aktenzeichen={aktenzeichen} />
     </InfoBar>
-  );
-};
+  )
+}

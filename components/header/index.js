@@ -1,12 +1,12 @@
-import SearchBar from "./SearchBar";
-import Logo from "./Logo";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
-import css from "styled-jsx/css";
-import Link from "next/link";
-import Button from "reactstrap/lib/Button"
-import NProgress from "nprogress";
-import Router from "next/router";
+import SearchBar from './SearchBar'
+import Logo from './Logo'
+import Col from 'reactstrap/lib/Col'
+import Row from 'reactstrap/lib/Row'
+import css from 'styled-jsx/css'
+import Link from 'next/link'
+import Button from 'reactstrap/lib/Button'
+import NProgress from 'nprogress'
+import Router from 'next/router'
 
 const styles = css`
   header {
@@ -21,43 +21,42 @@ const styles = css`
   nav.urteile-gesetze-header {
     padding: 8px 16px;
   }
-`;
+`
 
-Router.onRouteChangeStart = url => {
-  NProgress.start();
-};
-Router.onRouteChangeComplete = () => NProgress.done();
-Router.onRouteChangeError = () => NProgress.done();
+Router.onRouteChangeStart = (url) => {
+  NProgress.start()
+}
+Router.onRouteChangeComplete = () => NProgress.done()
+Router.onRouteChangeError = () => NProgress.done()
 
 const renderSearchBar = (noSearchBar, query) => {
-  if (noSearchBar) return;
+  if (noSearchBar) return
   return (
-    <Col sm="5" md="6" lg="7" style={{marginBottom:8}}>
+    <Col sm="5" md="6" lg="7" style={{ marginBottom: 8 }}>
       <SearchBar query={query} />
     </Col>
-  );
-};
+  )
+}
 
 const renderLogo = (noSearchBar) => {
   if (noSearchBar) {
     return (
       <Col sm="10" md="10" lg="10" style={{ marginBottom: 8 }}>
         <Link href="/">
-            <Logo />
-          </Link>
+          <Logo />
+        </Link>
       </Col>
     )
-  }
-  else {
+  } else {
     return (
       <Col sm="5" md="4" lg="3" style={{ marginBottom: 8 }}>
         <Link href="/">
-            <Logo />
-          </Link>
+          <Logo />
+        </Link>
       </Col>
-    );
+    )
   }
-};
+}
 
 export default ({ query, noSearchBar }) => (
   <header>
@@ -66,10 +65,20 @@ export default ({ query, noSearchBar }) => (
       <Row>
         {renderLogo(noSearchBar)}
         {renderSearchBar(noSearchBar, query)}
-        <Col sm="2" md="2" lg="2" className="d-sm-block d-md-block hidden-xs-down d-none">
-          <a href="https://blog.urteile-gesetze.de" className="btn btn-secondary">Neues</a>
+        <Col
+          sm="2"
+          md="2"
+          lg="2"
+          className="d-sm-block d-md-block hidden-xs-down d-none"
+        >
+          <a
+            href="https://blog.urteile-gesetze.de"
+            className="btn btn-secondary"
+          >
+            Neues
+          </a>
         </Col>
       </Row>
     </nav>
   </header>
-);
+)

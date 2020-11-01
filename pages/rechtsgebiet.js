@@ -1,22 +1,22 @@
-import React from "react";
-import SucheComponent from "../components/suche";
-import landingPagesJson from "../data/landingpages.json";
-import backend from "../services/backend";
-import Layout from "../layout/MainLayout";
-import { branding } from "../components/common/Constants";
+import React from 'react'
+import SucheComponent from '../components/suche'
+import landingPagesJson from '../data/landingpages.json'
+import backend from '../services/backend'
+import Layout from '../layout/MainLayout'
+import { branding } from '../components/common/Constants'
 
-const Suche = props => {
-  const { title, description } = props.pageMetaInfo;
-  const { query } = props.searchRequest;
+const Suche = (props) => {
+  const { title, description } = props.pageMetaInfo
+  const { query } = props.searchRequest
   return (
     <Layout title={title} description={description} query={query}>
-      <SucheComponent {...props} /> 
+      <SucheComponent {...props} />
     </Layout>
-  );
-};
+  )
+}
 
 function normalizeParam(param) {
-  return typeof param === "string" ? [param] : param;
+  return typeof param === 'string' ? [param] : param
 }
 
 async function retrieveSearchResults(searchRequest) {
@@ -27,12 +27,12 @@ async function retrieveSearchResults(searchRequest) {
     p: page,
     r: rechtsgebiete,
     j: jahre
-  } = searchRequest;
+  } = searchRequest
 
   const body = {
     query,
     page: p,
-    sortType: "relevanz",
+    sortType: 'relevanz',
     anzahlDerErgebnisse: 20,
     filter: {
       docTypes: normalizeParam(docTypes),
@@ -40,14 +40,14 @@ async function retrieveSearchResults(searchRequest) {
       rechtsgebiete: normalizeParam(rechtsgebiete),
       jahre: normalizeParam(jahre)
     }
-  };
+  }
 
-  const { docs, docCount, aggregations } = await backend.search(body);
-  return { docs, docCount, aggregations };
+  const { docs, docCount, aggregations } = await backend.search(body)
+  return { docs, docCount, aggregations }
 }
 
-Suche.getInitialProps = async function(props) {
-  const { landingpage, p } = props.query;
+Suche.getInitialProps = async function (props) {
+  const { landingpage, p } = props.query
 
   const {
     q,
@@ -58,7 +58,7 @@ Suche.getInitialProps = async function(props) {
     h1,
     canonical,
     page
-  } = landingPagesJson[landingpage];
+  } = landingPagesJson[landingpage]
 
   const searchResult = await backend.search({
     query: q,
@@ -69,7 +69,7 @@ Suche.getInitialProps = async function(props) {
       rechtsgebiete: filter.r,
       jahre: filter.j
     }
-  });
+  })
 
   return {
     searchResult,
@@ -83,10 +83,10 @@ Suche.getInitialProps = async function(props) {
       h1,
       description,
       canonical,
-      pageName: "/rechtsgebiet",
+      pageName: '/rechtsgebiet',
       landingpage
     }
-  };
-};
+  }
+}
 
-export default Suche;
+export default Suche

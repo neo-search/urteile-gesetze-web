@@ -1,9 +1,9 @@
-import React from "react";
-import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
+import React from 'react'
+import Layout from '../layout/MainLayout'
+import css from 'styled-jsx/css'
+import Container from 'reactstrap/lib/Container'
+import Col from 'reactstrap/lib/Col'
+import Row from 'reactstrap/lib/Row'
 
 const contentStyles = css`
   div.content {
@@ -11,12 +11,12 @@ const contentStyles = css`
     padding-top: 20px;
     padding-bottom: 40px;
   }
-`;
+`
 
 export default class Error extends React.Component {
   static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
-    return { statusCode };
+    const statusCode = res ? res.statusCode : err ? err.statusCode : null
+    return { statusCode }
   }
 
   render() {
@@ -30,7 +30,7 @@ export default class Error extends React.Component {
                 {this.props.statusCode ? (
                   <div
                     style={{
-                      textAlign: "center",
+                      textAlign: 'center',
                       paddingTop: 50,
                       paddingBottom: 50
                     }}
@@ -50,12 +50,12 @@ export default class Error extends React.Component {
                       werden gleich den Fehler beheben!
                     </p>
                   </div>
-                )}{" "}
+                )}{' '}
               </Col>
             </Row>
           </Container>
         </div>
       </Layout>
-    );
+    )
   }
 }

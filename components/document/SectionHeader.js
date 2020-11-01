@@ -1,11 +1,11 @@
-import InfoBar from "../common/InfoBar";
-import Link from "next/link";
-import Breadcrump from "../common/Breadcrumb";
-import BreadcrumpItem from "../common/BreadcrumbItem";
-import Row from "reactstrap/lib/Row";
-import Col from "reactstrap/lib/Col";
-import SectionLink from "../links/SectionLink";
-import Section from "./Section";
+import InfoBar from '../common/InfoBar'
+import Link from 'next/link'
+import Breadcrump from '../common/Breadcrumb'
+import BreadcrumpItem from '../common/BreadcrumbItem'
+import Row from 'reactstrap/lib/Row'
+import Col from 'reactstrap/lib/Col'
+import SectionLink from '../links/SectionLink'
+import Section from './Section'
 
 export default ({ doc }) => {
   const {
@@ -20,7 +20,7 @@ export default ({ doc }) => {
       abkuerzungNext,
       abkuerzungPrevious
     }
-  } = doc;
+  } = doc
 
   return (
     <InfoBar>
@@ -46,41 +46,44 @@ export default ({ doc }) => {
             </a>
           </Link>
         </BreadcrumpItem>
-        <BreadcrumpItem>{abkuerzung}
+        <BreadcrumpItem>
+          {abkuerzung}
           {/* <Link>
             <a>{abkuerzung}</a>
           </Link> */}
         </BreadcrumpItem>
       </Breadcrump>
       <Row>
-      <Col md="9">{renderLinkPrevious(kanonischeUrlPrevious, abkuerzungPrevious)}</Col>
+        <Col md="9">
+          {renderLinkPrevious(kanonischeUrlPrevious, abkuerzungPrevious)}
+        </Col>
 
         <Col md="3">{renderLinkNext(kanonischeUrlNext, abkuerzungNext)}</Col>
       </Row>
     </InfoBar>
-  );
-};
+  )
+}
 
 const renderLinkNext = (kanonischeUrlNext, abkuerzungNext) => {
-  if (kanonischeUrlNext && kanonischeUrlNext !== "") {
+  if (kanonischeUrlNext && kanonischeUrlNext !== '') {
     return (
       <SectionLink url={kanonischeUrlNext}>
         <div className="treffer">
-          <a href={kanonischeUrlNext}>{abkuerzungNext + " >"}</a>
+          <a href={kanonischeUrlNext}>{abkuerzungNext + ' >'}</a>
         </div>
       </SectionLink>
-    );
+    )
   }
-};
+}
 
 const renderLinkPrevious = (kanonischeUrlPrevious, abkuerzungPrevious) => {
-  if (kanonischeUrlPrevious && kanonischeUrlPrevious !== "") {
+  if (kanonischeUrlPrevious && kanonischeUrlPrevious !== '') {
     return (
       <SectionLink url={kanonischeUrlPrevious}>
         <div className="treffer">
-          <a href={kanonischeUrlPrevious}>{"< " + abkuerzungPrevious}</a>
+          <a href={kanonischeUrlPrevious}>{'< ' + abkuerzungPrevious}</a>
         </div>
       </SectionLink>
-    );
+    )
   }
-};
+}

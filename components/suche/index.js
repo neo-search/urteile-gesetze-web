@@ -1,164 +1,160 @@
-import Trefferliste from "./Trefferliste";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
+import Trefferliste from './Trefferliste'
+import Container from 'reactstrap/lib/Container'
+import Col from 'reactstrap/lib/Col'
+import Row from 'reactstrap/lib/Row'
 
-import InfoBar from "../common/InfoBar";
-import Facetten from "./facetten";
-import css from "styled-jsx/css";
-import React from "react";
+import InfoBar from '../common/InfoBar'
+import Facetten from './facetten'
+import css from 'styled-jsx/css'
+import React from 'react'
 
 const trefferlisteStyles = css`
   div.trefferliste {
     background-color: white;
     padding-top: 20px;
   }
-`;
+`
 
 const facettenData = (aggregations, filters, query) => {
-  const facetten = [];
+  const facetten = []
   if (aggregations.aggregationDocType) {
     facetten.push(
       facettenDataAggregation(
         aggregations.aggregationDocType,
-        "DOKUMENTART",
-        "d"
+        'DOKUMENTART',
+        'd'
       )
-    );
+    )
   }
 
-  if (aggregations["aggregationRechtsgebiete"]) {
+  if (aggregations['aggregationRechtsgebiete']) {
     facetten.push(
       facettenDataAggregation(
-        aggregations["aggregationRechtsgebiete"],
-        "RECHTSGEBIET",
-        "r"
+        aggregations['aggregationRechtsgebiete'],
+        'RECHTSGEBIET',
+        'r'
       )
-    );
+    )
   }
 
-  if (aggregations["rechtsprechungInfo.aggregationGericht"]) {
+  if (aggregations['rechtsprechungInfo.aggregationGericht']) {
     facetten.push(
       facettenDataAggregation(
-        aggregations["rechtsprechungInfo.aggregationGericht"],
-        "GERICHT",
-        "g"
+        aggregations['rechtsprechungInfo.aggregationGericht'],
+        'GERICHT',
+        'g'
       )
-    );
+    )
   }
 
-  if (aggregations["aggregationJahr"]) {
+  if (aggregations['aggregationJahr']) {
     facetten.push(
-      facettenDataAggregation(
-        aggregations["aggregationJahr"],
-        "JAHR",
-        "j"
-      )
-    );
+      facettenDataAggregation(aggregations['aggregationJahr'], 'JAHR', 'j')
+    )
   }
 
   return {
     facetten,
     urlparams: { ...filters, q: query }
-  };
-};
+  }
+}
 
 const facettenDataAggregation = (aggregation, name, id) => {
-  const values = aggregation.map(a => {
-    const { abkuerzung, beschreibung, docCount, key } = a;
+  const values = aggregation.map((a) => {
+    const { abkuerzung, beschreibung, docCount, key } = a
     return {
       valueName: abkuerzung,
       valueId: key,
       checked: false,
       hits: docCount
-    };
-  });
+    }
+  })
   const facetteDocType = {
     name: name,
     id: id,
     values: values
-  };
-  return facetteDocType;
-};
+  }
+  return facetteDocType
+}
 
 const renderInfoBarText = (query, docCount, page, h1) => {
-  if (page == "/landingpage")
+  if (page == '/landingpage')
     return (
       <React.Fragment>
-        <b>{docCount.toLocaleString("DE")}</b> Treffer für{" "}
+        <b>{docCount.toLocaleString('DE')}</b> Treffer für{' '}
         <h1
           style={{
-            backgroundColor: "#b7fffb",
-            fontSize: "1rem",
-            fontWeight: "bold",
-            display: "inline"
+            backgroundColor: '#b7fffb',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            display: 'inline'
           }}
         >
           {query}
         </h1>
       </React.Fragment>
-    );
-  if (page == "/landingpage-urteile")
+    )
+  if (page == '/landingpage-urteile')
     return (
       <React.Fragment>
         <b
           style={{
-            fontSize: "1.2rem"
+            fontSize: '1.2rem'
           }}
         >
-          {docCount.toLocaleString("DE")}
-        </b>{" "}
+          {docCount.toLocaleString('DE')}
+        </b>{' '}
         <h1
           style={{
             // backgroundColor: "#b7fffb",
-            fontSize: "1.2rem",
-            fontWeight: "normal",
-            display: "inline"
+            fontSize: '1.2rem',
+            fontWeight: 'normal',
+            display: 'inline'
           }}
         >
           Urteile für <b>{query}</b>
         </h1>
       </React.Fragment>
-    );
+    )
   if (h1)
     return (
       <>
         <h1
           style={{
             // backgroundColor: "#b7fffb",
-            fontSize: "1.2rem",
-            fontWeight: "bold",
-            display: "inline"
+            fontSize: '1.2rem',
+            fontWeight: 'bold',
+            display: 'inline'
           }}
         >
           {h1}
         </h1>
-        . Gefundene Dokumente: <b>{docCount.toLocaleString("DE")}</b>
+        . Gefundene Dokumente: <b>{docCount.toLocaleString('DE')}</b>
       </>
-    );
+    )
   if (query)
     return (
       <>
-        Suche nach <b>{query}</b>. Gefundene Dokumente:{" "}
-        <b>{docCount.toLocaleString("DE")}</b>
+        Suche nach <b>{query}</b>. Gefundene Dokumente:{' '}
+        <b>{docCount.toLocaleString('DE')}</b>
       </>
-    );
+    )
   return (
     <React.Fragment>
-      Gefundene Dokumente: <b>{docCount.toLocaleString("DE")}</b>
+      Gefundene Dokumente: <b>{docCount.toLocaleString('DE')}</b>
     </React.Fragment>
-  );
-};
+  )
+}
 
 const renderInfoBar = (query, docCount, pageName, h1) => {
-  return <InfoBar>{renderInfoBarText(query, docCount, pageName, h1)}</InfoBar>;
-};
+  return <InfoBar>{renderInfoBarText(query, docCount, pageName, h1)}</InfoBar>
+}
 
 const Suche = ({ searchRequest, searchResult, pageMetaInfo }) => {
-  const { docs, docCount, aggregations, highlightedDocs } = searchResult;
-  const { query, filter } = searchRequest;
-  const { pageName, h1 } = pageMetaInfo;
-  const data = facettenData(aggregations, filter, query);
+  const { docs, docCount, aggregations, highlightedDocs } = searchResult
+  const { query, filter } = searchRequest
+  const { pageName, h1 } = pageMetaInfo
+  const data = facettenData(aggregations, filter, query)
 
   return (
     <>
@@ -183,7 +179,7 @@ const Suche = ({ searchRequest, searchResult, pageMetaInfo }) => {
         </Container>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Suche;
+export default Suche

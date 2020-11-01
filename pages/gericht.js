@@ -1,14 +1,14 @@
-import React from "react";
-import Suche from "../components/suche";
-import landingPagesJson from "../data/landingpages.json";
-import backend from "../services/backend";
-import Layout from "../layout/MainLayout";
+import React from 'react'
+import Suche from '../components/suche'
+import landingPagesJson from '../data/landingpages.json'
+import backend from '../services/backend'
+import Layout from '../layout/MainLayout'
 
 const Gericht = ({ pageMetaInfo, searchRequest, searchResult }) => {
-  const { title, description, canonical } = pageMetaInfo;
-  const { query, page } = searchRequest;
+  const { title, description, canonical } = pageMetaInfo
+  const { query, page } = searchRequest
 
-  const canonicalWithPaging = page ? `${canonical}&p=${page}` : canonical;
+  const canonicalWithPaging = page ? `${canonical}&p=${page}` : canonical
   return (
     <Layout
       title={title}
@@ -22,14 +22,14 @@ const Gericht = ({ pageMetaInfo, searchRequest, searchResult }) => {
         pageMetaInfo={pageMetaInfo}
       />
     </Layout>
-  );
-};
+  )
+}
 
-Gericht.getInitialProps = async function(props) {
-  let { landingpage, p } = props.query;
+Gericht.getInitialProps = async function (props) {
+  let { landingpage, p } = props.query
   if (!landingpage && props.asPath)
-    landingpage = props.asPath.replace(/\?.*/, "");
-  debugger;
+    landingpage = props.asPath.replace(/\?.*/, '')
+  debugger
   const {
     q,
     filter = {},
@@ -39,11 +39,11 @@ Gericht.getInitialProps = async function(props) {
     canonical = landingpage,
     page,
     h1
-  } = landingPagesJson[landingpage];
+  } = landingPagesJson[landingpage]
 
-  debugger;
+  debugger
   // const canonicalWithPaging = p ? `${landingpage}&p=${p}` : landingpage;
-  const canonicalWithPaging = `${landingpage}`;
+  const canonicalWithPaging = `${landingpage}`
 
   const searchResult = await backend.search({
     query: q,
@@ -54,7 +54,7 @@ Gericht.getInitialProps = async function(props) {
       jahre: filter.j,
       rechtsgebiete: filter.r
     }
-  });
+  })
 
   return {
     searchResult,
@@ -68,9 +68,9 @@ Gericht.getInitialProps = async function(props) {
       description,
       h1,
       canonical: landingpage,
-      pageName: "/gericht"
+      pageName: '/gericht'
     }
-  };
-};
+  }
+}
 
-export default Gericht;
+export default Gericht

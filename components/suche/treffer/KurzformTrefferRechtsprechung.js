@@ -1,6 +1,6 @@
-import RechtsprechungLink from "./../../common/RechtsprechungLink";
-import css from "styled-jsx/css";
-import { colors } from "../../common/Constants";
+import RechtsprechungLink from './../../common/RechtsprechungLink'
+import css from 'styled-jsx/css'
+import { colors } from '../../common/Constants'
 
 const styles = css`
   div.treffer {
@@ -21,7 +21,7 @@ const styles = css`
     overflow: hidden;
     text-overflow: ellipsis;
   }
-`;
+`
 export default ({ doc }) => {
   return (
     <div className="treffer-outer">
@@ -31,14 +31,22 @@ export default ({ doc }) => {
           <div>
             <div>
               <a href={`${doc.kanonischeUrl}`} style={{ fontWeight: 600 }}>
-                {doc.gericht + " " + doc.spruchkoerper + ", " + doc.abkuerzung + ", Entscheidungsdatum: " + doc.date}
+                {doc.gericht +
+                  ' ' +
+                  doc.spruchkoerper +
+                  ', ' +
+                  doc.abkuerzung +
+                  ', Entscheidungsdatum: ' +
+                  doc.date}
               </a>
             </div>
-            <div className="shortenedText" dangerouslySetInnerHTML={{ __html: doc.kurzBeschreibung || "" }}>
-            </div>
+            <div
+              className="shortenedText"
+              dangerouslySetInnerHTML={{ __html: doc.kurzBeschreibung || '' }}
+            ></div>
           </div>
         </div>
       </RechtsprechungLink>
     </div>
-  );
-};
+  )
+}

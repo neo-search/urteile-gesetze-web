@@ -1,12 +1,12 @@
-import css from "styled-jsx/css";
-import React, { Component } from "react";
-import Router from "next/router";
-import InputGroup from "reactstrap/lib/InputGroup";
-import Input from "reactstrap/lib/Input";
-import Button from "reactstrap/lib/Button";
-import { colors } from "../common/Constants";
+import css from 'styled-jsx/css'
+import React, { Component } from 'react'
+import Router from 'next/router'
+import InputGroup from 'reactstrap/lib/InputGroup'
+import Input from 'reactstrap/lib/Input'
+import Button from 'reactstrap/lib/Button'
+import { colors } from '../common/Constants'
 
-import SearchSvg from "../icons/SearchSvg";
+import SearchSvg from '../icons/SearchSvg'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import  faSearch  from '@fortawesome/free-solid-svg-icons/faSearch'
 
@@ -47,36 +47,36 @@ const styles = css`
   div :global(div.input-group:not(focus)) {
     animation: greenPulse 3s infinite;
   }
-`;
+`
 
 export default class SearchBar extends Component {
   constructor(props) {
-    super(props);
-    this.query = props.query;
+    super(props)
+    this.query = props.query
     this.state = {
-      query: "",
+      query: '',
       active: false
-    };
+    }
   }
 
   handleInput(event) {
-    this.setState({ query: event.target.value });
+    this.setState({ query: event.target.value })
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
     Router.push({
-      pathname: "/suche",
+      pathname: '/suche',
       query: { q: this.state.query }
-    });
+    })
   }
 
   render() {
-    const { placeholder, light } = this.props;
-    const backgroundColor = light ? "white" : "#f1f1f1";
+    const { placeholder, light } = this.props
+    const backgroundColor = light ? 'white' : '#f1f1f1'
     const border = light
       ? `1px  solid ${colors.primaryAction}`
-      : "transparent 1px solid";
+      : 'transparent 1px solid'
 
     return (
       <div>
@@ -89,18 +89,18 @@ export default class SearchBar extends Component {
               type="text"
               onChange={this.handleInput.bind(this)}
               value={this.query}
-              placeholder={placeholder || "Gesetz oder Urteil suchen"}
+              placeholder={placeholder || 'Gesetz oder Urteil suchen'}
             />
             <Button
               color="background"
               style={{ backgroundColor }}
               aria-label="Suchen"
             >
-              <SearchSvg style={{width:24, height:16}}/>
+              <SearchSvg style={{ width: 24, height: 16 }} />
             </Button>
           </InputGroup>
         </form>
       </div>
-    );
+    )
   }
 }

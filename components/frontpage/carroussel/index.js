@@ -1,5 +1,5 @@
-import css from "styled-jsx/css";
-import React, { Component } from "react";
+import css from 'styled-jsx/css'
+import React, { Component } from 'react'
 
 const styles = css`
   form {
@@ -22,11 +22,11 @@ const styles = css`
     color: white;
     background-color: ${colors.primaryAction};
   }
-`;
+`
 
 export default class Carrousel extends Component {
   constructor(props) {
-    this.state = { activeIndex: 0 };
+    this.state = { activeIndex: 0 }
   }
 
   render() {}

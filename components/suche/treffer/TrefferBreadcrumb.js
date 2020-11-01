@@ -1,4 +1,4 @@
-import css from "styled-jsx/css";
+import css from 'styled-jsx/css'
 
 const styles = css`
   ol {
@@ -9,13 +9,13 @@ const styles = css`
     display: flex;
     list-style: none;
   }
-`;
+`
 
-export default props => {
+export default (props) => {
   return (
     <ol style={props.style}>
       <style jsx>{styles}</style>
       {props.children}
     </ol>
-  );
-};
+  )
+}

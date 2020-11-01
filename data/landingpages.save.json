@@ -1,7 +1,7 @@
 {
   "/urteile-gez-befreiung": {
     "q": "Befreiung Rundfunkbreitrag",
-    "filter": { "d": "r"},
+    "filter": { "d": "r" },
     "title": "Urteile zur GEZ Befreiung - alle Urteile online lesen",
     "h1": "Urteile zur GEZ Befreiung",
     "description": "Alle Urteile zur GEZ Befreiung online lesen.",

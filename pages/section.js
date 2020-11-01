@@ -1,14 +1,14 @@
-import Container from "reactstrap/lib/Container";
-import Row from "reactstrap/lib/Row";
-import Col from "reactstrap/lib/Col";
-import Section from "../components/document/Section";
-import SectionHeader from "../components/document/SectionHeader";
-import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
-import backend from "../services/backend";
-import { branding } from "../components/common/Constants";
-import Error from "./_error";
-import titleGenerator from "../services/titleGenerator";
+import Container from 'reactstrap/lib/Container'
+import Row from 'reactstrap/lib/Row'
+import Col from 'reactstrap/lib/Col'
+import Section from '../components/document/Section'
+import SectionHeader from '../components/document/SectionHeader'
+import Layout from '../layout/MainLayout'
+import css from 'styled-jsx/css'
+import backend from '../services/backend'
+import { branding } from '../components/common/Constants'
+import Error from './_error'
+import titleGenerator from '../services/titleGenerator'
 
 const contentStyles = css`
   div.content {
@@ -16,68 +16,68 @@ const contentStyles = css`
     padding-top: 20px;
     padding-bottom: 40px;
   }
-`;
+`
 
-const renderAltLink = doc => {
-  if (process.env.NODE_ENV !== "production")
+const renderAltLink = (doc) => {
+  if (process.env.NODE_ENV !== 'production')
     return (
       <Row>
         <Col md="10">
           <p style={{ fontSize: 10 }}>
             <a
               target="_blank"
-              href={"http://urteile-gesetze.de/" + doc.kanonischeUrl}
+              href={'http://urteile-gesetze.de/' + doc.kanonischeUrl}
             >
               Alt
             </a>
           </p>
         </Col>
       </Row>
-    );
-};
+    )
+}
 
 const computeGesetzTitle = (kurzueberschrift, titel, abkuerzung) => {
-  const maxTitelSize = 72 - `${abkuerzung} |  ${branding.seoname}`.length;
+  const maxTitelSize = 72 - `${abkuerzung} |  ${branding.seoname}`.length
 
   if (kurzueberschrift && kurzueberschrift.length <= maxTitelSize)
-    return kurzueberschrift;
-  if (titel && titel.length <= maxTitelSize) return kurzueberschrift;
+    return kurzueberschrift
+  if (titel && titel.length <= maxTitelSize) return kurzueberschrift
 
   let gesetzTitle = kurzueberschrift
     ? kurzueberschrift.substring(
         0,
         Math.min(kurzueberschrift.length, maxTitelSize)
       )
-    : titel.substring(0, Math.min(titel.length, maxTitelSize));
+    : titel.substring(0, Math.min(titel.length, maxTitelSize))
 
   gesetzTitle = kurzueberschrift.substring(
     0,
-    Math.min(gesetzTitle.length, gesetzTitle.lastIndexOf(" "))
-  );
-  return gesetzTitle;
-};
+    Math.min(gesetzTitle.length, gesetzTitle.lastIndexOf(' '))
+  )
+  return gesetzTitle
+}
 
 const computeLayoutTitel = (abkuerzung, abkuerzungNorm, titel) => {
-  debugger;  
-  if (!titel || titel == "") return `${abkuerzung} ${abkuerzungNorm}`;
+  debugger
+  if (!titel || titel == '') return `${abkuerzung} ${abkuerzungNorm}`
 
-  const titelString = `${abkuerzung} ${abkuerzungNorm} - ${titel}`;
-  return titleGenerator.title(titelString);
-};
+  const titelString = `${abkuerzung} ${abkuerzungNorm} - ${titel}`
+  return titleGenerator.title(titelString)
+}
 
 const SectionPage = ({ doc, errorCode, zitierendeUrteile }) => {
-  if (errorCode) return <Error statusCode={errorCode} />;
+  if (errorCode) return <Error statusCode={errorCode} />
 
-  const { seoDescription, titel } = doc;
+  const { seoDescription, titel } = doc
   const {
     abkuerzung,
     abkuerzungNorm,
     smallNorm,
     kanonischeUrlNorm
-  } = doc.sectionInfo;
+  } = doc.sectionInfo
 
-  const layoutTitel = computeLayoutTitel(abkuerzung, abkuerzungNorm, titel);
-  const kanonischeUrl = smallNorm ? kanonischeUrlNorm : doc.kanonischeUrl;
+  const layoutTitel = computeLayoutTitel(abkuerzung, abkuerzungNorm, titel)
+  const kanonischeUrl = smallNorm ? kanonischeUrlNorm : doc.kanonischeUrl
   return (
     <Layout
       title={layoutTitel}
@@ -102,47 +102,47 @@ const SectionPage = ({ doc, errorCode, zitierendeUrteile }) => {
         </Container>
       </div>
     </Layout>
-  );
-};
+  )
+}
 
-SectionPage.getInitialProps = async function(props) {
-  const { kanonischeUrl } = props.query;
+SectionPage.getInitialProps = async function (props) {
+  const { kanonischeUrl } = props.query
 
   if (kanonischeUrl) {
     try {
-      const doc = await backend.retrieveDoc(kanonischeUrl);
+      const doc = await backend.retrieveDoc(kanonischeUrl)
 
-      const { abkuerzungNorm, abkuerzung } = doc.doc.sectionInfo;
+      const { abkuerzungNorm, abkuerzung } = doc.doc.sectionInfo
       const query = abkuerzung
         ? `${abkuerzungNorm} ${abkuerzung}`
-        : abkuerzungNorm;
+        : abkuerzungNorm
 
       const zitierendeUrteile = await backend.search({
         query: query,
         page: 0,
         filter: {
-          docTypes: ["r"],
+          docTypes: ['r'],
           gerichte: [],
           rechtsgebiete: []
         },
         anzahlDerErgebnisse: 6
-      });
+      })
 
       return {
         ...doc,
-        pageName: "/section",
+        pageName: '/section',
         zitierendeUrteile: zitierendeUrteile.docs
-      };
+      }
     } catch (e) {
       console.error(
-        "Error /section: Dokument wurde nicht gefunden ",
+        'Error /section: Dokument wurde nicht gefunden ',
         kanonischeUrl,
         `, HTTP StatusCode :${e.response.status}`,
         `, HTTP StatusText: ${e.response.statusText}`
-      );
-      return { errorCode: 404 };
+      )
+      return { errorCode: 404 }
     }
   }
-};
+}
 
-export default SectionPage;
+export default SectionPage

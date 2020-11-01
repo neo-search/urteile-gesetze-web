@@ -1,8 +1,8 @@
-import Container from "reactstrap/lib/Container";
-import React, { Fragment } from "react";
-import css from "styled-jsx/css";
-import GesetzeLink from "../links/GesetzLink";
-import Link from "next/link";
+import Container from 'reactstrap/lib/Container'
+import React, { Fragment } from 'react'
+import css from 'styled-jsx/css'
+import GesetzeLink from '../links/GesetzLink'
+import Link from 'next/link'
 
 const styles = css`
   dl {
@@ -24,7 +24,7 @@ const styles = css`
   dl :global(dd) {
     font-weight: normal;
   }
-`;
+`
 
 const docstyles = css`
   div :global(dl) {
@@ -63,110 +63,118 @@ const docstyles = css`
       opacity: 1;
     }
   }
-`;
+`
 
 const summaryStyles = css`
-summary:hover {
-  text-decoration: underline;
-}
+  summary:hover {
+    text-decoration: underline;
+  }
 
-summary:focus {
-  outline: none;
-}
+  summary:focus {
+    outline: none;
+  }
 
-// details {
-//   padding-left: 10;
-// }
-`;
+  // details {
+  //   padding-left: 10;
+  // }
+`
 
 const renderMetaData = (desc, value, strong) => {
   if (value)
     return (
       <>
-        <dt>{desc + ": "}</dt>
+        <dt>{desc + ': '}</dt>
         <dd>{value}</dd>
       </>
-    );
-};
+    )
+}
 
 const renderMetaDataStrong = (desc, value) => {
   if (value)
     return (
       <>
-        <dt>{desc + ": "}</dt>
-        <dd><strong>{value}</strong></dd>
+        <dt>{desc + ': '}</dt>
+        <dd>
+          <strong>{value}</strong>
+        </dd>
       </>
-    );
-};
+    )
+}
 
 const renderZitierteNormsLinks = (zitierteNorms, zitierteNormUrls) => {
-  const links = [];
+  const links = []
   for (let i = 0; i < zitierteNorms.length; i++) {
-    const label = zitierteNorms[i];
-    const href = zitierteNormUrls[i];
+    const label = zitierteNorms[i]
+    const href = zitierteNormUrls[i]
     if (href)
       links.push(
         <div>
-          <Link as={href} href={`/section?kanonischeUrl=${href}`}>{label}</Link>
+          <Link as={href} href={`/section?kanonischeUrl=${href}`}>
+            {label}
+          </Link>
         </div>
-      );
+      )
     else
       links.push(
         // <div style={{ }}>{label}</div>
         <>
-        <dt></dt>
-        <dd>{label}</dd>
-      </>
-      );
+          <dt></dt>
+          <dd>{label}</dd>
+        </>
+      )
   }
 
-  return links;
-};
+  return links
+}
 
 const renderZitierteNorms = (desc, zitierteNorms, zitierteNormUrls) => {
   if (zitierteNorms && zitierteNorms.length > 0)
     return (
       <>
-      <style jsx>{docstyles}</style>
-      <details>
-        <style jsx>{summaryStyles}</style>
-        <summary>{desc}</summary>
-        {/* <dt>{desc + ": "}</dt> */}
-        <dd>{renderZitierteNormsLinks(zitierteNorms, zitierteNormUrls)}</dd>
-      </details>
+        {/* <style jsx>{docstyles}</style> */}
+        <details>
+          {/* <style jsx>{summaryStyles}</style> */}
+          <summary>{desc}</summary>
+          {/* <dt>{desc + ": "}</dt> */}
+          <dd>{renderZitierteNormsLinks(zitierteNorms, zitierteNormUrls)}</dd>
+        </details>
       </>
-    );
-};
+    )
+}
 
-const renderLeitsatz = doc => {
+const renderLeitsatz = (doc) => {
   if (doc.rechtsprechungInfo.leitsatz)
     return (
       <Fragment>
-        <h3 style={{ fontSize: "1.2rem" }}>Leitsätze</h3>
+        <h3 style={{ fontSize: '1.2rem' }}>Leitsätze</h3>
         <div
-          dangerouslySetInnerHTML={{ __html: doc.rechtsprechungInfo.leitsatz }}
+          dangerouslySetInnerHTML={{
+            __html: doc.rechtsprechungInfo.leitsatz
+          }}
         />
       </Fragment>
-    );
-};
+    )
+}
 
-const renderTenor = doc => {
+const renderTenor = (doc) => {
   if (doc.rechtsprechungInfo.tenor)
     return (
       <Fragment>
-        <h3 style={{ fontSize: "1.2rem" }}>Tenor</h3>
+        <h3 style={{ fontSize: '1.2rem' }}>Tenor</h3>
         <div
-          dangerouslySetInnerHTML={{ __html: doc.rechtsprechungInfo.tenor }}
+          dangerouslySetInnerHTML={{
+            __html: doc.rechtsprechungInfo.tenor
+          }}
         />
       </Fragment>
-    );
-};
+    )
+}
 
-const renderTatbestand = doc => {
+const renderTatbestand = (doc) => {
   if (doc.rechtsprechungInfo.tatbestand)
     return (
       <Fragment>
-        <h3 style={{ fontSize: "1.2rem" }}>Tatbestand</h3>
+        <h3 style={{ fontSize: '1.2rem' }}>Tatbestand</h3>
         <style jsx>{docstyles}</style>
         <div
           dangerouslySetInnerHTML={{
@@ -174,14 +182,14 @@ const renderTatbestand = doc => {
           }}
         />
       </Fragment>
-    );
-};
+    )
+}
 
-const renderGruende = doc => {
+const renderGruende = (doc) => {
   if (doc.rechtsprechungInfo.gruende)
     return (
       <Fragment>
-        <h3 style={{ fontSize: "1.2rem" }}>Gründe</h3>
+        <h3 style={{ fontSize: '1.2rem' }}>Gründe</h3>
         <style jsx>{docstyles}</style>
         <div
           dangerouslySetInnerHTML={{
@@ -189,14 +197,14 @@ const renderGruende = doc => {
           }}
         />
       </Fragment>
-    );
-};
+    )
+}
 
-const renderEntscheidungsgruende = doc => {
+const renderEntscheidungsgruende = (doc) => {
   if (doc.rechtsprechungInfo.entscheidungsgruende)
     return (
       <Fragment>
-        <h3 style={{ fontSize: "1.2rem" }}>Entscheidungsgründe</h3>
+        <h3 style={{ fontSize: '1.2rem' }}>Entscheidungsgründe</h3>
         <style jsx>{docstyles}</style>
         <div
           dangerouslySetInnerHTML={{
@@ -204,14 +212,14 @@ const renderEntscheidungsgruende = doc => {
           }}
         />
       </Fragment>
-    );
-};
+    )
+}
 
-const renderAbweichendeMeinung = doc => {
+const renderAbweichendeMeinung = (doc) => {
   if (doc.rechtsprechungInfo.abweichendeMeinung)
     return (
       <Fragment>
-        <h3 style={{ fontSize: "1.2rem" }}>AbweichendeMeinung</h3>
+        <h3 style={{ fontSize: '1.2rem' }}>AbweichendeMeinung</h3>
         <style jsx>{docstyles}</style>
         <div
           dangerouslySetInnerHTML={{
@@ -219,22 +227,28 @@ const renderAbweichendeMeinung = doc => {
           }}
         />
       </Fragment>
-    );
-};
+    )
+}
 
-const renderSubtitle = titel => {
+const renderSubtitle = (titel) => {
   if (titel)
     return (
       <>
-        <h2 style={{ fontSize: "1rem", paddingBottom: 10, paddingTop: 0 }}>
+        <h2
+          style={{
+            fontSize: '1rem',
+            paddingBottom: 10,
+            paddingTop: 0
+          }}
+        >
           {titel}
         </h2>
-        <hr style={{marginBottom: 50}}/>
+        <hr style={{ marginBottom: 50 }} />
       </>
-    );
-};
+    )
+}
 
-export default ({ doc }) => {
+const Urteil = ({ doc }) => {
   const {
     gerichtsbezeichnung,
     spruchkoerper,
@@ -246,49 +260,54 @@ export default ({ doc }) => {
     vorinstanz,
     zitierteNorms,
     zitierteNormUrls
-  } = doc.rechtsprechungInfo;
+  } = doc.rechtsprechungInfo
 
-  const { titel } = doc;
+  const { titel } = doc
 
   return (
     // <Layout title={doc.gericht + ' ' + doc.spruchkoerper}>
     <Container>
       <style jsx>{styles}</style>
 
-      <h3 style={{ textAlign: "center", fontSize: "1rem" }}>
+      <h3 style={{ textAlign: 'center', fontSize: '1rem' }}>
         {gerichtsbezeichnung}
       </h3>
       <p
         style={{
-          fontSize: "0.9rem",
+          fontSize: '0.9rem',
           fontWeight: 300,
-          textAlign: "center",
+          textAlign: 'center',
           // paddingBottom: 20,
           paddingTop: 0
         }}
-      >Entscheidungsdatum: <b style={{ fontWeight: 600 }}>{entscheidungsdatum}</b></p>
+      >
+        Entscheidungsdatum:{' '}
+        <b style={{ fontWeight: 600 }}>{entscheidungsdatum}</b>
+      </p>
 
       <hr />
 
       <h1
         style={{
-          fontSize: "1.3rem",
-          fontWeight: "bold",
+          fontSize: '1.3rem',
+          fontWeight: 'bold',
           paddingBottom: 50,
-          textAlign: "center"
+          textAlign: 'center'
         }}
-      >{gericht + " " + entscheidungsdatum + " - " + aktenzeichen}</h1>
+      >
+        {gericht + ' ' + entscheidungsdatum + ' - ' + aktenzeichen}
+      </h1>
 
       {renderSubtitle(titel)}
 
       <dl>
-        {renderMetaDataStrong("Gericht", gerichtsbezeichnung)}
-        {renderMetaDataStrong("Spruchkörper", spruchkoerper)}
-        {renderMetaDataStrong("Entscheidungsdatum", entscheidungsdatum)}
-        {renderMetaDataStrong("Aktenzeichen", aktenzeichen)}
-        {renderMetaDataStrong("ECLI", ecli)}
-        {renderMetaDataStrong("Dokumenttyp", dokumenttyp)}
-        {renderMetaData("Vorinstanz", vorinstanz)}
+        {renderMetaDataStrong('Gericht', gerichtsbezeichnung)}
+        {renderMetaDataStrong('Spruchkörper', spruchkoerper)}
+        {renderMetaDataStrong('Entscheidungsdatum', entscheidungsdatum)}
+        {renderMetaDataStrong('Aktenzeichen', aktenzeichen)}
+        {renderMetaDataStrong('ECLI', ecli)}
+        {renderMetaDataStrong('Dokumenttyp', dokumenttyp)}
+        {renderMetaData('Vorinstanz', vorinstanz)}
         {renderZitierteNorms(
           'Zitierte Gesetze',
           zitierteNorms,
@@ -305,5 +324,7 @@ export default ({ doc }) => {
       {renderAbweichendeMeinung(doc)}
     </Container>
     // </Layout>
-  );
-};
+  )
+}
+
+export default Urteil

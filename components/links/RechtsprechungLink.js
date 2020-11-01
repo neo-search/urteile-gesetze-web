@@ -1,9 +1,11 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-export default props => (
+const RechtsprechungLink = (props) => (
   <Link
     {...props}
     as={props.url}
     href={`/rechtsprechung?kanonischeUrl=${props.url}`}
   />
-);
+)
+
+export default RechtsprechungLink

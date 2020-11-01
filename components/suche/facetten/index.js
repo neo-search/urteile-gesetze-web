@@ -1,10 +1,11 @@
-import Facette from "./Facette";
-import css from "styled-jsx/css";
+import Facette from './Facette'
+import css from 'styled-jsx/css'
 
-import Button from "reactstrap/lib/Button";
-import Modal from "reactstrap/lib/Modal";
-import ModalBody from "reactstrap/lib/ModalBody";
-import ModalFooter from "reactstrap/lib/ModalFooter";
+import Button from 'reactstrap/lib/Button'
+import Modal from 'reactstrap/lib/Modal'
+import ModalBody from 'reactstrap/lib/ModalBody'
+import ModalFooter from 'reactstrap/lib/ModalFooter'
+import React from 'react'
 
 const styles = css`
   div {
@@ -22,38 +23,38 @@ const styles = css`
   // ::global(.modal.in .modal-dialog) {
   //   transform: translate3d(0, 0, 0);
   // }
-`;
+`
 
-const FilterButton = props => (
+const FilterButton = (props) => (
   <Button
     {...props}
     // color="primary"
     style={{
-      position: "fixed",
+      position: 'fixed',
       zIndex: 100,
-      background: "#e12830",
-      borderColor: "#d12727",
+      background: '#e12830',
+      borderColor: '#d12727',
       borderRadius: 18,
-      left: "50%",
-      transform: "translateX(-50%)",
+      left: '50%',
+      transform: 'translateX(-50%)',
       bottom: 15
     }}
   >
     Dokumente Filtern
   </Button>
-);
+)
 
 export default class Facetten extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       showFilter: false
-    };
-    this.toggleFilterPopup = this.toggleFilterPopup.bind(this);
+    }
+    this.toggleFilterPopup = this.toggleFilterPopup.bind(this)
   }
 
   toggleFilterPopup() {
-    this.setState({ showFilter: !this.state.showFilter });
+    this.setState({ showFilter: !this.state.showFilter })
   }
 
   renderFilterPopup(facetten, urlparams) {
@@ -65,7 +66,7 @@ export default class Facetten extends React.Component {
         className={this.props.className}
       >
         {/* <ModalHeader toggle={this.toggle}>Modal title</ModalHeader> */}
-        <ModalBody style={{ height: 400, overflowY: "auto" }}>
+        <ModalBody style={{ height: 400, overflowY: 'auto' }}>
           {facetten //
             .filter(({ values }) => values.length !== 0) //
             .map(({ name, id, values }) => (
@@ -78,7 +79,7 @@ export default class Facetten extends React.Component {
                 />
                 <style jsx>{styles}</style>
               </div>
-            ))}{" "}
+            ))}{' '}
         </ModalBody>
         <ModalFooter>
           {/* <Button color="primary" onClick={this.toggle}>
@@ -89,7 +90,7 @@ export default class Facetten extends React.Component {
           </FilterButton>
         </ModalFooter>
       </Modal>
-    );
+    )
   }
 
   renderButton() {
@@ -100,23 +101,23 @@ export default class Facetten extends React.Component {
           onClick={this.toggleFilterPopup}
           color="primary"
           style={{
-            position: "fixed",
+            position: 'fixed',
             zIndex: 100,
-            background: "#e12830",
-            borderColor: "#d12727",
+            background: '#e12830',
+            borderColor: '#d12727',
             borderRadius: 18,
-            left: "50%",
-            transform: "translateX(-50%)",
+            left: '50%',
+            transform: 'translateX(-50%)',
             bottom: 15
           }}
         >
           Dokumente Filtern
         </FilterButton>
-      );
+      )
   }
 
   render() {
-    const { facetten, urlparams } = this.props.facettenData;
+    const { facetten, urlparams } = this.props.facettenData
     return (
       <>
         <div className="d-none d-sm-block">
@@ -140,6 +141,6 @@ export default class Facetten extends React.Component {
           {this.renderFilterPopup(facetten, urlparams)}
         </div>
       </>
-    );
+    )
   }
 }

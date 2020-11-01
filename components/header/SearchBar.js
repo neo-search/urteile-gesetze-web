@@ -1,12 +1,12 @@
-import css from "styled-jsx/css";
-import React, { Component } from "react";
-import Router from "next/router";
-import InputGroup from "reactstrap/lib/InputGroup";
-import Input from "reactstrap/lib/Input";
-import Button from "reactstrap/lib/Button";
-import { colors } from "../common/Constants";
+import css from 'styled-jsx/css'
+import React, { Component } from 'react'
+import Router from 'next/router'
+import InputGroup from 'reactstrap/lib/InputGroup'
+import Input from 'reactstrap/lib/Input'
+import Button from 'reactstrap/lib/Button'
+import { colors } from '../common/Constants'
 
-import SearchSvg from "../icons/SearchSvg";
+import SearchSvg from '../icons/SearchSvg'
 
 const styles = css`
   form {
@@ -30,27 +30,27 @@ const styles = css`
     color: white;
     background-color: ${colors.primaryAction};
   }
-`;
+`
 
 export default class SearchBar extends Component {
   constructor(props) {
-    super(props);
-    this.query = props.query;
+    super(props)
+    this.query = props.query
     this.state = {
-      query: props.query 
-    };
+      query: props.query
+    }
   }
 
   handleInput(event) {
-    this.setState({ query: event.target.value });
+    this.setState({ query: event.target.value })
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
     Router.push({
-      pathname: "/suche",
+      pathname: '/suche',
       query: { q: this.state.query }
-    });
+    })
   }
 
   render() {
@@ -68,13 +68,12 @@ export default class SearchBar extends Component {
             />
 
             <Button color="background">
-           
-            <SearchSvg style={{width:24, height:16}}/>
-               {/* <FontAwesomeIcon icon={faSearch} style={{width:24, height:16}}/> */}
+              <SearchSvg style={{ width: 24, height: 16 }} />
+              {/* <FontAwesomeIcon icon={faSearch} style={{width:24, height:16}}/> */}
             </Button>
           </InputGroup>
         </form>
       </div>
-    );
+    )
   }
 }
