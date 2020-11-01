@@ -34,7 +34,7 @@ const styles = css`
     font-size: 0.9rem;
   }
 `;
-export default () => (
+const Banner = () => (
   <div className="banner">
     <style jsx>{styles}</style>
     <Container>
@@ -54,3 +54,5 @@ export default () => (
     </Container>
   </div>
 );
+
+export default Banner;

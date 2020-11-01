@@ -1,4 +1,4 @@
-export default ({ style }) => (
+const GithubSvg = ({ style }) => (
   <svg
     aria-hidden="true"
     data-prefix="fab"
@@ -14,3 +14,5 @@ export default ({ style }) => (
     />
   </svg>
 );
+
+export default GithubSvg
