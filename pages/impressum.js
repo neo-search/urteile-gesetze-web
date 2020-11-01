@@ -13,7 +13,7 @@ export default () => (
 
       <p>Seitenbetreiber i.S.d. § 5 TMG:</p>
       <p>
-        neoSearch UG (haftungsbeschränkt)<br /> Dieselstraße 13<br />
+        neoSearch UG (haftungsbeschränkt)<br /> Friedensstraße 1<br />
         66123 Saarbrücken<br />
       </p>
       <p>
