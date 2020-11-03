@@ -1,14 +1,13 @@
-import Container from 'reactstrap/lib/Container'
 import Col from 'reactstrap/lib/Col'
+import Container from 'reactstrap/lib/Container'
 import Row from 'reactstrap/lib/Row'
-
-import NormHeader from '../components/document/NormHeader'
-import Norm from '../components/document/Norm'
-import Layout from '../layout/MainLayout'
 import css from 'styled-jsx/css'
+import Norm from '../components/document/Norm'
+import NormHeader from '../components/document/NormHeader'
+import Layout from '../layout/MainLayout'
 import backend from '../services/backend'
-import { branding } from '../components/common/Constants'
 import serpGenerator from '../services/serpGenerator'
+
 
 const contentStyles = css`
   div.content {
