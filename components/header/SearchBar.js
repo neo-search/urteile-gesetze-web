@@ -1,9 +1,7 @@
 import css from "styled-jsx/css";
 import React, { Component } from "react";
 import Router from "next/router";
-import InputGroup from "reactstrap/lib/InputGroup";
-import Input from "reactstrap/lib/Input";
-import Button from "reactstrap/lib/Button";
+import { InputGroup, Input, Button } from "reactstrap";
 import { colors } from "../common/Constants";
 
 import SearchSvg from "../icons/SearchSvg";
@@ -37,7 +35,7 @@ export default class SearchBar extends Component {
     super(props);
     this.query = props.query;
     this.state = {
-      query: props.query 
+      query: props.query,
     };
   }
 
@@ -49,7 +47,7 @@ export default class SearchBar extends Component {
     event.preventDefault();
     Router.push({
       pathname: "/suche",
-      query: { q: this.state.query }
+      query: { q: this.state.query },
     });
   }
 
@@ -68,9 +66,8 @@ export default class SearchBar extends Component {
             />
 
             <Button color="background">
-           
-            <SearchSvg style={{width:24, height:16}}/>
-               {/* <FontAwesomeIcon icon={faSearch} style={{width:24, height:16}}/> */}
+              <SearchSvg style={{ width: 24, height: 16 }} />
+              {/* <FontAwesomeIcon icon={faSearch} style={{width:24, height:16}}/> */}
             </Button>
           </InputGroup>
         </form>

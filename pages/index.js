@@ -1,13 +1,11 @@
+import Head from "next/head";
 import Link from "next/link";
-import Layout from "../layout/MainLayout";
+import { Col, Container, Row } from "reactstrap";
+import css from "styled-jsx/css";
 import Banner from "../components/frontpage/Banner";
 import Card from "../components/frontpage/card";
-import css from "styled-jsx/css";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
-import GitHubSvg from "../components/icons/GitHubSvg";
-import Head from "next/head";
+import Layout from "../layout/MainLayout";
+import { useRouter } from "next/router";
 
 const styles = css`
   h2 {
@@ -39,7 +37,7 @@ const LabelLink = ({ href, as, children }) => (
         border: "1px solid transparent",
         padding: ".375rem .75rem",
         fontSize: "1rem",
-        lineHeight: 1.5
+        lineHeight: 1.5,
       }}
     >
       {children}
@@ -76,7 +74,7 @@ const renderSocialMetaData = () => {
               "@context": "http://schema.org",
               "@type": "Blog",
               "url": "https://blog.urteile-gesetze.de"
-              }`
+              }`,
           }}
         />
         <script
@@ -91,7 +89,7 @@ const renderSocialMetaData = () => {
               "https://www.facebook.com/urteilegesetze/",
               "https://plus.google.com/116310509828182688093",
               "https://twitter.com/urteile_gesetze"
-            ]}`
+            ]}`,
           }}
         />
       </Head>
@@ -99,22 +97,20 @@ const renderSocialMetaData = () => {
   );
 };
 
-export default props => {
-  <p>
-    Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
-    Informationssystem unter einer Open Source Lizenz.
-  </p>;
+export default (props) => {
+  const router = useRouter();
+  const { query } = router;
   return (
     <Layout
       title="Urteile, Gesetze und Verordnungen der Bundesrepublik Deutschland"
-      query={props.url.query.query}
+      query={query.query}
       noSearchbar={true}
       description="Finden Sie Gesetze, Verordnungen und Entscheidungen der Bundesrepublik Deutschland. Aktuell und kostenlos bei urteile-gesetze.de"
       canonical="/"
     >
       {renderSocialMetaData()}
       <Banner />
-      <Container>
+      {/* <Container>
         <style jsx>{styles}</style>
         <div>
           <h2>Open-Source</h2>
@@ -247,7 +243,7 @@ export default props => {
             <a>... Alle Gesetze sehen</a>
           </Link>
         </div>
-      </Container>
+      </Container> */}
     </Layout>
   );
 };

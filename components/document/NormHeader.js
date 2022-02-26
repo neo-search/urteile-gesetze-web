@@ -1,7 +1,7 @@
-import InfoBar from "../common/InfoBar";
 import Link from "next/link";
 import Breadcrump from "../common/Breadcrumb";
 import BreadcrumpItem from "../common/BreadcrumbItem";
+import InfoBar from "../common/InfoBar";
 
 export default ({ doc }) => {
   const { titel, abkuerzung, kurzueberschrift, kanonischeUrl } = doc;

@@ -1,7 +1,5 @@
 import Trefferliste from "./Trefferliste";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
+import { Container, Row, Col } from "reactstrap";
 
 import InfoBar from "../common/InfoBar";
 import Facetten from "./facetten";
@@ -49,34 +47,30 @@ const facettenData = (aggregations, filters, query) => {
 
   if (aggregations["aggregationJahr"]) {
     facetten.push(
-      facettenDataAggregation(
-        aggregations["aggregationJahr"],
-        "JAHR",
-        "j"
-      )
+      facettenDataAggregation(aggregations["aggregationJahr"], "JAHR", "j")
     );
   }
 
   return {
     facetten,
-    urlparams: { ...filters, q: query }
+    urlparams: { ...filters, q: query },
   };
 };
 
 const facettenDataAggregation = (aggregation, name, id) => {
-  const values = aggregation.map(a => {
+  const values = aggregation.map((a) => {
     const { abkuerzung, beschreibung, docCount, key } = a;
     return {
       valueName: abkuerzung,
       valueId: key,
       checked: false,
-      hits: docCount
+      hits: docCount,
     };
   });
   const facetteDocType = {
     name: name,
     id: id,
-    values: values
+    values: values,
   };
   return facetteDocType;
 };
@@ -91,7 +85,7 @@ const renderInfoBarText = (query, docCount, page, h1) => {
             backgroundColor: "#b7fffb",
             fontSize: "1rem",
             fontWeight: "bold",
-            display: "inline"
+            display: "inline",
           }}
         >
           {query}
@@ -103,7 +97,7 @@ const renderInfoBarText = (query, docCount, page, h1) => {
       <React.Fragment>
         <b
           style={{
-            fontSize: "1.2rem"
+            fontSize: "1.2rem",
           }}
         >
           {docCount.toLocaleString("DE")}
@@ -113,7 +107,7 @@ const renderInfoBarText = (query, docCount, page, h1) => {
             // backgroundColor: "#b7fffb",
             fontSize: "1.2rem",
             fontWeight: "normal",
-            display: "inline"
+            display: "inline",
           }}
         >
           Urteile für <b>{query}</b>
@@ -128,7 +122,7 @@ const renderInfoBarText = (query, docCount, page, h1) => {
             // backgroundColor: "#b7fffb",
             fontSize: "1.2rem",
             fontWeight: "bold",
-            display: "inline"
+            display: "inline",
           }}
         >
           {h1}

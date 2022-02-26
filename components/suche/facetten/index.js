@@ -1,11 +1,7 @@
 import Facette from "./Facette";
 import css from "styled-jsx/css";
 
-import Button from "reactstrap/lib/Button";
-import Modal from "reactstrap/lib/Modal";
-import ModalBody from "reactstrap/lib/ModalBody";
-import ModalFooter from "reactstrap/lib/ModalFooter";
-
+import { Button, Modal, ModalBody, ModalFooter } from "bootstrap";
 const styles = css`
   div {
     // padding-top: 12px;
@@ -24,7 +20,7 @@ const styles = css`
   // }
 `;
 
-const FilterButton = props => (
+const FilterButton = (props) => (
   <Button
     {...props}
     // color="primary"
@@ -36,7 +32,7 @@ const FilterButton = props => (
       borderRadius: 18,
       left: "50%",
       transform: "translateX(-50%)",
-      bottom: 15
+      bottom: 15,
     }}
   >
     Dokumente Filtern
@@ -47,7 +43,7 @@ export default class Facetten extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showFilter: false
+      showFilter: false,
     };
     this.toggleFilterPopup = this.toggleFilterPopup.bind(this);
   }
@@ -107,7 +103,7 @@ export default class Facetten extends React.Component {
             borderRadius: 18,
             left: "50%",
             transform: "translateX(-50%)",
-            bottom: 15
+            bottom: 15,
           }}
         >
           Dokumente Filtern

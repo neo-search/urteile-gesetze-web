@@ -1,9 +1,7 @@
 import React from "react";
 import Layout from "../layout/MainLayout";
 import css from "styled-jsx/css";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
+import { Container, Col, Row } from "reactstrap";
 
 const contentStyles = css`
   div.content {
@@ -32,7 +30,7 @@ export default class Error extends React.Component {
                     style={{
                       textAlign: "center",
                       paddingTop: 50,
-                      paddingBottom: 50
+                      paddingBottom: 50,
                     }}
                   >
                     <h1>Dokument nicht gefunden.</h1>

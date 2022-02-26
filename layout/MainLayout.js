@@ -1,16 +1,11 @@
-import Link from "next/link";
-import Header from "../components/header/";
-import Footer from "../components/footer/Footer";
 import Head from "next/head";
-import css from "styled-jsx/css";
+import { destroyCookie, parseCookies, setCookie } from "nookies";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-import { parseCookies, setCookie, destroyCookie } from "nookies";
-import { initGA, logPageView, logException } from "../services/analytics";
-
-import "./bootstrap.min.css";
-import "./style.css";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import Footer from "../components/footer/Footer";
+import Header from "../components/header/";
+import { initGA, logPageView } from "../services/analytics";
 
 class LayoutWithHeaderAndFooter extends Component {
   constructor(props) {
@@ -153,7 +148,7 @@ class LayoutWithHeaderAndFooter extends Component {
       query,
       description,
       noSearchbar = false,
-      canonical
+      canonical,
     } = this.props;
     return (
       <div>
@@ -212,7 +207,7 @@ class LayoutWithHeaderAndFooter extends Component {
 }
 
 LayoutWithHeaderAndFooter.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 export default LayoutWithHeaderAndFooter;

@@ -1,9 +1,7 @@
 import css from "styled-jsx/css";
 import React, { Component } from "react";
 import Router from "next/router";
-import InputGroup from "reactstrap/lib/InputGroup";
-import Input from "reactstrap/lib/Input";
-import Button from "reactstrap/lib/Button";
+import { InputGroup, Input, Button } from "reactstrap";
 import { colors } from "../common/Constants";
 
 import SearchSvg from "../icons/SearchSvg";
@@ -55,7 +53,7 @@ export default class SearchBar extends Component {
     this.query = props.query;
     this.state = {
       query: "",
-      active: false
+      active: false,
     };
   }
 
@@ -67,7 +65,7 @@ export default class SearchBar extends Component {
     event.preventDefault();
     Router.push({
       pathname: "/suche",
-      query: { q: this.state.query }
+      query: { q: this.state.query },
     });
   }
 
@@ -96,7 +94,7 @@ export default class SearchBar extends Component {
               style={{ backgroundColor }}
               aria-label="Suchen"
             >
-              <SearchSvg style={{width:24, height:16}}/>
+              <SearchSvg style={{ width: 24, height: 16 }} />
             </Button>
           </InputGroup>
         </form>

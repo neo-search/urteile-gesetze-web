@@ -1,6 +1,5 @@
 import { colors } from "../../common/Constants";
-import Pagination from "reactstrap/lib/Pagination";
-import PaginationItem from "reactstrap/lib/PaginationItem";
+import { Pagination, PaginationItem } from "reactstrap";
 
 import Link from "next/link";
 
@@ -21,7 +20,7 @@ const styles = css`
   }
 `;
 
-const CenteredPagination = props => (
+const CenteredPagination = (props) => (
   <div style={{ textAlign: "center" }}>
     <Pagination
       {...props}
@@ -30,7 +29,7 @@ const CenteredPagination = props => (
         paddingTop: 10,
         marginLeft: "auto",
         marginRight: "auto",
-        display: "inline-block"
+        display: "inline-block",
       }}
     />
   </div>
@@ -42,11 +41,11 @@ const PageLink = ({
   active,
   pageMetaInfo,
   pageIndex,
-  searchRequest
+  searchRequest,
 }) => {
   // as={props.url}
   // href={`/rechtsprechung?kanonischeUrl=${props.url}`}
-  const { canonical, pageName, landingpage,suche } = pageMetaInfo;
+  const { canonical, pageName, landingpage, suche } = pageMetaInfo;
   // const as = canonical
   //   ? canonical + (canonical.indexOf("?") !== -1 ? "&" : "?") + "p=" + pageIndex
   //   : href;
@@ -60,7 +59,9 @@ const PageLink = ({
       "?" +
       (landingpage ? "landingpage=" + landingpage + "&" : "") +
       "p=" +
-      pageIndex +"&q=" +suche
+      pageIndex +
+      "&q=" +
+      suche
     : href;
   searchRequest = { ...searchRequest, p: pageIndex };
 
@@ -81,7 +82,7 @@ const PageLink = ({
   );
 };
 
-const PageItem = props => (
+const PageItem = (props) => (
   <PaginationItem
     {...props}
     style={{ marginLeft: 0, display: "inline-block" }}
@@ -98,7 +99,7 @@ export default ({
   baseUrl,
   pageSize = 20,
   pageMetaInfo,
-  searchRequest
+  searchRequest,
 }) => {
   const pageIndex = Number(actualPage);
   const numberOfPages = numberOfResults / pageSize + 1;
@@ -117,9 +118,9 @@ export default ({
       {pageIndex > 0 ? (
         <PageItem>
           <PageLink
-            href={`${baseUrl}${
-              baseUrl.indexOf("?") !== -1 ? "&" : "?"
-            }p=${pageIndex - 1}`}
+            href={`${baseUrl}${baseUrl.indexOf("?") !== -1 ? "&" : "?"}p=${
+              pageIndex - 1
+            }`}
             pageMetaInfo={pageMetaInfo}
             pageIndex={pageIndex - 1}
             searchRequest={searchRequest}
@@ -130,7 +131,7 @@ export default ({
       ) : (
         <></>
       )}
-      {result.map(i => (
+      {result.map((i) => (
         <PageItem key={i}>
           <PageLink
             href={`${baseUrl}${baseUrl.indexOf("?") !== -1 ? "&" : "?"}p=${i}`}
@@ -146,9 +147,9 @@ export default ({
       {numberOfPages - 1 > pageIndex + 1 ? (
         <PageItem>
           <PageLink
-            href={`${baseUrl}${
-              baseUrl.indexOf("?") !== -1 ? "&" : "?"
-            }p=${pageIndex + 1}`}
+            href={`${baseUrl}${baseUrl.indexOf("?") !== -1 ? "&" : "?"}p=${
+              pageIndex + 1
+            }`}
             pageMetaInfo={pageMetaInfo}
             pageIndex={pageIndex + 1}
             searchRequest={searchRequest}
