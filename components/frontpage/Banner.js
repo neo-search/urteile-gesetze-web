@@ -7,14 +7,6 @@ import SearchBar from "../common/SearchBar";
 
 const styles = css`
   div.banner {
-    background-image: url(static/background.png),
-      linear-gradient(
-        165deg,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0) 65%,
-        rgba(38, 38, 38, 0.3) 65.1%,
-        rgba(38, 38, 38, 0.3)
-      );
     padding: 0 20px 0px 20px;
   }
   h1 {
