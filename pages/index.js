@@ -1,14 +1,13 @@
+import Head from "next/head";
 import Link from "next/link";
-import Layout from "../layout/MainLayout";
+import Col from "reactstrap/lib/Col";
+import Container from "reactstrap/lib/Container";
+import Row from "reactstrap/lib/Row";
+import css from "styled-jsx/css";
 import Banner from "../components/frontpage/Banner";
 import Card from "../components/frontpage/card";
-import css from "styled-jsx/css";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
-import GitHubSvg from "../components/icons/GitHubSvg";
-import Head from "next/head";
-
+import Supportbanner from "../components/frontpage/Supportbanner";
+import Layout from "../layout/MainLayout";
 const styles = css`
   h2 {
     font-size: 16px;
@@ -39,7 +38,7 @@ const LabelLink = ({ href, as, children }) => (
         border: "1px solid transparent",
         padding: ".375rem .75rem",
         fontSize: "1rem",
-        lineHeight: 1.5
+        lineHeight: 1.5,
       }}
     >
       {children}
@@ -76,7 +75,7 @@ const renderSocialMetaData = () => {
               "@context": "http://schema.org",
               "@type": "Blog",
               "url": "https://blog.urteile-gesetze.de"
-              }`
+              }`,
           }}
         />
         <script
@@ -91,7 +90,7 @@ const renderSocialMetaData = () => {
               "https://www.facebook.com/urteilegesetze/",
               "https://plus.google.com/116310509828182688093",
               "https://twitter.com/urteile_gesetze"
-            ]}`
+            ]}`,
           }}
         />
       </Head>
@@ -99,7 +98,7 @@ const renderSocialMetaData = () => {
   );
 };
 
-export default props => {
+export default (props) => {
   <p>
     Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
     Informationssystem unter einer Open Source Lizenz.
@@ -114,6 +113,9 @@ export default props => {
     >
       {renderSocialMetaData()}
       <Banner />
+      <Container>
+        <Supportbanner></Supportbanner>
+      </Container>
       <Container>
         <style jsx>{styles}</style>
         <div>
