@@ -3,10 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "reactstrap/lib/Card";
 import CardBody from "reactstrap/lib/CardBody";
 import CardSubtitle from "reactstrap/lib/CardSubtitle";
+import CardText from "reactstrap/lib/CardText";
 // import FontAwesomeIcon
 import { colors } from "../common/Constants";
-
-
 
 const WhiteCardBody = (props) => (
   <CardBody
@@ -21,7 +20,7 @@ const WhiteCardBody = (props) => (
 );
 
 const CenteredSubTitle = ({ href, asHref, label, children }) => (
-  <CardSubtitle style={{ textAlign: "left" }}>
+  <CardText style={{ textAlign: "left" }}>
     {/* <Link as={asHref} href={href}> */}
     <h2
       style={{
@@ -29,18 +28,27 @@ const CenteredSubTitle = ({ href, asHref, label, children }) => (
         color: "#888888",
         fontWeight: "normal",
         textAlign: "left",
+        marginBottom: 0,
       }}
     >
       <FontAwesomeIcon icon={faHandshake}></FontAwesomeIcon> Dieses Projekt
-      erfreut sich der freundlichen Unterstützung von{" "}
-      <a href="https://va-ra.com/" target="_blank">
-        Rechtsanwalt Stade
-      </a>
-      .
+      erfreut sich der freundlichen Unterstützung von
+      <ul>
+        <li>
+          <a href="https://va-ra.com/" target="_blank">
+            Rechtsanwalt Stade
+          </a>
+        </li>
+        <li>
+          <a href="https://korten-ag.de/" target="_blank">
+            Anwalt Hamburg
+          </a>
+        </li>
+      </ul>
     </h2>
 
     {/* </Link> */}
-  </CardSubtitle>
+  </CardText>
 );
 
 const IMG_PLACEHOLDER =

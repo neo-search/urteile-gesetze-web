@@ -114,7 +114,11 @@ export default (props) => {
       {renderSocialMetaData()}
       <Banner />
       <Container>
-        <Supportbanner></Supportbanner>
+        <Row>
+          <Col>
+            <Supportbanner></Supportbanner>
+          </Col>
+        </Row>
       </Container>
       <Container>
         <style jsx>{styles}</style>
