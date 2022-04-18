@@ -7,7 +7,7 @@
     "dev": "next",
     "dev-restservice-live": "NODE_ENV=production next",
     "express": "node express/server.js",
-    "build": "next build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider  next build",
     "start": "NODE_ENV=production node express/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
