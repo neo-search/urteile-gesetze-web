@@ -214,7 +214,6 @@ export default (props) => {
 
         <div>
           <h2>Wichtigste Gesetze</h2>
-
           <LabelLink
             as="/gesetze/bgb"
             href="/gesetz/?kanonischeUrl=/gesetze/bgb"
@@ -252,6 +251,16 @@ export default (props) => {
           <Link href="/gesetze">
             <a>... Alle Gesetze sehen</a>
           </Link>
+          <p />
+          unsere selbst entworfenen{" "}
+          <a href="https://moppenstedt.de/collections/urkunden-zum-selbst-beschriften">
+            Urkunden
+          </a>{" "}
+          und{" "}
+          <a href="https://moppenstedt.de/collections/kinderurkunden">
+            Kinderurkunden
+          </a>{" "}
+          bei moppenstedt.de entdecken.
         </div>
       </Container>
     </Layout>
