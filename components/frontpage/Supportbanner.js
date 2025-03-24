@@ -39,16 +39,6 @@ const CenteredSubTitle = ({ href, asHref, label, children }) => (
             Rechtsanwalt Stade
           </a>
         </li>
-        <li>
-          <a href="https://korten-ag.de/" target="_blank">
-            Anwalt Hamburg
-          </a>
-        </li>
-        <li>
-          <a href="https://www.weiss-grunert.de/" target="_blank">
-            Rechtsanwalt Landshut
-          </a>
-        </li>
       </ul>
     </h2>
 

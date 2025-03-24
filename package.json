@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
-    "dev-restservice-live": "NODE_ENV=production next",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider   next",
+    "dev-restservice-live": "NODE_OPTIONS=--openssl-legacy-provider  NODE_ENV=production next",
     "express": "node express/server.js",
     "build": "NODE_OPTIONS=--openssl-legacy-provider  next build",
     "start": "NODE_ENV=production node express/server.js",
