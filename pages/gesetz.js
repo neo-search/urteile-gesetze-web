@@ -1,22 +1,21 @@
-import Container from "reactstrap/lib/Container";
 import Col from "reactstrap/lib/Col";
+import Container from "reactstrap/lib/Container";
 import Row from "reactstrap/lib/Row";
 
-import NormHeader from "../components/document/NormHeader";
+// import css from "styled-jsx/css";
 import Norm from "../components/document/Norm";
+import NormHeader from "../components/document/NormHeader";
 import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
 import backend from "../services/backend";
-import { branding } from "../components/common/Constants";
 import serpGenerator from "../services/serpGenerator";
 
-const contentStyles = css`
-  div.content {
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
-`;
+// const contentStyles = css`
+//   div.content {
+//     background-color: white;
+//     padding-top: 20px;
+//     padding-bottom: 40px;
+//   }
+// `;
 
 const renderAltLink = doc => {
   if (process.env.NODE_ENV !== "production")
@@ -62,7 +61,7 @@ const GesetzPage = ({ doc, zitierendeUrteile }) => {
       </div>
 
       <div className="content">
-        <style jsx>{contentStyles}</style>
+        {/* <style jsx>{contentStyles}</style> */}
         <Container>
           <Row>
             <Col md="10">

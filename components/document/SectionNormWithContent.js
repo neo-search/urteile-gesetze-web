@@ -1,20 +1,18 @@
-import Link from "next/link";
 
-import KurzformTrefferRechtsprechung from '../suche/treffer/KurzformTrefferRechtsprechung'
-import css from 'styled-jsx/css'
+// import css from 'styled-jsx/css';
 
-const contentStyles = css`
-  div.content {
-    background-color: red;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
+// const contentStyles = css`
+//   div.content {
+//     background-color: red;
+//     padding-top: 20px;
+//     padding-bottom: 40px;
+//   }
 
-  article entry {
-    display: block;
-    background-color: yellow;
-  }
-`
+//   article entry {
+//     display: block;
+//     background-color: yellow;
+//   }
+// `
 
 export default ({ doc }) => {
   const {

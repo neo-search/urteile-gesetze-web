@@ -1,9 +1,9 @@
 const prod = process.env.NODE_ENV === "production";
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const withCSS = require('@zeit/next-css')
+// const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+// const withCSS = require('@zeit/next-css')
 
-module.exports = withCSS({
+module.exports = {
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
   bundleAnalyzerConfig: {
@@ -26,5 +26,5 @@ module.exports = withCSS({
     logging: prod ? "info" : "debug"
   }
 
-});
+};
 

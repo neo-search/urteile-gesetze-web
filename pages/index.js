@@ -1,24 +1,12 @@
+import Head from "next/head";
 import Link from "next/link";
-import Layout from "../layout/MainLayout";
+import Col from "reactstrap/lib/Col";
+import Container from "reactstrap/lib/Container";
+import Row from "reactstrap/lib/Row";
 import Banner from "../components/frontpage/Banner";
 import Card from "../components/frontpage/card";
-import css from "styled-jsx/css";
-import Container from "reactstrap/lib/Container";
-import Col from "reactstrap/lib/Col";
-import Row from "reactstrap/lib/Row";
-import GitHubSvg from "../components/icons/GitHubSvg";
-import Head from "next/head";
-
-const styles = css`
-  h2 {
-    font-size: 16px;
-    font-weight: 600;
-    color: #888888;
-    font-weight: normal;
-    margin-top: 55px;
-    text-transform: uppercase;
-  }
-`;
+import Layout from "../layout/MainLayout";
+import styles from "./IndexH2.module.css";
 
 const LabelLink = ({ href, as, children }) => (
   <Link href={href} as={as || href}>
@@ -39,7 +27,7 @@ const LabelLink = ({ href, as, children }) => (
         border: "1px solid transparent",
         padding: ".375rem .75rem",
         fontSize: "1rem",
-        lineHeight: 1.5
+        lineHeight: 1.5,
       }}
     >
       {children}
@@ -76,7 +64,7 @@ const renderSocialMetaData = () => {
               "@context": "http://schema.org",
               "@type": "Blog",
               "url": "https://blog.urteile-gesetze.de"
-              }`
+              }`,
           }}
         />
         <script
@@ -91,7 +79,7 @@ const renderSocialMetaData = () => {
               "https://www.facebook.com/urteilegesetze/",
               "https://plus.google.com/116310509828182688093",
               "https://twitter.com/urteile_gesetze"
-            ]}`
+            ]}`,
           }}
         />
       </Head>
@@ -99,11 +87,12 @@ const renderSocialMetaData = () => {
   );
 };
 
-export default props => {
+export default (props) => {
   <p>
     Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
     Informationssystem unter einer Open Source Lizenz.
   </p>;
+  console.log(props);
   return (
     <Layout
       title="Urteile, Gesetze und Verordnungen der Bundesrepublik Deutschland"
@@ -115,9 +104,9 @@ export default props => {
       {renderSocialMetaData()}
       <Banner />
       <Container>
-        <style jsx>{styles}</style>
+        {/* <style jsx>{styles}</style> */}
         <div>
-          <h2>Open-Source</h2>
+          <h2 className={styles.h2}>Open-Source</h2>
           <p>
             <em>Kostenfrei und Open Source!</em> urteile-gesetze.de ist das
             erste juristische Informationssystem unter einer Open Source Lizenz.
@@ -129,7 +118,7 @@ export default props => {
           </p>
         </div>
         <div>
-          <h2>Rechtsgebiete</h2>
+          <h2 className={styles.h2}>Rechtsgebiete</h2>
           <Row>
             <CardLink
               asHref="/arbeitsrecht"
@@ -170,7 +159,7 @@ export default props => {
         </div>
 
         <div>
-          <h2>Letzte Urteile</h2>
+          <h2 className={styles.h2}>Letzte Urteile</h2>
           <LabelLink as="/bverfg">Bundesverfassungsgericht (BVerfG)</LabelLink>
           <LabelLink as="/bgh">Bundesgerichtshof (BGH)</LabelLink>
           <LabelLink as="/bverwg">Bundesverwaltungsgericht (BVerwG)</LabelLink>
@@ -195,7 +184,7 @@ export default props => {
         </div>
 
         <div>
-          <h2>Neueste Gesetze</h2>
+          <h2 className={styles.h2}>Neueste Gesetze</h2>
           <LabelLink
             as="/gesetze/mufklag"
             href="/gesetz/?kanonischeUrl=/gesetze/mufklag"
@@ -207,7 +196,7 @@ export default props => {
         </div>
 
         <div>
-          <h2>Wichtigste Gesetze</h2>
+          <h2 className={styles.h2}>Wichtigste Gesetze</h2>
 
           <LabelLink
             as="/gesetze/bgb"

@@ -4,19 +4,19 @@ import Col from "reactstrap/lib/Col";
 import Section from "../components/document/Section";
 import SectionHeader from "../components/document/SectionHeader";
 import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import backend from "../services/backend";
 import { branding } from "../components/common/Constants";
 import Error from "./_error";
 import titleGenerator from "../services/titleGenerator";
 
-const contentStyles = css`
-  div.content {
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
-`;
+// const contentStyles = css`
+//   div.content {
+//     background-color: white;
+//     padding-top: 20px;
+//     padding-bottom: 40px;
+//   }
+// `;
 
 const renderAltLink = doc => {
   if (process.env.NODE_ENV !== "production")
@@ -91,7 +91,7 @@ const SectionPage = ({ doc, errorCode, zitierendeUrteile }) => {
       </div>
 
       <div className="content">
-        <style jsx>{contentStyles}</style>
+        {/* <style jsx>{contentStyles}</style> */}
         <Container>
           <Row>
             <Col md="10">

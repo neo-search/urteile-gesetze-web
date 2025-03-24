@@ -1,4 +1,4 @@
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import React, { Component } from "react";
 import Router from "next/router";
 import InputGroup from "reactstrap/lib/InputGroup";
@@ -8,29 +8,29 @@ import { colors } from "../common/Constants";
 
 import SearchSvg from "../icons/SearchSvg";
 
-const styles = css`
-  form {
-    min-width: 200px;
-    max-width: 500px;
-  }
+// const styles = css`
+//   form {
+//     min-width: 200px;
+//     max-width: 500px;
+//   }
 
-  div :global(input) {
-    background-color: #f1f1f1;
-    border: none;
-  }
+//   div :global(input) {
+//     background-color: #f1f1f1;
+//     border: none;
+//   }
 
-  div :global(.btn) {
-    background-color: #f1f1f1;
-    border-radius: 0;
-    color: ${colors.primaryAction};
-  }
+//   div :global(.btn) {
+//     background-color: #f1f1f1;
+//     border-radius: 0;
+//     color: ${colors.primaryAction};
+//   }
 
-  div :global(.btn:focus),
-  div :global(.btn:hover) {
-    color: white;
-    background-color: ${colors.primaryAction};
-  }
-`;
+//   div :global(.btn:focus),
+//   div :global(.btn:hover) {
+//     color: white;
+//     background-color: ${colors.primaryAction};
+//   }
+// `;
 
 export default class SearchBar extends Component {
   constructor(props) {

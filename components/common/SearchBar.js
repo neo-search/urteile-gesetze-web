@@ -1,4 +1,4 @@
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import React, { Component } from "react";
 import Router from "next/router";
 import InputGroup from "reactstrap/lib/InputGroup";
@@ -10,44 +10,44 @@ import SearchSvg from "../icons/SearchSvg";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import  faSearch  from '@fortawesome/free-solid-svg-icons/faSearch'
 
-const styles = css`
-  // form {
-  //   width: 500px;
-  // }
+// const styles = css`
+//   // form {
+//   //   width: 500px;
+//   // }
 
-  div :global(input) {
-    // background-color: #f1f1f1;
-    border: none;
-  }
+//   div :global(input) {
+//     // background-color: #f1f1f1;
+//     border: none;
+//   }
 
-  div :global(.btn) {
-    // background-color: #f1f1f1;
-    border-radius: 0;
-    color: ${colors.primaryAction};
-  }
+//   div :global(.btn) {
+//     // background-color: #f1f1f1;
+//     border-radius: 0;
+//     color: ${colors.primaryAction};
+//   }
 
-  div :global(.btn:focus),
-  div :global(.btn:hover) {
-    color: white;
-    background-color: ${colors.primaryAction};
-  }
+//   div :global(.btn:focus),
+//   div :global(.btn:hover) {
+//     color: white;
+//     background-color: ${colors.primaryAction};
+//   }
 
-  @keyframes greenPulse {
-    from {
-      -webkit-box-shadow: 0px 0px 0px 5px rgba(161, 205, 255, 0.62);
-    }
-    50% {
-      -webkit-box-shadow: 0px 0px 0px 11px rgba(161, 205, 255, 0.99);
-    }
-    to {
-      -webkit-box-shadow: 0px 0px 0px 5px rgba(161, 205, 255, 0.62);
-    }
-  }
+//   @keyframes greenPulse {
+//     from {
+//       -webkit-box-shadow: 0px 0px 0px 5px rgba(161, 205, 255, 0.62);
+//     }
+//     50% {
+//       -webkit-box-shadow: 0px 0px 0px 11px rgba(161, 205, 255, 0.99);
+//     }
+//     to {
+//       -webkit-box-shadow: 0px 0px 0px 5px rgba(161, 205, 255, 0.62);
+//     }
+//   }
 
-  div :global(div.input-group:not(focus)) {
-    animation: greenPulse 3s infinite;
-  }
-`;
+//   div :global(div.input-group:not(focus)) {
+//     animation: greenPulse 3s infinite;
+//   }
+// `;
 
 export default class SearchBar extends Component {
   constructor(props) {

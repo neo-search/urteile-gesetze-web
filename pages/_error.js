@@ -1,17 +1,17 @@
 import React from "react";
 import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import Container from "reactstrap/lib/Container";
 import Col from "reactstrap/lib/Col";
 import Row from "reactstrap/lib/Row";
 
-const contentStyles = css`
-  div.content {
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
-`;
+// const contentStyles = css`
+//   div.content {
+//     background-color: white;
+//     padding-top: 20px;
+//     padding-bottom: 40px;
+//   }
+// `;
 
 export default class Error extends React.Component {
   static getInitialProps({ res, err }) {
@@ -23,7 +23,7 @@ export default class Error extends React.Component {
     return (
       <Layout>
         <div className="content">
-          <style jsx>{contentStyles}</style>
+          {/* <style jsx>{contentStyles}</style> */}
           <Container>
             <Row>
               <Col md="10">

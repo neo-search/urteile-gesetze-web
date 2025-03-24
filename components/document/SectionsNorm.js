@@ -1,15 +1,15 @@
 import SectionNorm from "./SectionNorm";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import SectionNormWithContent from "./SectionNormWithContent";
 
-const styles = css`
-  div :global(div) {
-  }
-`;
+// const styles = css`
+//   div :global(div) {
+//   }
+// `;
 
 export default ({ sections }) => {
   return <div>
-      <style jsx>{styles}</style>
+      {/* <style jsx>{styles}</style> */}
       {/* <hr /> */}
       {sections.map(d => {
         if (d.smallNorm && d.smallNorm === true) {

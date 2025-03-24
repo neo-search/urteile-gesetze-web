@@ -1,23 +1,23 @@
 import RechtsprechungLink from "./../../common/RechtsprechungLink";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import Breadcrumb from "./TrefferBreadcrumb";
 import BreadcrumbItem from "./TrefferBreadcrumbItem";
 import { colors } from "../../common/Constants";
 
-const styles = css`
-  div.treffer {
-    padding-bottom: 6px;
-  }
+// const styles = css`
+//   div.treffer {
+//     padding-bottom: 6px;
+//   }
 
-  div.treffer:hover {
-    background-color: ${colors.hoverBackgroundColor};
-    cursor: pointer;
-  }
+//   div.treffer:hover {
+//     background-color: ${colors.hoverBackgroundColor};
+//     cursor: pointer;
+//   }
 
-  div.treffer-outer {
-    // padding-bottom: 16px;
-  }
-`;
+//   div.treffer-outer {
+//     // padding-bottom: 16px;
+//   }
+// `;
 export default ({ doc }) => {
   const kurzbeschreibung = doc.kurzBeschreibung ? doc.kurzBeschreibung : "";
 
@@ -26,7 +26,7 @@ export default ({ doc }) => {
       className="treffer-outer"
       style={{ borderBottom: "1px solid #eaeaea", marginBottom: 25 }}
     >
-      <style jsx>{styles}</style>
+      {/* <style jsx>{styles}</style> */}
       <div className="treffer">
         <div style={{ paddingBottom: 4 }}>
           <div

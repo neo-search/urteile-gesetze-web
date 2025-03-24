@@ -1,27 +1,27 @@
 import SectionLink from "../common/SectionLink";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import { colors } from "../common/Constants";
 
-const styles = css`
-  div:hover {
-    background-color: ${colors.hoverBackgroundColor};
-    cursor: pointer;
-  }
+// const styles = css`
+//   div:hover {
+//     background-color: ${colors.hoverBackgroundColor};
+//     cursor: pointer;
+//   }
 
-  div a {
-    font-weight: 600;
-  }
+//   div a {
+//     font-weight: 600;
+//   }
 
-  div a span {
-    color: ${colors.primaryAction};
-    font-weight: normal;
-  }
+//   div a span {
+//     color: ${colors.primaryAction};
+//     font-weight: normal;
+//   }
 
-  div {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-`;
+//   div {
+//     padding-top: 8px;
+//     padding-bottom: 8px;
+//   }
+// `;
 
 const renderLink = (doc, abkuerzungOrEmpty) => {
   return (

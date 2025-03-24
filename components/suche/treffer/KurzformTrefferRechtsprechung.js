@@ -1,27 +1,27 @@
 import RechtsprechungLink from "./../../common/RechtsprechungLink";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import { colors } from "../../common/Constants";
 
-const styles = css`
-  div.treffer {
-    padding-bottom: 6px;
-  }
+// const styles = css`
+//   div.treffer {
+//     padding-bottom: 6px;
+//   }
 
-  div.treffer:hover {
-    background-color: ${colors.hoverBackgroundColor};
-    cursor: pointer;
-  }
+//   div.treffer:hover {
+//     background-color: ${colors.hoverBackgroundColor};
+//     cursor: pointer;
+//   }
 
-  div.treffer-outer {
-    padding-bottom: 16px;
-  }
+//   div.treffer-outer {
+//     padding-bottom: 16px;
+//   }
 
-  div.shortenedText {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
+//   div.shortenedText {
+//     white-space: nowrap;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   }
+// `;
 export default ({ doc }) => {
   return (
     <div className="treffer-outer">

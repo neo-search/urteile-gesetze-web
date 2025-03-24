@@ -4,22 +4,22 @@ import PaginationItem from "reactstrap/lib/PaginationItem";
 
 import Link from "next/link";
 
-import css from "styled-jsx/css";
-const styles = css`
-  a {
-    position: relative;
-    display: block;
-    padding: 0.65rem 0.9rem;
-    margin-left: 10px;
-    line-height: 1.25;
-    color: ${colors.primaryAction};
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-  }
-  a:hover {
-    background-color: ${colors.hoverBackgroundColor};
-  }
-`;
+// import css from "styled-jsx/css";
+// const styles = css`
+//   a {
+//     position: relative;
+//     display: block;
+//     padding: 0.65rem 0.9rem;
+//     margin-left: 10px;
+//     line-height: 1.25;
+//     color: ${colors.primaryAction};
+//     background-color: #fff;
+//     border: 1px solid #dee2e6;
+//   }
+//   a:hover {
+//     background-color: ${colors.hoverBackgroundColor};
+//   }
+// `;
 
 const CenteredPagination = props => (
   <div style={{ textAlign: "center" }}>

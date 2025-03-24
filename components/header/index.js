@@ -1,27 +1,26 @@
-import SearchBar from "./SearchBar";
-import Logo from "./Logo";
+import Link from "next/link";
+import Router from "next/router";
+import NProgress from "nprogress";
 import Col from "reactstrap/lib/Col";
 import Row from "reactstrap/lib/Row";
-import css from "styled-jsx/css";
-import Link from "next/link";
-import Button from "reactstrap/lib/Button"
-import NProgress from "nprogress";
-import Router from "next/router";
+// import css from "styled-jsx/css";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
 
-const styles = css`
-  header {
-    background-color: white;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
-    color: white;
-    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
-      0 3px 1px 0 rgba(20, 23, 28, 0.1);
-  }
-  nav.urteile-gesetze-header {
-    padding: 8px 16px;
-  }
-`;
+// const styles = css`
+//   header {
+//     background-color: white;
+//     position: fixed;
+//     width: 100%;
+//     z-index: 100;
+//     color: white;
+//     box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+//       0 3px 1px 0 rgba(20, 23, 28, 0.1);
+//   }
+//   nav.urteile-gesetze-header {
+//     padding: 8px 16px;
+//   }
+// `;
 
 Router.onRouteChangeStart = url => {
   NProgress.start();

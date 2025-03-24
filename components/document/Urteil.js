@@ -1,83 +1,82 @@
-import Container from "reactstrap/lib/Container";
-import React, { Fragment } from "react";
-import css from "styled-jsx/css";
-import GesetzeLink from "../links/GesetzLink";
 import Link from "next/link";
+import React, { Fragment } from "react";
+import Container from "reactstrap/lib/Container";
+// import css from "styled-jsx/css";
 
-const styles = css`
-  dl {
-    width: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-  }
+// const styles = css`
+//   dl {
+//     width: 100%;
+//     overflow: hidden;
+//     padding: 0;
+//     margin: 0;
+//   }
 
-  dl :global(dt) {
-    float: left;
-    clear: left;
-    width: 140px;
-    padding: 0;
-    margin: 0;
-    margin-right: 1.5rem;
-    font-weight: normal;
-  }
-  dl :global(dd) {
-    font-weight: normal;
-  }
-`;
+//   dl :global(dt) {
+//     float: left;
+//     clear: left;
+//     width: 140px;
+//     padding: 0;
+//     margin: 0;
+//     margin-right: 1.5rem;
+//     font-weight: normal;
+//   }
+//   dl :global(dd) {
+//     font-weight: normal;
+//   }
+// `;
 
-const docstyles = css`
-  div :global(dl) {
-    width: 100%;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-  }
+// const docstyles = css`
+//   div :global(dl) {
+//     width: 100%;
+//     overflow: hidden;
+//     padding: 0;
+//     margin: 0;
+//   }
 
-  div :global(dl dt) {
-    float: left;
-    clear: left;
-    width: 20px;
-    padding: 0;
-    margin: 0;
-    font-weight: normal;
-    color: rgb(153, 153, 153);
-  }
-  div :global(dl dd) {
-    font-weight: normal;
-    margin-left: 18px;
-  }
+//   div :global(dl dt) {
+//     float: left;
+//     clear: left;
+//     width: 20px;
+//     padding: 0;
+//     margin: 0;
+//     font-weight: normal;
+//     color: rgb(153, 153, 153);
+//   }
+//   div :global(dl dd) {
+//     font-weight: normal;
+//     margin-left: 18px;
+//   }
 
-  details[open] dd {
-    animation-name: growAndFadeInFontSize;
-    animation-duration: 500ms;
-  }
+//   details[open] dd {
+//     animation-name: growAndFadeInFontSize;
+//     animation-duration: 500ms;
+//   }
 
-  @keyframes growAndFadeInFontSize {
-    0% {
-      font-size: 0;
-      opacity: 0;
-    }
-    100% {
-      font-size: inherit;
-      opacity: 1;
-    }
-  }
-`;
+//   @keyframes growAndFadeInFontSize {
+//     0% {
+//       font-size: 0;
+//       opacity: 0;
+//     }
+//     100% {
+//       font-size: inherit;
+//       opacity: 1;
+//     }
+//   }
+// `;
 
-const summaryStyles = css`
-summary:hover {
-  text-decoration: underline;
-}
-
-summary:focus {
-  outline: none;
-}
-
-// details {
-//   padding-left: 10;
+// const summaryStyles = css`
+// summary:hover {
+//   text-decoration: underline;
 // }
-`;
+
+// summary:focus {
+//   outline: none;
+// }
+
+// // details {
+// //   padding-left: 10;
+// // }
+// `;
 
 const renderMetaData = (desc, value, strong) => {
   if (value)

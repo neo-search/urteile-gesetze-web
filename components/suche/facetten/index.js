@@ -1,28 +1,28 @@
 import Facette from "./Facette";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 
 import Button from "reactstrap/lib/Button";
 import Modal from "reactstrap/lib/Modal";
 import ModalBody from "reactstrap/lib/ModalBody";
 import ModalFooter from "reactstrap/lib/ModalFooter";
 
-const styles = css`
-  div {
-    // padding-top: 12px;
-    padding-bottom: 24px;
-    // padding-left: 12px;
+// const styles = css`
+//   div {
+//     // padding-top: 12px;
+//     padding-bottom: 24px;
+//     // padding-left: 12px;
 
-    min-width: 190px;
-    max-width: 230px;
-  }
+//     min-width: 190px;
+//     max-width: 230px;
+//   }
 
-  // ::global(.modal.fade .modal-dialog) {
-  //   transform: translate3d(0, 100vh, 0);
-  // }
-  // ::global(.modal.in .modal-dialog) {
-  //   transform: translate3d(0, 0, 0);
-  // }
-`;
+//   // ::global(.modal.fade .modal-dialog) {
+//   //   transform: translate3d(0, 100vh, 0);
+//   // }
+//   // ::global(.modal.in .modal-dialog) {
+//   //   transform: translate3d(0, 0, 0);
+//   // }
+// `;
 
 const FilterButton = props => (
   <Button

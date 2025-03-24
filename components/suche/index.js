@@ -5,15 +5,15 @@ import Row from "reactstrap/lib/Row";
 
 import InfoBar from "../common/InfoBar";
 import Facetten from "./facetten";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import React from "react";
 
-const trefferlisteStyles = css`
-  div.trefferliste {
-    background-color: white;
-    padding-top: 20px;
-  }
-`;
+// const trefferlisteStyles = css`
+//   div.trefferliste {
+//     background-color: white;
+//     padding-top: 20px;
+//   }
+// `;
 
 const facettenData = (aggregations, filters, query) => {
   const facetten = [];

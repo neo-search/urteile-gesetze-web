@@ -5,21 +5,21 @@ import Container from "reactstrap/lib/Container";
 import Col from "reactstrap/lib/Col";
 import Row from "reactstrap/lib/Row";
 import Layout from "../layout/MainLayout";
-import css from "styled-jsx/css";
+// import css from "styled-jsx/css";
 import { branding } from "../components/common/Constants";
 
-const contentStyles = css`
-  div.content {
-    background-color: white;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
+// const contentStyles = css`
+//   div.content {
+//     background-color: white;
+//     padding-top: 20px;
+//     padding-bottom: 40px;
+//   }
 
-  div.content div {
-    paddingtop: 20px;
-    paddingbottom: 20px;
-  }
-`;
+//   div.content div {
+//     paddingtop: 20px;
+//     paddingbottom: 20px;
+//   }
+// `;
 
 const Gesetze = props => {
   const { gesetze } = props;
@@ -42,7 +42,7 @@ const Gesetze = props => {
       }`}
     >
       <div className="content">
-        <style jsx>{contentStyles}</style>
+        {/* <style jsx>{contentStyles}</style> */}
         <Container>
           <h1 style={{ paddingBottom: 70 }}>
             Gesetze und Verordnungen der Bundesrepublik Deutschland
