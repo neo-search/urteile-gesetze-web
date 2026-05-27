@@ -63,20 +63,14 @@ const docstyles = css`
       opacity: 1;
     }
   }
-`;
 
-const summaryStyles = css`
-summary:hover {
-  text-decoration: underline;
-}
+  summary:hover {
+    text-decoration: underline;
+  }
 
-summary:focus {
-  outline: none;
-}
-
-// details {
-//   padding-left: 10;
-// }
+  summary:focus {
+    outline: none;
+  }
 `;
 
 const renderMetaData = (desc, value, strong) => {
@@ -129,7 +123,6 @@ const renderZitierteNorms = (desc, zitierteNorms, zitierteNormUrls) => {
       <>
       <style jsx>{docstyles}</style>
       <details>
-        <style jsx>{summaryStyles}</style>
         <summary>{desc}</summary>
         {/* <dt>{desc + ": "}</dt> */}
         <dd>{renderZitierteNormsLinks(zitierteNorms, zitierteNormUrls)}</dd>

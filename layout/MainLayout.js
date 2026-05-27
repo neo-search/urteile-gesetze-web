@@ -1,16 +1,13 @@
-import Link from "next/link";
 import Header from "../components/header/";
 import Footer from "../components/footer/Footer";
 import Head from "next/head";
-import css from "styled-jsx/css";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
-import { initGA, logPageView, logException } from "../services/analytics";
+import { initGA, logPageView } from "../services/analytics";
 
-import "./bootstrap.min.css";
-import "./style.css";
+// CSS-Imports sind in pages/_app.js (Next.js 9+ Anforderung)
 
 class LayoutWithHeaderAndFooter extends Component {
   constructor(props) {
@@ -77,7 +74,7 @@ class LayoutWithHeaderAndFooter extends Component {
               onClick={() => {
                 this.showTrackingOverlay();
               }}
-              style={{ "text-decoration": "underline" }}
+              style={{ textDecoration: "underline" }}
             >
               Webtracking-Einstellungen
             </a>{" "}
@@ -162,23 +159,23 @@ class LayoutWithHeaderAndFooter extends Component {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/static/apple-touch-icon.png"
+            href="/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/static/favicon-32x32.png"
+            href="/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/static/favicon-16x16.png"
+            href="/favicon-16x16.png"
           />
           <link
             rel="mask-icon"
-            href="/static/safari-pinned-tab.svg"
+            href="/safari-pinned-tab.svg"
             color="#5bbad5"
           />
           <meta name="theme-color" content="#ffffff" />
@@ -186,7 +183,7 @@ class LayoutWithHeaderAndFooter extends Component {
           {this.renderDescription(description)}
           {this.renderCanonical(canonical)}
           <meta property="og:site_name" content="Urteile & Gesetze" />
-          <meta property="og:image" content="/static/apple-touch-icon.png" />
+          <meta property="og:image" content="/apple-touch-icon.png" />
           <meta property="og:type" content="article" />
           <meta
             name="viewport"

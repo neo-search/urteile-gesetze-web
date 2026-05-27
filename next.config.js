@@ -1,30 +1,23 @@
 const prod = process.env.NODE_ENV === "production";
-const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const withCSS = require('@zeit/next-css')
 
-module.exports = withCSS({
-  analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-  analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
-  bundleAnalyzerConfig: {
-    server: {
-      analyzerMode: 'static',
-      reportFilename: '../../bundles/server.html'
-    },
-    browser: {
-      analyzerMode: 'static',
-      reportFilename: '../bundles/client.html'
-    }
-  },
-  serverRuntimeConfig: {
-    // Will only be available on the server side
-    mySecret: "secret"
-  },
-  publicRuntimeConfig: {
-    // Will be available on both server and client
-    backendUrl: prod ? "https://rest.urteile-gesetze.de" : "http://localhost:8090",
-    logging: prod ? "info" : "debug"
-  }
-
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
 });
 
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // CSS-Unterstützung ist seit Next.js 9 eingebaut — kein withCSS-Plugin mehr nötig
+  serverRuntimeConfig: {
+    // Nur auf dem Server verfügbar
+    mySecret: "secret",
+  },
+  publicRuntimeConfig: {
+    // Auf Server und Client verfügbar
+    backendUrl: prod
+      ? "https://rest.urteile-gesetze.de"
+      : "http://localhost:8090",
+    logging: prod ? "info" : "debug",
+  },
+};
+
+module.exports = withBundleAnalyzer(nextConfig);

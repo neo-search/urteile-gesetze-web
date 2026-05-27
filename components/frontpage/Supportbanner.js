@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "reactstrap/lib/Card";
 import CardBody from "reactstrap/lib/CardBody";
 import CardSubtitle from "reactstrap/lib/CardSubtitle";
-import CardText from "reactstrap/lib/CardText";
 // import FontAwesomeIcon
 import { colors } from "../common/Constants";
 
@@ -20,8 +19,7 @@ const WhiteCardBody = (props) => (
 );
 
 const CenteredSubTitle = ({ href, asHref, label, children }) => (
-  <CardText style={{ textAlign: "left" }}>
-    {/* <Link as={asHref} href={href}> */}
+  <div style={{ textAlign: "left" }}>
     <h2
       style={{
         fontSize: 16,
@@ -35,15 +33,13 @@ const CenteredSubTitle = ({ href, asHref, label, children }) => (
       erfreut sich der freundlichen Unterstützung von
       <ul>
         <li>
-          <a href="https://va-ra.com/" target="_blank">
+          <a href="https://va-ra.com/" target="_blank" rel="noopener noreferrer">
             Rechtsanwalt Stade
           </a>
         </li>
       </ul>
     </h2>
-
-    {/* </Link> */}
-  </CardText>
+  </div>
 );
 
 const IMG_PLACEHOLDER =

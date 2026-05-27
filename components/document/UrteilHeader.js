@@ -7,21 +7,21 @@ import BreadcrumpItem from "../common/BreadcrumbItem";
 const UrteilBreadCrump = ({ gericht, aktenzeichen }) => (
   <Breadcrump small={true}>
     <BreadcrumpItem>
-      <Link href="/">
+      <Link legacyBehavior href="/">
         <a itemProp="url">
           <span itemProp="name">Startseite</span>
         </a>
       </Link>
     </BreadcrumpItem>
     <BreadcrumpItem>
-      <Link as="/urteile" href={`/suche?d=r`}>
+      <Link legacyBehavior as="/urteile" href={`/suche?d=r`}>
         <a itemProp="url">
           <span itemProp="name">Urteile</span>
         </a>
       </Link>
     </BreadcrumpItem>
     <BreadcrumpItem>
-      <Link href={"/" + gericht.toLowerCase()}>
+      <Link legacyBehavior href={"/" + gericht.toLowerCase()}>
         <a itemProp="url">{gericht}</a>
       </Link>
     </BreadcrumpItem>

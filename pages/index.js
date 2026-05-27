@@ -8,6 +8,7 @@ import Banner from "../components/frontpage/Banner";
 import Card from "../components/frontpage/card";
 import Supportbanner from "../components/frontpage/Supportbanner";
 import Layout from "../layout/MainLayout";
+
 const styles = css`
   h2 {
     font-size: 16px;
@@ -19,47 +20,44 @@ const styles = css`
   }
 `;
 
+// In Next.js 13+ rendert <Link> selbst ein <a> — kein child-<a> mehr nötig
 const LabelLink = ({ href, as, children }) => (
-  <Link href={href} as={as || href}>
-    <a
-      style={{
-        marginRight: 24,
-        backgroundColor: "white",
-        marginBottom: 18,
-        border: "none",
-        boxShadow: "0px 1px 1px grey",
-        color: "#014fa4",
-        display: "inline-block",
-        fontWeight: 400,
-        textAlign: "center",
-        whiteSpace: "nowrap",
-        verticalAlign: "middle",
-        userSelect: "none",
-        border: "1px solid transparent",
-        padding: ".375rem .75rem",
-        fontSize: "1rem",
-        lineHeight: 1.5,
-      }}
-    >
-      {children}
-    </a>
+  <Link
+    href={href || as}
+    as={as}
+    style={{
+      marginRight: 24,
+      backgroundColor: "white",
+      marginBottom: 18,
+      boxShadow: "0px 1px 1px grey",
+      color: "#014fa4",
+      display: "inline-block",
+      fontWeight: 400,
+      textAlign: "center",
+      whiteSpace: "nowrap",
+      verticalAlign: "middle",
+      userSelect: "none",
+      border: "1px solid transparent",
+      padding: ".375rem .75rem",
+      fontSize: "1rem",
+      lineHeight: 1.5,
+      textDecoration: "none",
+    }}
+  >
+    {children}
   </Link>
 );
 
 const CardLink = ({ asHref, href, label, img, alt }) => (
   <Col xs={6} sm={6} md={4} lg={3}>
-    <Link as={asHref} href={href}>
-      <div>
-        <Card
-          label={label}
-          asHref={asHref}
-          href={href}
-          imgsrc={img}
-          alt={alt}
-          title={alt}
-        />
-      </div>
-    </Link>
+    <Card
+      label={label}
+      asHref={asHref}
+      href={href}
+      imgsrc={img}
+      alt={alt}
+      title={alt}
+    />
   </Col>
 );
 
@@ -88,7 +86,6 @@ const renderSocialMetaData = () => {
             "url": "https://urteile-gesetze.de",
             "sameAs": [
               "https://www.facebook.com/urteilegesetze/",
-              "https://plus.google.com/116310509828182688093",
               "https://twitter.com/urteile_gesetze"
             ]}`,
           }}
@@ -98,15 +95,12 @@ const renderSocialMetaData = () => {
   );
 };
 
-export default (props) => {
-  <p>
-    Kostenfrei und Open Source! urteile-gesetze ist das erste juristische
-    Informationssystem unter einer Open Source Lizenz.
-  </p>;
+// query kommt jetzt über getServerSideProps statt props.url (seit Next.js 9 entfernt)
+export default function HomePage({ query }) {
   return (
     <Layout
       title="Urteile, Gesetze und Verordnungen der Bundesrepublik Deutschland"
-      query={props.url.query.query}
+      query={query}
       noSearchbar={true}
       description="Finden Sie Gesetze, Verordnungen und Entscheidungen der Bundesrepublik Deutschland. Aktuell und kostenlos bei urteile-gesetze.de"
       canonical="/"
@@ -142,35 +136,35 @@ export default (props) => {
               href="/rechtsgebiet?landingpage=/arbeitsrecht"
               label="Arbeitsrecht"
               alt="Rechtsgebiet Arbeitsrecht"
-              img="/static/assets/arbeitsrecht.svg"
+              img="/assets/arbeitsrecht.svg"
             />
             <CardLink
               asHref="/sozialrecht"
               href="/rechtsgebiet?landingpage=/sozialrecht"
               label="Sozialrecht"
               alt="Rechtsgebiet Sozialrecht"
-              img="/static/assets/sozialrecht.svg"
+              img="/assets/sozialrecht.svg"
             />
             <CardLink
               asHref="/staats-verfassungsrecht"
               href="/rechtsgebiet?landingpage=/staats-verfassungsrecht"
               label="Staats- & Verfassungrecht"
               alt="Rechtsgebiete Staats- & Verfassungrecht"
-              img="/static/assets/staatssrecht.svg"
+              img="/assets/staatssrecht.svg"
             />
             <CardLink
               asHref="/steuerrecht"
               href="/rechtsgebiet?landingpage=/steuerrecht"
               label="Steuerrecht"
               alt="Rechtsgebiet Steuerrecht"
-              img="/static/assets/steuerrecht.svg"
+              img="/assets/steuerrecht.svg"
             />
             <CardLink
               asHref="/strafrecht"
               href="/rechtsgebiet?landingpage=/strafrecht"
               label="Strafrecht"
               alt="Rechtsgebiet Strafrecht"
-              img="/static/assets/strafrecht.svg"
+              img="/assets/strafrecht.svg"
             />
           </Row>
         </div>
@@ -195,9 +189,7 @@ export default (props) => {
           </LabelLink>
           <a href="/gerichte">...&nbsp;Alle Gerichte sehen</a>
           <p />
-          <Link as={`/urteile`} href={`/urteile`}>
-            ...&nbsp;Alle Urteile sehen
-          </Link>
+          <Link href="/urteile">...&nbsp;Alle Urteile sehen</Link>
         </div>
 
         <div>
@@ -248,9 +240,7 @@ export default (props) => {
             StPO
           </LabelLink>
           <p />
-          <Link href="/gesetze">
-            <a>... Alle Gesetze sehen</a>
-          </Link>
+          <Link href="/gesetze">... Alle Gesetze sehen</Link>
           <p />
           unsere selbst entworfenen{" "}
           <a href="https://moppenstedt.de/collections/urkunden-zum-selbst-beschriften">
@@ -265,4 +255,12 @@ export default (props) => {
       </Container>
     </Layout>
   );
-};
+}
+
+export function getServerSideProps({ query }) {
+  return {
+    props: {
+      query: query.query || null,
+    },
+  };
+}

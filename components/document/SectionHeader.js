@@ -26,28 +26,28 @@ export default ({ doc }) => {
     <InfoBar>
       <Breadcrump small={true}>
         <BreadcrumpItem>
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a itemProp="url">
               <span itemProp="name">Startseite</span>
             </a>
           </Link>
         </BreadcrumpItem>
         <BreadcrumpItem>
-          <Link href="/gesetze">
+          <Link legacyBehavior href="/gesetze">
             <a itemProp="url">
               <span itemProp="name">Gesetze</span>
             </a>
           </Link>
         </BreadcrumpItem>
         <BreadcrumpItem>
-          <Link href={kanonischeUrlNorm}>
+          <Link legacyBehavior href={kanonischeUrlNorm}>
             <a itemProp="url">
               <span itemProp="name">{abkuerzungNorm}</span>
             </a>
           </Link>
         </BreadcrumpItem>
         <BreadcrumpItem>{abkuerzung}
-          {/* <Link>
+          {/* <Link legacyBehavior>
             <a>{abkuerzung}</a>
           </Link> */}
         </BreadcrumpItem>

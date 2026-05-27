@@ -37,12 +37,12 @@ export default () => (
     <Container>
       <Row>
         <Col md={{ size: 4 }}>
-          <Link href="/impressum">
+          <Link legacyBehavior href="/impressum">
             <a>Impressum</a>
           </Link>
         </Col>
         <Col md={{ size: 4 }}>
-          <Link href="/unternehmen">
+          <Link legacyBehavior href="/unternehmen">
             <a>Über uns</a>
           </Link>
         </Col>
@@ -50,7 +50,7 @@ export default () => (
 
       <Row>
         <Col md={{ size: 4 }}>
-          <Link href="/datenschutz">
+          <Link legacyBehavior href="/datenschutz">
             <a>Datenschutz</a>
           </Link>
         </Col>

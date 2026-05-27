@@ -1,8 +1,6 @@
-// _document is only rendered on the server side and not on the client side
-// Event handlers like onClick can't be added to this file
-
-// ./pages/_document.js
-import Document, { Head, Main, NextScript } from "next/document";
+// _document wird nur server-seitig gerendert
+// Event-Handler wie onClick können hier nicht verwendet werden
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -12,15 +10,15 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html lang="de">
+      <Html lang="de">
         <Head>
-          <link rel="manifest" href="/static/manifest.json"/>
+          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

@@ -16,7 +16,7 @@ const LabelLink = ({ href, label }) => (
 const Gericht = ({ href, gericht, children }) => (
   <div>
     <h5>
-      <Link href={`/${href}`}>
+      <Link legacyBehavior href={`/${href}`}>
         <a>{gericht}</a>
       </Link>
     </h5>

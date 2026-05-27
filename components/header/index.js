@@ -3,7 +3,6 @@ import Logo from "./Logo";
 import Col from "reactstrap/lib/Col";
 import Row from "reactstrap/lib/Row";
 import css from "styled-jsx/css";
-import Link from "next/link";
 import Button from "reactstrap/lib/Button"
 import NProgress from "nprogress";
 import Router from "next/router";
@@ -23,11 +22,10 @@ const styles = css`
   }
 `;
 
-Router.onRouteChangeStart = url => {
-  NProgress.start();
-};
-Router.onRouteChangeComplete = () => NProgress.done();
-Router.onRouteChangeError = () => NProgress.done();
+// Next.js 10+ verwendet Router.events statt direkte Zuweisung
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 const renderSearchBar = (noSearchBar, query) => {
   if (noSearchBar) return;
@@ -42,18 +40,14 @@ const renderLogo = (noSearchBar) => {
   if (noSearchBar) {
     return (
       <Col sm="10" md="10" lg="10" style={{ marginBottom: 8 }}>
-        <Link href="/">
-            <Logo />
-          </Link>
+        <Logo />
       </Col>
     )
   }
   else {
     return (
       <Col sm="5" md="4" lg="3" style={{ marginBottom: 8 }}>
-        <Link href="/">
-            <Logo />
-          </Link>
+        <Logo />
       </Col>
     );
   }

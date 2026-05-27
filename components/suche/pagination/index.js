@@ -64,19 +64,13 @@ const PageLink = ({
     : href;
   searchRequest = { ...searchRequest, p: pageIndex };
 
+  // pageMetaInfo und searchRequest werden nicht als HTML-Props übergeben (Next.js 13+)
   return (
-    <Link
-      href={href}
-      as={as}
-      pageMetaInfo={pageMetaInfo}
-      searchRequest={searchRequest}
-    >
-      {/* <div> */}
+    <Link legacyBehavior href={href} as={as}>
       <a style={{ color: active ? "red" : colors.primaryAction }}>
         <style jsx>{styles}</style>
         {children}
       </a>
-      {/* </div> */}
     </Link>
   );
 };

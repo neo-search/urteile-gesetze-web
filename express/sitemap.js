@@ -133,31 +133,31 @@ const sitemapImages = sitemapService.createSitemap({
       url: "/",
       img: [
         {
-          url: "/static/assets/arbeitsrecht.svg",
+          url: "/assets/arbeitsrecht.svg",
           caption: "Arbeitsrecht",
           title: "Arbeitsrecht | Urteile & Gesetze",
           license: "https://creativecommons.org/licenses/by-nd/4.0/"
         },
         {
-          url: "/static/assets/sozialrecht.svg",
+          url: "/assets/sozialrecht.svg",
           caption: "Sozialrecht",
           title: "Sozialrecht | Urteile & Gesetze",
           license: "https://creativecommons.org/licenses/by-nd/4.0/"
         },
         {
-          url: "/static/assets/staatssrecht.svg",
+          url: "/assets/staatssrecht.svg",
           caption: "Staats- & Verfassungsrecht",
           title: "Staats- & Verfassungsrecht | Urteile & Gesetze",
           license: "https://creativecommons.org/licenses/by-nd/4.0/"
         },
         {
-          url: "/static/assets/steuerrecht.svg",
+          url: "/assets/steuerrecht.svg",
           caption: "Steuerrecht",
           title: "Steuerrecht | Urteile & Gesetze",
           license: "https://creativecommons.org/licenses/by-nd/4.0/"
         },
         {
-          url: "/static/assets/strafrecht.svg",
+          url: "/assets/strafrecht.svg",
           caption: "Strafrecht",
           title: "Strafrecht | Urteile & Gesetze",
           license: "https://creativecommons.org/licenses/by-nd/4.0/"

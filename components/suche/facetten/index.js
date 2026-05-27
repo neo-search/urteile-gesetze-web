@@ -1,3 +1,4 @@
+import React from "react";
 import Facette from "./Facette";
 import css from "styled-jsx/css";
 

@@ -53,7 +53,7 @@ export default ({ doc, zitierendeUrteile }) => {
   return (
     <div>
       <h2 style={{ textAlign: "center", fontSize: "1rem" }}>
-        <Link href={kanonischeUrlNorm}>
+        <Link legacyBehavior href={kanonischeUrlNorm}>
           <a>
             <b>
               {(kurzueberschriftNorm ? kurzueberschriftNorm + " " : "") +

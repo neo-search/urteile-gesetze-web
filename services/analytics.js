@@ -1,14 +1,13 @@
-import ReactGA from 'react-ga'
+// react-ga4 (GA4-kompatibel) statt veraltetes react-ga (UA)
+import ReactGA from 'react-ga4'
 
 export const initGA = () => {
+  // GA4 Measurement ID (G-...). Hinweis: UA-IDs werden von Google nicht mehr unterstützt.
   ReactGA.initialize('UA-102965034-1');
-  ReactGA.ga('set', 'anonymizeIp', true);
-
 }
 
 export const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname })
-  ReactGA.pageview(window.location.pathname)
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname })
 }
 
 export const logEvent = (category = '', action = '') => {
@@ -19,6 +18,6 @@ export const logEvent = (category = '', action = '') => {
 
 export const logException = (description = '', fatal = false) => {
   if (description) {
-    ReactGA.exception({ description, fatal })
+    ReactGA.event('exception', { description, fatal })
   }
 }

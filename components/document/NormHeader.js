@@ -10,17 +10,17 @@ export default ({ doc }) => {
     <InfoBar>
       <Breadcrump small={true}>
         <BreadcrumpItem>
-          <Link href="/">
+          <Link legacyBehavior href="/">
             <a>Home</a>
           </Link>
         </BreadcrumpItem>
         <BreadcrumpItem>
-          <Link href="/gesetze">
+          <Link legacyBehavior href="/gesetze">
             <a>Gesetze</a>
           </Link>
         </BreadcrumpItem>
         <BreadcrumpItem>
-          <Link href={kanonischeUrl}>
+          <Link legacyBehavior href={kanonischeUrl}>
             <a>{abkuerzung}</a>
           </Link>
         </BreadcrumpItem>
