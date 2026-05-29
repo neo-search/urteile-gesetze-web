@@ -1,12 +1,10 @@
 export const colors = {
-  primaryAction: '#014fa4',
-  // primaryAction: "#014fa4",
-
-  primaryActionHover: '#23527c',
+  primaryAction: '#1a3f7a',
+  primaryActionHover: '#122d5c',
   backgroundColor: '#f6f6f6',
   foregroundColor: '#444444',
   lightForegroundColor: '#999999',
-  hoverBackgroundColor: '#E5F1FF'
+  hoverBackgroundColor: '#e8eef8'
 
   // backgroundColor: '#ddd'
   // Secondary

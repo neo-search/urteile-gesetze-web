@@ -190,6 +190,9 @@ class LayoutWithHeaderAndFooter extends Component {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
+        <a href="#main-content" className="skip-link">
+          Zum Hauptinhalt springen
+        </a>
         <Header query={query} noSearchBar={noSearchbar} />
 
         <div
@@ -198,7 +201,9 @@ class LayoutWithHeaderAndFooter extends Component {
         />
 
         <div className="spaceUnderSearchbar" />
-        <div>{children}</div>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
 
         {this.renderTrackingFooter()}
         {this.renderTrackingOverlay()}

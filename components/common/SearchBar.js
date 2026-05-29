@@ -11,41 +11,44 @@ import SearchSvg from "../icons/SearchSvg";
 // import  faSearch  from '@fortawesome/free-solid-svg-icons/faSearch'
 
 const styles = css`
-  // form {
-  //   width: 500px;
-  // }
+  div :global(div.input-group) {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.2s ease;
+  }
+
+  div :global(div.input-group:focus-within) {
+    box-shadow: 0 0 0 3px rgba(1, 79, 164, 0.18), 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
 
   div :global(input) {
-    // background-color: #f1f1f1;
     border: none;
+    outline: none;
+    box-shadow: none !important;
+    font-size: 1rem;
+    padding: 10px 16px;
   }
 
-  div :global(.btn) {
-    // background-color: #f1f1f1;
-    border-radius: 0;
-    color: ${colors.primaryAction};
+  div :global(input:focus) {
+    box-shadow: none !important;
   }
 
-  div :global(.btn:focus),
-  div :global(.btn:hover) {
-    color: white;
+  div :global(.btn-search) {
     background-color: ${colors.primaryAction};
+    border: none;
+    border-radius: 0;
+    padding: 0 18px;
+    color: white;
+    transition: background-color 0.15s ease;
+    display: flex;
+    align-items: center;
   }
 
-  @keyframes greenPulse {
-    from {
-      -webkit-box-shadow: 0px 0px 0px 5px rgba(161, 205, 255, 0.62);
-    }
-    50% {
-      -webkit-box-shadow: 0px 0px 0px 11px rgba(161, 205, 255, 0.99);
-    }
-    to {
-      -webkit-box-shadow: 0px 0px 0px 5px rgba(161, 205, 255, 0.62);
-    }
-  }
-
-  div :global(div.input-group:not(focus)) {
-    animation: greenPulse 3s infinite;
+  div :global(.btn-search:hover),
+  div :global(.btn-search:focus) {
+    background-color: ${colors.primaryActionHover};
+    color: white;
   }
 `;
 
@@ -74,29 +77,35 @@ export default class SearchBar extends Component {
   render() {
     const { placeholder, light } = this.props;
     const backgroundColor = light ? "white" : "#f1f1f1";
-    const border = light
-      ? `1px  solid ${colors.primaryAction}`
-      : "transparent 1px solid";
 
     return (
       <div>
         <style jsx>{styles}</style>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <InputGroup style={{ border }}>
+        <form
+          onSubmit={this.handleSubmit.bind(this)}
+          role="search"
+          aria-label="Gesetze und Urteile suchen"
+        >
+          <label htmlFor="main-search" className="visually-hidden">
+            Gesetz oder Urteil suchen
+          </label>
+          <InputGroup>
             <Input
+              id="main-search"
               style={{ backgroundColor }}
-              // length={500}
-              type="text"
+              type="search"
               onChange={this.handleInput.bind(this)}
               value={this.query}
               placeholder={placeholder || "Gesetz oder Urteil suchen"}
+              aria-label="Suchbegriff eingeben"
+              autoComplete="off"
             />
             <Button
-              color="background"
-              style={{ backgroundColor }}
-              aria-label="Suchen"
+              className="btn-search"
+              type="submit"
+              aria-label="Suche starten"
             >
-              <SearchSvg style={{width:24, height:16}}/>
+              <SearchSvg style={{ width: 18, height: 18 }} aria-hidden="true" />
             </Button>
           </InputGroup>
         </form>
