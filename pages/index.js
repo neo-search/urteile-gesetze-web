@@ -26,7 +26,7 @@ const styles = css`
   }
 
   section:last-child {
-    margin-bottom: 0;
+    margin-bottom: 32px;
   }
 
   h2 {

@@ -14,8 +14,9 @@ class LayoutWithHeaderAndFooter extends Component {
     super(props);
     this.showTrackingOverlay = this.showTrackingOverlay.bind(this);
     this.changeTrackingSettings = this.changeTrackingSettings.bind(this);
-    const { trackingAllowed } = parseCookies(this.props);
-    this.state = { showTrackingInfo: false, trackingAllowed: trackingAllowed };
+    // trackingAllowed wird erst in componentDidMount aus document.cookie gelesen,
+    // damit Server- und Client-Render übereinstimmen (verhindert Hydration-Fehler).
+    this.state = { showTrackingInfo: false, trackingAllowed: null, mounted: false };
   }
 
   renderCanonical(canonical) {
@@ -39,6 +40,10 @@ class LayoutWithHeaderAndFooter extends Component {
   }
 
   componentDidMount() {
+    // Cookies erst client-seitig lesen — verhindert SSR/Client-Mismatch
+    const { trackingAllowed } = parseCookies();
+    this.setState({ trackingAllowed, mounted: true });
+
     const prod = process.env.NODE_ENV === "production";
     if (prod) this.trackIfAllowed();
   }
@@ -64,6 +69,8 @@ class LayoutWithHeaderAndFooter extends Component {
   }
 
   renderTrackingFooter() {
+    // Vor dem Mount nichts rendern — verhindert Hydration-Mismatch
+    if (!this.state.mounted) return null;
     if (this.state.trackingAllowed === undefined) {
       return (
         <div id="stickyFooter">
@@ -93,6 +100,7 @@ class LayoutWithHeaderAndFooter extends Component {
   }
 
   renderTrackingOverlay() {
+    if (!this.state.mounted) return null;
     if (this.state.showTrackingInfo === true) {
       return (
         <div id="trackingOverlay">
